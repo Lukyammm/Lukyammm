@@ -1,4 +1,4 @@
-Hi, I'm Lukyam Madeira 👋
+# Hi, I'm Lukyam Madeira 👋
 
 Software Developer focused on building automation tools, dashboards, and operational systems using JavaScript, Google Apps Script, HTML, CSS, and Google Workspace.
 
@@ -14,27 +14,27 @@ JavaScript | Google Apps Script | HTML | CSS | Google Sheets | Looker Studio | G
 
 ## Featured Projects
 
-**Hospital Reporting Systems**
+### Hospital Reporting Systems
 
 Operational dashboards and reporting tools built to support healthcare teams with data visualization and process monitoring.
 
-**Google Workspace Automation**
+### Google Workspace Automation
 
 Spreadsheet automation solutions using JavaScript and Google Apps Script to reduce manual work and improve workflow efficiency.
 
-**Administrative Platforms**
+### Administrative Platforms
 
 Internal tools and SaaS-style platforms focused on task management, productivity, and operational control.
 
 ## Career Focus
 
 - Software Development
-- - Workflow Automation
-  - - Dashboard Development
-    - - Google Workspace Automation
-      - - Internal Tools Development
-        - - SaaS Development
-         
-          - ## Contact
-         
-          - 📧 Email: lukyam.mkl@gmail.com
+- Workflow Automation
+- Dashboard Development
+- Google Workspace Automation
+- Internal Tools Development
+- SaaS Development
+
+## Contact
+
+Email: lukyam.mkl@gmail.com
