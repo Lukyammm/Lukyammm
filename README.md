@@ -37,4 +37,4 @@ Internal tools and SaaS-style platforms focused on task management, productivity
 
 ## Contact
 
-Email: lukyam.mkl@gmail.com
+Email: lukyam.madeira@gmail.com
