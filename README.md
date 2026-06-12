@@ -1,16 +1,40 @@
-## Hi there 👋
+Hi, I'm Lukyam Madeira 👋
 
-<!--
-**Lukyammm/Lukyammm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Software Developer focused on building automation tools, dashboards, and operational systems using JavaScript, Google Apps Script, HTML, CSS, and Google Workspace.
 
-Here are some ideas to get you started:
+## About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I have experience developing real-world solutions for hospital and administrative environments, including workflow automation, KPI dashboards, internal systems, and process management tools.
+
+My goal is to build clean, useful, and scalable digital solutions that improve operations and help teams work more efficiently.
+
+## Tech Stack
+
+JavaScript | Google Apps Script | HTML | CSS | Google Sheets | Looker Studio | GitHub | Responsive Web Design
+
+## Featured Projects
+
+**Hospital Reporting Systems**
+
+Operational dashboards and reporting tools built to support healthcare teams with data visualization and process monitoring.
+
+**Google Workspace Automation**
+
+Spreadsheet automation solutions using JavaScript and Google Apps Script to reduce manual work and improve workflow efficiency.
+
+**Administrative Platforms**
+
+Internal tools and SaaS-style platforms focused on task management, productivity, and operational control.
+
+## Career Focus
+
+- Software Development
+- - Workflow Automation
+  - - Dashboard Development
+    - - Google Workspace Automation
+      - - Internal Tools Development
+        - - SaaS Development
+         
+          - ## Contact
+         
+          - 📧 Email: lukyam.mkl@gmail.com
