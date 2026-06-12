@@ -14,17 +14,29 @@ JavaScript | Google Apps Script | HTML | CSS | Google Sheets | Looker Studio | G
 
 ## Featured Projects
 
-### Hospital Reporting Systems
+### [Hospital Reporting Dashboard](https://github.com/Lukyammm/hospital-reporting-dashboard)
 
-Operational dashboards and reporting tools built to support healthcare teams with data visualization and process monitoring.
+Hospital reporting dashboard built with HTML, JavaScript, Google Apps Script, and Google Workspace.
 
-### Google Workspace Automation
+### [Patient Satisfaction Survey System](https://github.com/Lukyammm/patient-satisfaction-survey-system)
 
-Spreadsheet automation solutions using JavaScript and Google Apps Script to reduce manual work and improve workflow efficiency.
+Patient satisfaction survey system designed to collect, organize, and analyze healthcare feedback.
 
-### Administrative Platforms
+### [Hospital Process Management System](https://github.com/Lukyammm/hospital-process-management-system)
 
-Internal tools and SaaS-style platforms focused on task management, productivity, and operational control.
+Hospital process management system focused on internal workflows, records, and operational control.
+
+### [Google Sheets Automation Tool](https://github.com/Lukyammm/google-sheets-automation-tool)
+
+Google Sheets automation tool built with JavaScript and Google Apps Script to improve productivity.
+
+### [Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)
+
+Internal communication platform for organizing announcements, updates, and team information.
+
+### [Administrative Workflow System](https://github.com/Lukyammm/administrative-workflow-system)
+
+Administrative system for managing records, workflows, and operational information.
 
 ## Career Focus
 
