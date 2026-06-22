@@ -1,51 +1,55 @@
-# Hi, I'm Lukyam Madeira 👋
+# Hi, I'm Lukyam Madeira
 
-**Software developer who ships real internal tools** — dashboards, access
-control, and operational systems that hospital teams use every day. I turn
-spreadsheets and paper routines into reliable web applications with JavaScript,
-Google Apps Script, and Google Workspace.
+**Junior Data / BI Analyst and builder of real healthcare operations tools.**
+
+I create dashboards, reporting workflows, data quality checks, and Google Workspace automations that turn spreadsheets and manual routines into reliable decision-support systems.
 
 ```text
-Focus:  Web apps · Dashboards · Automation · Internal tools
-Stack:  JavaScript · Google Apps Script · HTML · CSS · Google Sheets · Looker Studio
-Domain: Hospital & administrative operations (production systems)
+Focus:  Data Analytics | BI Dashboards | SQL | Reporting Automation | Internal Tools
+Stack:  SQL | Power BI / DAX | JavaScript | Google Apps Script | HTML/CSS | Google Sheets
+Domain: Healthcare quality, patient safety, clinical operations, and administrative workflows
 ```
 
-## About me
+## About Me
 
-For the past few years I've built and shipped internal web applications for a
-hospital environment — KPI dashboards, an access-control system, a rapid-response
-call tool, patient-safety monitoring, and satisfaction analytics. The stack is
-lean, but the engineering isn't: hashed-password authentication with lockout,
-caching and document locks for safe concurrent writes, scheduled jobs, schema
-migrations, and role-based permissions.
+I build practical systems for hospital and administrative operations: patient safety dashboards, reporting tools, rapid-response workflows, satisfaction analytics, and spreadsheet automation.
 
-I care about software that's **practical, reliable, and used** — not demos.
+My strongest fit is at the intersection of **data analysis, BI reporting, SQL, healthcare operations, and workflow automation**. I care about clear metrics, reliable data, privacy-aware documentation, and tools that non-technical teams can actually use.
 
-## Featured projects
+## Technical Skills
 
-| Project | What it does |
+- **SQL:** relational modeling, KPI queries, joins, aggregations, data validation, and reporting-ready datasets.
+- **Business Intelligence:** Power BI concepts, DAX measures, dashboard structure, KPI design, and executive reporting.
+- **Data Quality:** checks for missing values, duplicates, invalid categories, inconsistent dates, and operational data readiness.
+- **Automation:** Google Apps Script, Google Sheets workflows, CSV/XLSX intake, and internal process tools.
+- **Frontend for internal tools:** JavaScript, HTML, CSS, responsive dashboards, filters, modals, and export-ready views.
+
+## Featured Portfolio
+
+| Project | What it demonstrates |
 |---|---|
-| **[Administrative Workflow System](https://github.com/Lukyammm/administrative-workflow-system)** | Hospital access-control app (lockers, visitors, companions, audit logs) with caching and document locking. My largest system. |
-| **[Hospital Process Management System](https://github.com/Lukyammm/hospital-process-management-system)** | Process & KPI management with dashboards, scheduled snapshot jobs, role-based access, and audit history. |
-| **[TRR — Rapid Response Team](https://github.com/Lukyammm/TRR)** | Clinical/surgical call intake with MEWS-based criticality, SLA tracking, and secure auth (salted hashing, lockout, sessions). |
-| **[Patient Satisfaction Survey System](https://github.com/Lukyammm/patient-satisfaction-survey-system)** | Feedback capture + analytics: NPS, satisfaction scoring, sector canonicalization, CSV export. |
-| **[Hospital Reporting Dashboard](https://github.com/Lukyammm/hospital-reporting-dashboard)** | Configuration-driven reporting engine for care-record quality and death review (CRP/CRO). |
-| **[Boletim COSEP](https://github.com/Lukyammm/Boletim)** | Patient-safety dashboard with goal compliance and automated critical-notification email alerts. |
+| **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)** | Full BI case study with synthetic healthcare data, SQL schema, KPI queries, data quality checks, dimensional modeling, and Power BI-ready DAX measures. |
+| **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)** | Patient safety dashboard for compliance indicators, safety walks, notifications, targets, and PDF-ready reporting pages. |
+| **[Clinical Reporting Suite](https://github.com/Lukyammm/clinical-reporting-suite)** | Reporting dashboard with data quality review, administrative configuration, and export-ready clinical quality reports. |
+| **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)** | CSV/XLS/XLSX intake workflow with file preview, cleanup options, routing rules, and Google Sheets import automation. |
+| **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)** | Operational process management dashboard with KPIs, process boards, snapshots, governance, and data review workflows. |
+| **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)** | Patient satisfaction and NPS analytics with ratings, sector breakdowns, saved filters, and manifestation tracking. |
+| **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)** | Clinical and surgical rapid-response workflow with severity triage, administrative queue, and SLA monitoring. |
+| **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)** | Hospital locker custody workflow with terms, audit trail, state monitoring, notifications, and operational controls. |
 
-## What I bring to a team
+## What I Bring
 
-- **I ship things people depend on** — production internal tools, not tutorials.
-- **I engineer for reliability** — caching, locking, validation, audit logs.
-- **I take security seriously** — hashed passwords, lockout, sessions, permissions.
-- **I model real processes** — built from how teams actually work, not assumptions.
-- **I write for the next person** — clean structure and clear documentation.
+- **BI thinking:** I translate operational questions into metrics, models, dashboards, and follow-up workflows.
+- **SQL and data quality:** I document schemas, write KPI queries, and validate data before it reaches the dashboard layer.
+- **Healthcare operations context:** I understand patient safety, reporting cadence, response tracking, and privacy-sensitive workflows.
+- **Automation mindset:** I reduce manual spreadsheet work with Apps Script, Google Sheets, and web interfaces.
+- **Portfolio privacy:** Public repositories use synthetic/fictitious data and include data privacy statements where relevant.
 
-## Career focus
+## Career Focus
 
-`Web Development` · `Dashboard Development` · `Workflow Automation` ·
-`Internal Tools` · `Google Workspace Automation` · `SaaS`
+`Junior Data Analyst` | `BI Analyst` | `Healthcare Analytics` | `SQL` | `Power BI` | `Dashboard Development` | `Data Quality` | `Workflow Automation`
 
-## Let's connect
+## Let's Connect
 
-📫 **lukyam.madeira@gmail.com** — open to developer opportunities.
+- LinkedIn: [linkedin.com/in/lukyam1](https://www.linkedin.com/in/lukyam1)
+- Email: [lukyam.madeira@gmail.com](mailto:lukyam.madeira@gmail.com)
