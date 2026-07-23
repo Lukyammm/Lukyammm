@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=48&pause=1000&color=22D3A0&center=true&vCenter=true&width=800&height=120&lines=Lukyam+Madeira" alt="Lukyam Madeira" />
+  <img src="./banner.svg" alt="Lukyam Madeira - Analista de Dados e Desenvolvedor" />
 </div>
 
 <br/>
