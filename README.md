@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=soft&color=0D1117&height=180&section=header&text=Lukyam%20Madeira&fontSize=50&fontColor=22D3A0&fontAlignY=40&desc=Analista%20de%20Dados%20%26%20Desenvolvedor&descAlignY=65&descSize=20&descColor=ffffff" alt="Lukyam Madeira" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=48&pause=1000&color=22D3A0&center=true&vCenter=true&width=800&height=120&lines=Lukyam+Madeira" alt="Lukyam Madeira" />
 </div>
 
 <br/>
@@ -61,7 +61,6 @@ Sistemas completos que lidam com controle de acesso (RBAC), cache, proteção co
 ### 📊 Meus Números
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Lukyammm&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Estatísticas do GitHub do Lukyam" />
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=Lukyammm&theme=tokyonight&hide_border=true&background=0D1117" alt="Sequência de contribuições" />
 </div>
 
