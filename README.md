@@ -1,80 +1,65 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=220&section=header&text=Ola,%20eu%20sou%20o%20Lukyam!&fontSize=56&fontAlignY=36&desc=Software%20de%20verdade%20para%20a%20saude%20-%20JavaScript%20e%20Google%20Apps%20Script&descAlign=50&descAlignY=56&descSize=16" alt="Olá, eu sou o Lukyam!" />
-</div>
+# Hi, I'm Lukyam Madeira 👋
 
-<div align="center">
-  <a href="https://github.com/Lukyammm?tab=repositories">
-    <img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=600&size=20&pause=1000&color=22D3A0&center=true&vCenter=true&width=1000&lines=Construo+o+software+que+o+hospital+usa+de+verdade;JavaScript+%2B+Google+Apps+Script+%2B+Sheets;Do+papel+%C3%A0+produ%C3%A7%C3%A3o:+seguro,+r%C3%A1pido,+confi%C3%A1vel" alt="O que eu faço" />
-  </a>
-  <br/>
-  <img src="https://komarev.com/ghpvc/?username=Lukyammm&label=Visitas%20no%20perfil&color=22d3a0&style=flat-square" alt="Visitas no perfil" />
-</div>
+**Analista de Dados & Desenvolvedor** focado em descomplicar operações, automatizar rotinas e estruturar dashboards que ajudam equipes a tomar decisões precisas e baseadas em dados.
 
-<br/>
-
-<div align="center">
-  <p>
-    Nos últimos anos, transformei rotinas de papel e planilhas bagunçadas em aplicações web que um
-    hospital universitário usa <b>todos os dias</b> — controle de acesso, segurança do paciente,
-    chamados de time de resposta rápida e análise de satisfação. A stack é enxuta de propósito
-    (JavaScript + Google Apps Script + Google Sheets), mas a engenharia não é: hash de senha com
-    bloqueio por tentativa, cache e <i>locks</i> para escrita concorrente, jobs agendados e permissões por papel.
-  </p>
-  <p><b>Plataforma simples, software sério.</b></p>
-</div>
+Pego planilhas caóticas, processos de papel e dados não estruturados, e transformo em aplicações web confiáveis e pipelines automatizados. Minha base principal de atuação tem sido operações e qualidade hospitalar, mas as ferramentas que construo (automação de ETL, dashboards gerenciais, sistemas internos) otimizam a qualidade da informação em qualquer área de negócio.
 
 ---
 
-### 🚀 Projetos que rodam de verdade
-
-<div align="center"><i>Sistemas internos em produção num hospital universitário — não são projetos de tutorial.</i></div>
-
-<br/>
-
-| Projeto | O que é (e o que tem por baixo) |
-|:--|:--|
-| 🚑 **[TRR — Time de Resposta Rápida](https://github.com/Lukyammm/TRR)** | Abertura e rastreio de chamados clínico/cirúrgico com criticidade **MEWS** e **SLA**. Autenticação com salt + hash, comparação _timing-safe_ e bloqueio anti-brute-force. |
-| 🔐 **[Cosign — Controle de Acesso](https://github.com/Lukyammm/administrative-workflow-system)** | Armários, visitantes e acompanhantes do hospital (~26 mil linhas). Cache, _document locks_ e retry/backoff para escrita concorrente segura. |
-| 📈 **[SIGEP — Gestão de Processos & KPIs](https://github.com/Lukyammm/hospital-process-management-system)** | Indicadores, follow-up e mapeamento de processos. Jobs agendados, migrações de schema, permissões por papel e histórico de auditoria. |
-| 💬 **[Satisfação do Paciente (NPS)](https://github.com/Lukyammm/patient-satisfaction-survey-system)** | Captura e análise de satisfação. Canonicalização de setores (_fuzzy match_), dedupe e NPS calculado no servidor. |
-| 📊 **[Qualidade CRP/CRO](https://github.com/Lukyammm/hospital-reporting-dashboard)** | Relatórios de conformidade de registros e gestão de revisão de óbitos. Engine _config-driven_ com cache e permissões. |
-
-<div align="center"><sub>… e mais alguns sistemas em produção no <a href="https://github.com/Lukyammm?tab=repositories">meu GitHub</a>.</sub></div>
-
----
-
-### 🧰 Minhas ferramentas
+### 🧰 Minhas Ferramentas
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <br/>
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL" />
   <img src="https://img.shields.io/badge/Apps%20Script-4285F4?style=for-the-badge&logo=googleappsscript&logoColor=white" alt="Google Apps Script" />
-  <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Google Sheets" />
-  <img src="https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=looker&logoColor=white" alt="Looker Studio" />
-  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <br/>
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
+  <img src="https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=looker&logoColor=white" alt="Looker Studio" />
+  <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Google Sheets" />
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </div>
 
 ---
 
-### 📊 GitHub em números
+### 🚀 Portfólio de Projetos
+
+Abaixo estão alguns dos sistemas, automações e dashboards que desenvolvi (a maioria construída do zero para rodar em produção). Como o volume de repositórios é grande, agrupei por área de foco tecnológico:
+
+#### 📊 Business Intelligence & Analytics
+Projetos focados em modelagem de dados, tratamento de qualidade, DAX/SQL e criação de relatórios de apoio à decisão.
+- **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)**: Case completo de BI com modelagem dimensional, definição de KPIs, checagem de qualidade de dados em SQL e medidas DAX para Power BI.
+- **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)**: Analytics de pesquisa NPS com rotinas de limpeza, cruzamento de dados setorizados e histórico de satisfação.
+- **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)**: Dashboard de indicadores operacionais e segurança, com alertas configurados e relatórios gerenciais automatizados.
+- **[Hospital Quality Bulletin Dashboard](https://github.com/Lukyammm/hospital-quality-bulletin-dashboard)**: Painel de gestão da qualidade focado na análise diária de metas e KPIs.
+
+#### ⚙️ Automação de Processos & ETL
+Ferramentas criadas para substituir trabalho manual crônico, rotear dados de forma inteligente e garantir conformidade.
+- **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)**: Pipeline completo de entrada (CSV/XLSX) com rotinas de limpeza estruturada, validação de regras de negócios e importação automatizada.
+- **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)**: Workflow automatizado de custódia com trilha de auditoria contínua, monitoramento de estados lógicos e disparo de notificações.
+- **[Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)**: Portal back-office para automatizar rotinas de comunicados internos mantendo logs de submissão estruturados.
+- **[Shift Handoff Workflow](https://github.com/Lukyammm/shift-handoff-workflow)**: Automação para consolidar logs de passagem de plantão, trazendo padronização para dados anteriormente desestruturados.
+
+#### 💻 Aplicações Web Internas
+Sistemas completos que lidam com controle de acesso (RBAC), cache, proteção contra acessos simultâneos e criptografia.
+- **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)**: Dashboard interativo de gestão de governança e processos, com snapshot recorrente de dados e RBAC completo.
+- **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)**: Sistema robusto de rastreio e SLA para chamados de triagem. Usa hashing de senha com salt e bloqueio (lockout) para segurança.
+- **[Institutional Access Governance Portal](https://github.com/Lukyammm/institutional-access-governance-portal)**: Sistema escalável focado em controle de acesso com implementação de *document locks* para lidar com escrita concorrente de milhares de registros.
+
+> 💡 *Tenho dezenas de outros repositórios práticos. Fique à vontade para explorar todos os meus projetos na aba [Repositories](https://github.com/Lukyammm?tab=repositories).*
+
+---
+
+### 📊 Meus Números
 
 <div align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=Lukyammm&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&count_private=true&include_all_commits=true" alt="Estatísticas do GitHub do Lukyam" />
   <img height="165" src="https://streak-stats.demolab.com?user=Lukyammm&theme=tokyonight&hide_border=true&background=0D1117" alt="Sequência de contribuições" />
 </div>
-
----
-
-### 🐍 Meus commits viram jogo
 
 <div align="center">
   <picture>
@@ -82,29 +67,19 @@
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Lukyammm/Lukyammm/output/github-contribution-grid-snake.svg">
     <img alt="Animação da cobrinha comendo o grid de contribuições" src="https://raw.githubusercontent.com/Lukyammm/Lukyammm/output/github-contribution-grid-snake.svg">
   </picture>
-  <br/>
-  <sub><i>Cada quadradinho é um commit. A cobrinha come todos. 🐍</i></sub>
 </div>
 
 ---
 
-### 📬 Bora trocar uma ideia?
+### 📬 Contato
 
-<div align="center">
+Bora trocar uma ideia sobre dados, operações e projetos?
+
+<div align="left">
   <a href="mailto:lukyam.madeira@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://linkedin.com/in/lukyam">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <br/><br/>
-  <sub>📍 Ceará, Brasil &nbsp;·&nbsp; 🏥 Saúde + Tecnologia</sub>
 </div>
-
-<br/>
-
-<div align="center">
-  <i>Informação clara e sistemas que não falham no meio da noite economizam tempo — e, às vezes, salvam vidas.</i>
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=120&section=footer" alt="" />
