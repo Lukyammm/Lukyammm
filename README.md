@@ -1,70 +1,57 @@
-# Hi, I'm Lukyam Madeira
+﻿<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=OlÃ¡,%20sou%20o%20Lukyam!&fontSize=70&fontAlignY=35&desc=Transformando%20dados%20e%20processos%20na%20Ã¡rea%20da%20saÃºde&descAlignY=55&descAlign=50" />
+</div>
 
-**Junior Data / BI Analyst and automation developer focused on healthcare operations, dashboards, reporting, workflow automation, and data quality.**
+<br/>
 
-I build practical analytics and internal tools that turn spreadsheets, form responses, manual follow-ups, and fragmented operational records into dashboards, reports, validation checks, and workflow systems for teams that need reliable information to make decisions.
+<div align="center">
+  <h3>Especialista em OperaÃ§Ãµes ClÃ­nicas e AnÃ¡lise de Dados Hospitalares ðŸ¥ðŸ“Š</h3>
+  <p>Sou apaixonado por tecnologia aplicada Ã  saÃºde, buscando constantemente inovar e criar ferramentas que otimizam a gestÃ£o hospitalar, garantem a seguranÃ§a do paciente e melhoram a eficiÃªncia dos processos clÃ­nicos.</p>
+</div>
 
-```text
-Target roles: Junior Data Analyst | BI Analyst | Reporting Analyst | Healthcare Data Analyst | Operations Analyst
-Core tools:   Power BI | DAX | SQL | Google Sheets | Google Apps Script | JavaScript | HTML/CSS
-Domains:      Healthcare quality | Patient safety | Clinical operations | Data quality | Process improvement
-```
+---
 
-## Portfolio Positioning
+### ðŸš€ Sobre Mim
+- ðŸ’¼ Desenvolvo **Dashboards AnalÃ­ticos**, fluxos de comunicaÃ§Ã£o e sistemas de gestÃ£o de leitos.
+- ðŸ›  Foco em **Qualidade em SaÃºde**, GovernanÃ§a de Acessos e OtimizaÃ§Ã£o de Processos (Lean/Six Sigma focado em saÃºde).
+- ðŸ’¡ Acredito que a informaÃ§Ã£o clara e sistemas intuitivos salvam vidas.
 
-My portfolio is strongest where business operations, data quality, and practical automation meet. The projects below are built around realistic healthcare and administrative workflows: KPI monitoring, reporting cadence, spreadsheet cleanup, response tracking, audit trails, and privacy-aware documentation.
+---
 
-What I want hiring teams to see:
+### ðŸ’» Principais Ãreas de AtuaÃ§Ã£o
 
-- I can translate an operational problem into KPIs, data structure, dashboard flows, and usable internal tooling.
-- I can work with Google Sheets, Apps Script, SQL concepts, DAX measures, and JavaScript interfaces to support BI/reporting workflows.
-- I document projects with synthetic or fictitious data so the portfolio shows the work without exposing patient, employee, or institutional records.
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=python,js,ts,react,html,css,git,github,docker,aws" alt="Habilidades" />
+</div>
 
-## Start Here
+<br/>
 
-| Project | Hiring signal | Stack / keywords |
-|---|---|---|
-| **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)** | End-to-end BI case study with synthetic healthcare data, dimensional modeling, KPI definitions, SQL queries, data quality checks, and Power BI-ready measures. | SQL, Power BI, DAX, dimensional modeling, data quality, healthcare analytics |
-| **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)** | Patient safety dashboard for compliance indicators, safety walks, notifications, targets, and PDF-ready report pages. | Google Apps Script, dashboards, KPI reporting, patient safety |
-| **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)** | Operational process management dashboard with KPIs, process boards, snapshots, governance, RBAC, audit trail, tests, and CI. | JavaScript, Apps Script, workflow automation, process management, testing |
-| **[Clinical Reporting Suite](https://github.com/Lukyammm/clinical-reporting-suite)** | Reporting dashboard with data quality review, administrative configuration, A4 report pages, and export-ready clinical quality reports. | reporting automation, data quality, PDF export, clinical indicators |
-| **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)** | CSV/XLS/XLSX intake flow with preview, cleanup options, keyword routing, validation, and Google Sheets import automation. | spreadsheet automation, ETL-style workflow, validation, Google Sheets |
-| **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)** | Patient satisfaction and NPS analytics with ratings, sector breakdowns, saved filters, history charts, and manifestation tracking. | NPS, survey analytics, dashboard design, healthcare experience |
+*As linguagens acima representam minha stack focada na criaÃ§Ã£o de sistemas de alto desempenho para gestÃ£o clÃ­nica.*
 
-## Additional Operational Systems
+---
 
-| Project | What it demonstrates |
-|---|---|
-| **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)** | Clinical and surgical rapid-response workflow with severity triage, administrative queue, and SLA monitoring. |
-| **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)** | Hospital locker custody workflow with terms, audit trail, state monitoring, notifications, and operational controls. |
-| **[Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)** | Internal communication portal for announcements, shift notices, extensions, administration, and publication history. |
+### ðŸ“ˆ EstatÃ­sticas do GitHub
 
-## Technical Strengths
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Lukyammm&show_icons=true&theme=radium&hide_border=true&bg_color=0D1117" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Lukyammm&theme=radium&hide_border=true&background=0D1117" width="48%" />
+</div>
 
-- **BI and reporting:** KPI design, dashboard structure, filters, summaries, export-ready views, DAX-ready measures, and decision-support reporting.
-- **SQL and data modeling:** relational structure, joins, aggregations, validation queries, star-schema concepts, and KPI query design.
-- **Healthcare operations context:** patient safety indicators, clinical process tracking, response workflows, reporting cadence, and privacy-aware documentation.
-- **Workflow automation:** Google Apps Script, Google Sheets workflows, CSV/XLSX intake, validation steps, notifications, audit logs, and internal tools.
-- **Data quality:** checks for missing values, duplicates, inconsistent dates, invalid categories, orphan keys, and unreliable operational records.
-- **Frontend for internal tools:** JavaScript, HTML, CSS, responsive dashboards, filters, modals, tables, charts, and practical user interfaces.
+---
 
-## Best-Fit Roles
+### ðŸ“¬ Como me encontrar
 
-`Junior Data Analyst` | `BI Analyst` | `Reporting Analyst` | `Healthcare Data Analyst` | `Operations Analyst` | `Data Quality Analyst`
+<div align="center">
+  <a href="mailto:seu-email@exemplo.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://linkedin.com/in/lukyam">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+</div>
 
-Target areas:
+<br/>
 
-`Healthcare Analytics` | `Business Intelligence` | `Operational Reporting` | `Dashboard Development` | `Workflow Automation` | `Process Improvement`
-
-Location focus:
-
-`Lubbock, Texas` | `Remote-friendly U.S. teams` | `Healthcare and operations-driven organizations`
-
-## Portfolio Privacy
-
-Public repositories use synthetic, fictitious, or anonymized sample data. They are intended to demonstrate structure, workflow design, reporting logic, automation patterns, and BI thinking without exposing real patient or operational records.
-
-## Let's Connect
-
-- LinkedIn: [linkedin.com/in/lukyam1](https://www.linkedin.com/in/lukyam1)
-- Email: [lukyam.madeira@gmail.com](mailto:lukyam.madeira@gmail.com)
+<div align="center">
+  <i>"A inovaÃ§Ã£o na saÃºde comeÃ§a quando descomplicamos o que parece burocrÃ¡tico."</i>
+</div>
