@@ -1,4 +1,8 @@
-# Hi, I'm Lukyam Madeira 👋
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=soft&color=0D1117&height=180&section=header&text=Lukyam%20Madeira&fontSize=50&fontColor=22D3A0&fontAlignY=40&desc=Analista%20de%20Dados%20%26%20Desenvolvedor&descAlignY=65&descSize=20&descColor=ffffff" alt="Lukyam Madeira" />
+</div>
+
+<br/>
 
 **Analista de Dados & Desenvolvedor** focado em descomplicar operações, automatizar rotinas e estruturar dashboards que ajudam equipes a tomar decisões precisas e baseadas em dados.
 
@@ -57,8 +61,8 @@ Sistemas completos que lidam com controle de acesso (RBAC), cache, proteção co
 ### 📊 Meus Números
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Lukyammm&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&count_private=true&include_all_commits=true" alt="Estatísticas do GitHub do Lukyam" />
-  <img height="165" src="https://streak-stats.demolab.com?user=Lukyammm&theme=tokyonight&hide_border=true&background=0D1117" alt="Sequência de contribuições" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Lukyammm&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Estatísticas do GitHub do Lukyam" />
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=Lukyammm&theme=tokyonight&hide_border=true&background=0D1117" alt="Sequência de contribuições" />
 </div>
 
 <div align="center">
