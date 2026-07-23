@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=220&section=header&text=Ol%C3%A1,%20eu%20sou%20o%20Lukyam!&fontSize=56&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Software%20de%20verdade%20para%20a%20sa%C3%BAde%20%C2%B7%20JavaScript%20%26%20Google%20Apps%20Script&descAlign=50&descAlignY=56&descSize=16" alt="Olá, eu sou o Lukyam!" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=220&section=header&text=Ol%C3%A1,%20eu%20sou%20o%20Lukyam!&fontSize=56&fontAlignY=36&desc=Software%20de%20verdade%20para%20a%20sa%C3%BAde%20%C2%B7%20JavaScript%20%26%20Google%20Apps%20Script&descAlign=50&descAlignY=56&descSize=16" alt="Olá, eu sou o Lukyam!" />
 </div>
 
 <div align="center">
   <a href="https://github.com/Lukyammm?tab=repositories">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=22D3A0&center=true&vCenter=true&width=620&lines=Construo+o+software+que+o+hospital+usa+de+verdade;JavaScript+%2B+Google+Apps+Script+%2B+Sheets;Do+papel+%C3%A0+produ%C3%A7%C3%A3o:+seguro,+r%C3%A1pido,+confi%C3%A1vel" alt="O que eu faço" />
+    <img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=600&size=22&pause=1000&color=22D3A0&center=true&vCenter=true&width=800&lines=Construo+o+software+que+o+hospital+usa+de+verdade;JavaScript+%2B+Google+Apps+Script+%2B+Sheets;Do+papel+%C3%A0+produ%C3%A7%C3%A3o:+seguro,+r%C3%A1pido,+confi%C3%A1vel" alt="O que eu faço" />
   </a>
   <br/>
   <img src="https://komarev.com/ghpvc/?username=Lukyammm&label=Visitas%20no%20perfil&color=22d3a0&style=flat-square" alt="Visitas no perfil" />
@@ -46,23 +46,20 @@
 ### 🧰 Minhas ferramentas
 
 <div align="center">
-  <p><b>No dia a dia</b></p>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <br/>
   <img src="https://img.shields.io/badge/Apps%20Script-4285F4?style=for-the-badge&logo=googleappsscript&logoColor=white" alt="Google Apps Script" />
   <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Google Sheets" />
+  <img src="https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=looker&logoColor=white" alt="Looker Studio" />
+  <br/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=looker&logoColor=white" alt="Looker Studio" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</div>
-
-<div align="center">
-  <p><b>Explorando</b></p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
 </div>
 
 ---
