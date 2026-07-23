@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=220&section=header&text=Ol%C3%A1,%20eu%20sou%20o%20Lukyam!&fontSize=56&fontAlignY=36&desc=Software%20de%20verdade%20para%20a%20sa%C3%BAde%20%C2%B7%20JavaScript%20%26%20Google%20Apps%20Script&descAlign=50&descAlignY=56&descSize=16" alt="Olá, eu sou o Lukyam!" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=220&section=header&text=Ola,%20eu%20sou%20o%20Lukyam!&fontSize=56&fontAlignY=36&desc=Software%20de%20verdade%20para%20a%20saude%20-%20JavaScript%20e%20Google%20Apps%20Script&descAlign=50&descAlignY=56&descSize=16" alt="Olá, eu sou o Lukyam!" />
 </div>
 
 <div align="center">
   <a href="https://github.com/Lukyammm?tab=repositories">
-    <img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=600&size=22&pause=1000&color=22D3A0&center=true&vCenter=true&width=800&lines=Construo+o+software+que+o+hospital+usa+de+verdade;JavaScript+%2B+Google+Apps+Script+%2B+Sheets;Do+papel+%C3%A0+produ%C3%A7%C3%A3o:+seguro,+r%C3%A1pido,+confi%C3%A1vel" alt="O que eu faço" />
+    <img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=600&size=20&pause=1000&color=22D3A0&center=true&vCenter=true&width=1000&lines=Construo+o+software+que+o+hospital+usa+de+verdade;JavaScript+%2B+Google+Apps+Script+%2B+Sheets;Do+papel+%C3%A0+produ%C3%A7%C3%A3o:+seguro,+r%C3%A1pido,+confi%C3%A1vel" alt="O que eu faço" />
   </a>
   <br/>
   <img src="https://komarev.com/ghpvc/?username=Lukyammm&label=Visitas%20no%20perfil&color=22d3a0&style=flat-square" alt="Visitas no perfil" />
