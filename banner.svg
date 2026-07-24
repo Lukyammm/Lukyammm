@@ -1,91 +1,85 @@
-<svg width="850" height="280" viewBox="0 0 850 280" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lukyam Madeira — Analista de Dados e Desenvolvedor">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0a0e" />
-      <stop offset="50%" stop-color="#12141d" />
-      <stop offset="100%" stop-color="#05070a" />
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1022"/>
+      <stop offset="0.55" stop-color="#121a38"/>
+      <stop offset="1" stop-color="#080b17"/>
     </linearGradient>
-    
-    <!-- Text Gradient -->
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F2FE" />
-      <stop offset="100%" stop-color="#4FACFE" />
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.50"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0.25">
+      <stop offset="0" stop-color="#eaf2ff"/>
+      <stop offset="0.5" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.25 0;0.25 0;-0.25 0" dur="7s" repeatCount="indefinite"/>
     </linearGradient>
-
-    <!-- Accent Gradient -->
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4facfe" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.6"/>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
     </linearGradient>
-
-    <!-- Glow Filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-
-    <!-- Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#6b7bff" stroke-opacity="0.06" stroke-width="1"/>
     </pattern>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <clipPath id="rnd"><rect width="900" height="260" rx="20"/></clipPath>
   </defs>
 
-  <style>
-    .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 58px; font-weight: 800; fill: url(#textGrad); }
-    .subtitle { font-family: 'Inter', -apple-system, sans-serif; font-size: 18px; font-weight: 600; fill: #8b949e; letter-spacing: 5px; text-transform: uppercase; }
-    .tagline { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 400; fill: #6e7681; }
-    
-    /* Animations */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-    @keyframes draw {
-      0% { stroke-dashoffset: 1000; }
-      100% { stroke-dashoffset: 0; }
-    }
-    
-    .shape1 { animation: float 6s ease-in-out infinite; transform-origin: center; }
-    .shape2 { animation: float 8s ease-in-out infinite reverse; transform-origin: center; }
-    .glow-circle { animation: pulse 4s ease-in-out infinite; transform-origin: center; }
-    .chart-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 2s ease-out forwards; }
-  </style>
+  <g clip-path="url(#rnd)">
+    <rect width="900" height="260" fill="url(#bg)"/>
+    <rect width="900" height="260" fill="url(#grid)"/>
+    <circle cx="140" cy="40" r="210" fill="url(#glowA)"/>
+    <circle cx="815" cy="240" r="230" fill="url(#glowB)"/>
 
-  <!-- Base Background -->
-  <rect width="850" height="280" rx="16" fill="url(#bg)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-  
-  <!-- Grid Overlay -->
-  <rect width="850" height="280" rx="16" fill="url(#grid)" />
+    <!-- live dashboard card -->
+    <g transform="translate(588,44)">
+      <rect width="278" height="172" rx="14" fill="#0d1430" fill-opacity="0.72" stroke="#3b82f6" stroke-opacity="0.28"/>
+      <text x="18" y="27" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#5f6f96">LIVE · KPIs</text>
+      <circle cx="252" cy="23" r="4" fill="#22d3ee"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+      <g stroke="#ffffff" stroke-opacity="0.06">
+        <line x1="18" y1="70" x2="260" y2="70"/>
+        <line x1="18" y1="110" x2="260" y2="110"/>
+        <line x1="18" y1="150" x2="260" y2="150"/>
+      </g>
+      <g opacity="0.55">
+        <rect x="26" y="110" width="22" height="40" rx="4" fill="url(#bar)"><animate attributeName="height" values="40;96;40" dur="4.2s" repeatCount="indefinite"/><animate attributeName="y" values="110;54;110" dur="4.2s" repeatCount="indefinite"/></rect>
+        <rect x="58" y="80" width="22" height="70" rx="4" fill="url(#bar)"><animate attributeName="height" values="70;34;70" dur="3.6s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="80;116;80" dur="3.6s" begin="0.3s" repeatCount="indefinite"/></rect>
+        <rect x="90" y="98" width="22" height="52" rx="4" fill="url(#bar)"><animate attributeName="height" values="52;104;52" dur="4.8s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="y" values="98;46;98" dur="4.8s" begin="0.6s" repeatCount="indefinite"/></rect>
+        <rect x="122" y="64" width="22" height="86" rx="4" fill="url(#bar)"><animate attributeName="height" values="86;48;86" dur="4s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="64;102;64" dur="4s" begin="0.2s" repeatCount="indefinite"/></rect>
+      </g>
+      <path d="M18 128 L48 120 L74 122 L96 92 L112 150 L128 120 L158 116 L188 96 L214 104 L240 74 L260 86" fill="none" stroke="url(#line)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="640" stroke-dashoffset="640"><animate attributeName="stroke-dashoffset" values="640;0" dur="2.6s" begin="0.4s" fill="freeze"/></path>
+      <circle cx="260" cy="86" r="4" fill="#a78bfa"><animate attributeName="r" values="3;6.5;3" dur="1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.4;1" dur="1.7s" repeatCount="indefinite"/></circle>
+    </g>
 
-  <!-- Abstract Tech/Data Shapes (Glowing Orbs) -->
-  <g class="shape1">
-    <circle cx="750" cy="80" r="140" fill="url(#accent)" filter="blur(50px)" />
+    <!-- floating particles -->
+    <g fill="#22d3ee">
+      <circle cx="470" cy="56" r="2.5" opacity="0.7"><animate attributeName="cy" values="56;44;56" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="520" cy="210" r="2" opacity="0.6"><animate attributeName="cy" values="210;198;210" dur="6s" repeatCount="indefinite"/></circle>
+      <circle cx="70" cy="205" r="2" opacity="0.5"><animate attributeName="cy" values="205;193;205" dur="5.5s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- left content -->
+    <g transform="translate(56,0)" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+      <g transform="translate(0,82)">
+        <rect x="0" y="-12" width="7" height="17" rx="2" fill="url(#bar)"/>
+        <text x="20" y="2" font-size="13" font-weight="600" letter-spacing="3.5" fill="#7dd3fc">DADOS · SAÚDE · SOFTWARE</text>
+      </g>
+      <text x="-2" y="150" font-size="58" font-weight="800" fill="#22d3ee" opacity="0.35" filter="url(#soft)">Lukyam Madeira</text>
+      <text x="-2" y="150" font-size="58" font-weight="800" fill="url(#title)">Lukyam Madeira</text>
+      <text x="0" y="184" font-size="16.5" font-weight="600" letter-spacing="3.5" fill="#9fb0cc">ANALISTA DE DADOS &amp; DESENVOLVEDOR</text>
+      <text x="0" y="212" font-size="14" fill="#66738f">Transformo dados e processos em decisões que a operação usa.</text>
+    </g>
   </g>
-  <g class="shape2">
-    <circle cx="100" cy="220" r="160" fill="url(#accent)" filter="blur(60px)" />
-  </g>
-
-  <!-- Stylized Data Chart Line -->
-  <path class="chart-line" d="M 0 250 L 150 200 L 250 220 L 350 150 L 450 180 L 550 100 L 650 130 L 750 50 L 850 80" fill="none" stroke="rgba(79, 172, 254, 0.25)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-  
-  <!-- Data Nodes on the Chart -->
-  <circle cx="350" cy="150" r="4" fill="#00F2FE" class="glow-circle" filter="url(#glow)"/>
-  <circle cx="550" cy="100" r="4" fill="#00F2FE" class="glow-circle" filter="url(#glow)" style="animation-delay: 1s;"/>
-  <circle cx="750" cy="50" r="4" fill="#00F2FE" class="glow-circle" filter="url(#glow)" style="animation-delay: 2s;"/>
-
-  <!-- Content Group -->
-  <g transform="translate(425, 120)">
-    <text x="0" y="0" class="title" text-anchor="middle" filter="url(#glow)">Lukyam Madeira</text>
-    <text x="0" y="45" class="subtitle" text-anchor="middle">Analista de Dados &amp; Desenvolvedor</text>
-    
-    <!-- Divider Line -->
-    <rect x="-150" y="75" width="300" height="1" fill="rgba(255,255,255,0.1)" />
-    
-    <text x="0" y="105" class="tagline" text-anchor="middle">Transformando complexidade em inteligência através de dados.</text>
-  </g>
+  <rect x="0.5" y="0.5" width="899" height="259" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
 </svg>
