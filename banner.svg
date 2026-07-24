@@ -1,85 +1,86 @@
 <svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lukyam Madeira — Analista de Dados e Desenvolvedor">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="260" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0b1022"/>
-      <stop offset="0.55" stop-color="#121a38"/>
-      <stop offset="1" stop-color="#080b17"/>
-    </linearGradient>
-    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.50"/>
-      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.40"/>
-      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0.25">
-      <stop offset="0" stop-color="#eaf2ff"/>
-      <stop offset="0.5" stop-color="#7dd3fc"/>
-      <stop offset="1" stop-color="#a78bfa"/>
-      <animateTransform attributeName="gradientTransform" type="translate" values="-0.25 0;0.25 0;-0.25 0" dur="7s" repeatCount="indefinite"/>
-    </linearGradient>
-    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#3b82f6"/>
-      <stop offset="1" stop-color="#22d3ee"/>
-    </linearGradient>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#a78bfa"/>
-    </linearGradient>
+    <!-- Background grid pattern -->
     <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#6b7bff" stroke-opacity="0.06" stroke-width="1"/>
+      <circle cx="2" cy="2" r="1" fill="#cbd5e1" opacity="0.05"/>
     </pattern>
-    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="7"/>
-    </filter>
-    <clipPath id="rnd"><rect width="900" height="260" rx="20"/></clipPath>
+    <clipPath id="rnd"><rect width="900" height="260" rx="12"/></clipPath>
   </defs>
 
   <g clip-path="url(#rnd)">
-    <rect width="900" height="260" fill="url(#bg)"/>
+    <!-- Background -->
+    <rect width="900" height="260" fill="#2a3243"/>
     <rect width="900" height="260" fill="url(#grid)"/>
-    <circle cx="140" cy="40" r="210" fill="url(#glowA)"/>
-    <circle cx="815" cy="240" r="230" fill="url(#glowB)"/>
 
-    <!-- live dashboard card -->
-    <g transform="translate(588,44)">
-      <rect width="278" height="172" rx="14" fill="#0d1430" fill-opacity="0.72" stroke="#3b82f6" stroke-opacity="0.28"/>
-      <text x="18" y="27" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#5f6f96">LIVE · KPIs</text>
-      <circle cx="252" cy="23" r="4" fill="#22d3ee"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
-      <g stroke="#ffffff" stroke-opacity="0.06">
-        <line x1="18" y1="70" x2="260" y2="70"/>
-        <line x1="18" y1="110" x2="260" y2="110"/>
-        <line x1="18" y1="150" x2="260" y2="150"/>
+    <!-- Left Content -->
+    <g transform="translate(68, 0)" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+      
+      <!-- Top Tags -->
+      <g transform="translate(0, 85)" fill="#cbd5e1" font-size="13.5" font-weight="500" letter-spacing="1">
+        <!-- Network Icon -->
+        <g transform="translate(0, -12)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="15" cy="5" r="2.5"/>
+          <circle cx="5" cy="12" r="2.5"/>
+          <circle cx="15" cy="19" r="2.5"/>
+          <path d="M 7.2 10.5 L 12.8 6.5 M 7.2 13.5 L 12.8 17.5"/>
+        </g>
+        <text x="25" y="0">DADOS</text>
+        
+        <text x="82" y="0">·</text>
+        
+        <!-- Heart Pulse Icon -->
+        <g transform="translate(94, -11)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.5,13.5 C1.5,10.5 1.5,5.5 4.5,2.5 C7.5,-0.5 11.5,1.5 12,4.5 C12.5,1.5 16.5,-0.5 19.5,2.5 C22.5,5.5 22.5,10.5 19.5,13.5 L12,20.5 L4.5,13.5 Z"/>
+          <path d="M5,9 L8,9 L9.5,6 L12.5,13 L14,9 L19,9" stroke="#2a3243" stroke-width="3"/>
+          <path d="M5,9 L8,9 L9.5,6 L12.5,13 L14,9 L19,9"/>
+        </g>
+        <text x="120" y="0">SAÚDE</text>
+        
+        <text x="176" y="0">·</text>
+        
+        <!-- Code Icon -->
+        <g transform="translate(188, -12)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="18" rx="4"/>
+          <path d="M 9 8 L 6 11 L 9 14 M 15 8 L 18 11 L 15 14 M 13 6 L 11 16"/>
+        </g>
+        <text x="216" y="0">SOFTWARE</text>
       </g>
-      <g opacity="0.55">
-        <rect x="26" y="110" width="22" height="40" rx="4" fill="url(#bar)"><animate attributeName="height" values="40;96;40" dur="4.2s" repeatCount="indefinite"/><animate attributeName="y" values="110;54;110" dur="4.2s" repeatCount="indefinite"/></rect>
-        <rect x="58" y="80" width="22" height="70" rx="4" fill="url(#bar)"><animate attributeName="height" values="70;34;70" dur="3.6s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="80;116;80" dur="3.6s" begin="0.3s" repeatCount="indefinite"/></rect>
-        <rect x="90" y="98" width="22" height="52" rx="4" fill="url(#bar)"><animate attributeName="height" values="52;104;52" dur="4.8s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="y" values="98;46;98" dur="4.8s" begin="0.6s" repeatCount="indefinite"/></rect>
-        <rect x="122" y="64" width="22" height="86" rx="4" fill="url(#bar)"><animate attributeName="height" values="86;48;86" dur="4s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="64;102;64" dur="4s" begin="0.2s" repeatCount="indefinite"/></rect>
-      </g>
-      <path d="M18 128 L48 120 L74 122 L96 92 L112 150 L128 120 L158 116 L188 96 L214 104 L240 74 L260 86" fill="none" stroke="url(#line)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="640" stroke-dashoffset="640"><animate attributeName="stroke-dashoffset" values="640;0" dur="2.6s" begin="0.4s" fill="freeze"/></path>
-      <circle cx="260" cy="86" r="4" fill="#a78bfa"><animate attributeName="r" values="3;6.5;3" dur="1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.4;1" dur="1.7s" repeatCount="indefinite"/></circle>
+
+      <!-- Main Title -->
+      <text x="-2" y="145" font-size="58" font-weight="700" fill="#f8fafc">Lukyam Madeira</text>
+      
+      <!-- Subtitle -->
+      <text x="0" y="184" font-size="16.5" font-weight="500" letter-spacing="1.5" fill="#94a3b8">ANALISTA DE DADOS &amp; DESENVOLVEDOR</text>
+      
+      <!-- Description -->
+      <text x="0" y="215" font-size="15" fill="#94a3b8" font-weight="400">Transformo dados e processos em decisões que a operação usa.</text>
     </g>
 
-    <!-- floating particles -->
-    <g fill="#22d3ee">
-      <circle cx="470" cy="56" r="2.5" opacity="0.7"><animate attributeName="cy" values="56;44;56" dur="5s" repeatCount="indefinite"/></circle>
-      <circle cx="520" cy="210" r="2" opacity="0.6"><animate attributeName="cy" values="210;198;210" dur="6s" repeatCount="indefinite"/></circle>
-      <circle cx="70" cy="205" r="2" opacity="0.5"><animate attributeName="cy" values="205;193;205" dur="5.5s" repeatCount="indefinite"/></circle>
+    <!-- Right Chart -->
+    <g transform="translate(580, 115)">
+      <!-- Bars -->
+      <rect x="0" y="45" width="28" height="50" fill="#a5d8ff" rx="3"/>
+      <rect x="40" y="5" width="28" height="90" fill="#89cff0" rx="3"/>
+      <rect x="80" y="15" width="28" height="80" fill="#60b6f0" rx="3"/>
+      <rect x="120" y="30" width="28" height="65" fill="#54c5d6" rx="3"/>
+      <rect x="160" y="-25" width="28" height="120" fill="#45d4c4" rx="3"/>
+      <rect x="200" y="-55" width="28" height="150" fill="#39d9b7" rx="3"/>
+
+      <!-- Line -->
+      <path d="M 14,30 C 30,5 40,-15 54,-15 C 70,-15 74,-5 94,-5 C 114,5 118,15 134,15 C 150,15 158,-40 174,-40 C 190,-40 198,-80 214,-80" fill="none" stroke="#a5d8ff" stroke-width="2.5" stroke-linecap="round"/>
+      
+      <!-- Line points -->
+      <g fill="#2a3243" stroke="#a5d8ff" stroke-width="2.5">
+        <circle cx="14" cy="30" r="3.5"/>
+        <circle cx="54" cy="-15" r="3.5"/>
+        <circle cx="94" cy="-5" r="3.5"/>
+        <circle cx="134" cy="15" r="3.5"/>
+        <circle cx="174" cy="-40" r="3.5"/>
+        <circle cx="214" cy="-80" r="3.5"/>
+      </g>
     </g>
 
-    <!-- left content -->
-    <g transform="translate(56,0)" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-      <g transform="translate(0,82)">
-        <rect x="0" y="-12" width="7" height="17" rx="2" fill="url(#bar)"/>
-        <text x="20" y="2" font-size="13" font-weight="600" letter-spacing="3.5" fill="#7dd3fc">DADOS · SAÚDE · SOFTWARE</text>
-      </g>
-      <text x="-2" y="150" font-size="58" font-weight="800" fill="#22d3ee" opacity="0.35" filter="url(#soft)">Lukyam Madeira</text>
-      <text x="-2" y="150" font-size="58" font-weight="800" fill="url(#title)">Lukyam Madeira</text>
-      <text x="0" y="184" font-size="16.5" font-weight="600" letter-spacing="3.5" fill="#9fb0cc">ANALISTA DE DADOS &amp; DESENVOLVEDOR</text>
-      <text x="0" y="212" font-size="14" fill="#66738f">Transformo dados e processos em decisões que a operação usa.</text>
-    </g>
+    <!-- Bottom right sparkle -->
+    <path d="M 800 220 Q 810 220 810 210 Q 810 220 820 220 Q 810 220 810 230 Q 810 220 800 220 Z" fill="#64748b" opacity="0.6"/>
   </g>
-  <rect x="0.5" y="0.5" width="899" height="259" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
 </svg>
