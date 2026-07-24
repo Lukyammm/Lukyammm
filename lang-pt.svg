@@ -1,11 +1,5 @@
 <svg width="162" height="42" viewBox="0 0 162 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Português">
-  <defs>
-    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#7dd3fc"/>
-      <stop offset="1" stop-color="#a78bfa"/>
-    </linearGradient>
-  </defs>
-  <path d="M0,1 H142 A19,19 0 0 1 161,20 V22 A19,19 0 0 1 142,41 H0 Z" fill="#111834"/>
-  <path d="M0.5,41 V1 H142 A19,19 0 0 1 161,20 V22 A19,19 0 0 1 142,41 Z" fill="none" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1"/>
-  <text x="81" y="27" text-anchor="middle" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.3" fill="url(#txt)">PORTUGUÊS</text>
+  <path d="M0,1 H142 A19,19 0 0 1 161,20 V22 A19,19 0 0 1 142,41 H0 Z" fill="#1e293b"/>
+  <path d="M0.5,41 V1 H142 A19,19 0 0 1 161,20 V22 A19,19 0 0 1 142,41 Z" fill="none" stroke="#475569" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="81" y="26" text-anchor="middle" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="1.5" fill="#cbd5e1">PORTUGUÊS</text>
 </svg>

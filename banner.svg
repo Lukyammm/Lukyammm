@@ -1,45 +1,52 @@
 <svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lukyam Madeira — Analista de Dados e Desenvolvedor">
   <defs>
-    <!-- Background grid pattern -->
     <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#cbd5e1" opacity="0.05"/>
+      <circle cx="2" cy="2" r="1.5" fill="#cbd5e1" opacity="0.05"/>
     </pattern>
-    <clipPath id="rnd"><rect width="900" height="260" rx="12"/></clipPath>
+    <clipPath id="rnd"><rect width="900" height="260" rx="14"/></clipPath>
   </defs>
 
   <g clip-path="url(#rnd)">
     <!-- Background -->
-    <rect width="900" height="260" fill="#2a3243"/>
+    <rect width="900" height="260" fill="#222834"/>
     <rect width="900" height="260" fill="url(#grid)"/>
+
+    <!-- Floating particles for animation -->
+    <g fill="#38bdf8" opacity="0.4">
+      <circle cx="450" cy="50" r="2.5"><animate attributeName="cy" values="50;35;50" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="520" cy="220" r="2"><animate attributeName="cy" values="220;205;220" dur="6s" repeatCount="indefinite"/></circle>
+      <circle cx="60" cy="215" r="2"><animate attributeName="cy" values="215;200;215" dur="5.5s" repeatCount="indefinite"/></circle>
+      <circle cx="840" cy="70" r="2.5"><animate attributeName="cy" values="70;50;70" dur="7s" repeatCount="indefinite"/></circle>
+    </g>
 
     <!-- Left Content -->
     <g transform="translate(68, 0)" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
       
       <!-- Top Tags -->
-      <g transform="translate(0, 85)" fill="#cbd5e1" font-size="13.5" font-weight="500" letter-spacing="1">
+      <g transform="translate(0, 80)" fill="#94a3b8" font-size="13" font-weight="600" letter-spacing="1">
         <!-- Network Icon -->
-        <g transform="translate(0, -12)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="15" cy="5" r="2.5"/>
-          <circle cx="5" cy="12" r="2.5"/>
-          <circle cx="15" cy="19" r="2.5"/>
-          <path d="M 7.2 10.5 L 12.8 6.5 M 7.2 13.5 L 12.8 17.5"/>
+        <g transform="translate(0, -12)" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="15" cy="5" r="2"/>
+          <circle cx="5" cy="12" r="2"/>
+          <circle cx="15" cy="19" r="2"/>
+          <path d="M 7 10 L 13 7 M 7 14 L 13 17"/>
         </g>
-        <text x="25" y="0">DADOS</text>
+        <text x="26" y="0">DADOS</text>
         
         <text x="82" y="0">·</text>
         
         <!-- Heart Pulse Icon -->
-        <g transform="translate(94, -11)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(94, -11)" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4.5,13.5 C1.5,10.5 1.5,5.5 4.5,2.5 C7.5,-0.5 11.5,1.5 12,4.5 C12.5,1.5 16.5,-0.5 19.5,2.5 C22.5,5.5 22.5,10.5 19.5,13.5 L12,20.5 L4.5,13.5 Z"/>
-          <path d="M5,9 L8,9 L9.5,6 L12.5,13 L14,9 L19,9" stroke="#2a3243" stroke-width="3"/>
+          <path d="M5,9 L8,9 L9.5,6 L12.5,13 L14,9 L19,9" stroke="#222834" stroke-width="3"/>
           <path d="M5,9 L8,9 L9.5,6 L12.5,13 L14,9 L19,9"/>
         </g>
-        <text x="120" y="0">SAÚDE</text>
+        <text x="122" y="0">SAÚDE</text>
         
         <text x="176" y="0">·</text>
         
         <!-- Code Icon -->
-        <g transform="translate(188, -12)" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(188, -12)" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="18" rx="4"/>
           <path d="M 9 8 L 6 11 L 9 14 M 15 8 L 18 11 L 15 14 M 13 6 L 11 16"/>
         </g>
@@ -47,40 +54,57 @@
       </g>
 
       <!-- Main Title -->
-      <text x="-2" y="145" font-size="58" font-weight="700" fill="#f8fafc">Lukyam Madeira</text>
+      <text x="-2" y="136" font-size="56" font-weight="700" fill="#f8fafc">Lukyam Madeira</text>
       
       <!-- Subtitle -->
-      <text x="0" y="184" font-size="16.5" font-weight="500" letter-spacing="1.5" fill="#94a3b8">ANALISTA DE DADOS &amp; DESENVOLVEDOR</text>
+      <text x="0" y="172" font-size="16" font-weight="500" letter-spacing="1.5" fill="#cbd5e1">ANALISTA DE DADOS &amp; DESENVOLVEDOR</text>
       
       <!-- Description -->
-      <text x="0" y="215" font-size="15" fill="#94a3b8" font-weight="400">Transformo dados e processos em decisões que a operação usa.</text>
+      <text x="0" y="202" font-size="14.5" fill="#94a3b8" font-weight="400">Transformo dados e processos em decisões que a operação usa.</text>
     </g>
 
     <!-- Right Chart -->
     <g transform="translate(580, 115)">
-      <!-- Bars -->
-      <rect x="0" y="45" width="28" height="50" fill="#a5d8ff" rx="3"/>
-      <rect x="40" y="5" width="28" height="90" fill="#89cff0" rx="3"/>
-      <rect x="80" y="15" width="28" height="80" fill="#60b6f0" rx="3"/>
-      <rect x="120" y="30" width="28" height="65" fill="#54c5d6" rx="3"/>
-      <rect x="160" y="-25" width="28" height="120" fill="#45d4c4" rx="3"/>
-      <rect x="200" y="-55" width="28" height="150" fill="#39d9b7" rx="3"/>
+      <!-- Animated Bars -->
+      <rect x="0" y="45" width="26" height="50" fill="#a5d8ff" rx="4">
+        <animate attributeName="height" values="50;65;50" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="45;30;45" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="40" y="5" width="26" height="90" fill="#89cff0" rx="4">
+        <animate attributeName="height" values="90;70;90" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="5;25;5" dur="4s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="80" y="15" width="26" height="80" fill="#60b6f0" rx="4">
+        <animate attributeName="height" values="80;95;80" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="15;0;15" dur="3.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="120" y="30" width="26" height="65" fill="#54c5d6" rx="4">
+        <animate attributeName="height" values="65;85;65" dur="4.2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="30;10;30" dur="4.2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="160" y="-25" width="26" height="120" fill="#45d4c4" rx="4">
+        <animate attributeName="height" values="120;100;120" dur="3.8s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-25;-5;-25" dur="3.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="200" y="-55" width="26" height="150" fill="#39d9b7" rx="4">
+        <animate attributeName="height" values="150;135;150" dur="4.5s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-55;-40;-55" dur="4.5s" repeatCount="indefinite"/>
+      </rect>
 
-      <!-- Line -->
-      <path d="M 14,30 C 30,5 40,-15 54,-15 C 70,-15 74,-5 94,-5 C 114,5 118,15 134,15 C 150,15 158,-40 174,-40 C 190,-40 198,-80 214,-80" fill="none" stroke="#a5d8ff" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Animated Line -->
+      <path d="M 13,25 C 25,0 40,-5 53,-5 C 65,-5 80,5 93,5 C 105,5 120,15 133,15 C 145,15 160,-35 173,-35 C 185,-35 200,-65 213,-65" fill="none" stroke="#e0f2fe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="300" stroke-dashoffset="300">
+        <animate attributeName="stroke-dashoffset" values="300;0" dur="2s" fill="freeze"/>
+      </path>
       
-      <!-- Line points -->
-      <g fill="#2a3243" stroke="#a5d8ff" stroke-width="2.5">
-        <circle cx="14" cy="30" r="3.5"/>
-        <circle cx="54" cy="-15" r="3.5"/>
-        <circle cx="94" cy="-5" r="3.5"/>
-        <circle cx="134" cy="15" r="3.5"/>
-        <circle cx="174" cy="-40" r="3.5"/>
-        <circle cx="214" cy="-80" r="3.5"/>
+      <!-- Pulsing Line points -->
+      <g fill="#222834" stroke="#e0f2fe" stroke-width="2.5">
+        <circle cx="13" cy="25" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="2s" repeatCount="indefinite"/></circle>
+        <circle cx="53" cy="-5" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle cx="93" cy="5" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="133" cy="15" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
+        <circle cx="173" cy="-35" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="2.8s" repeatCount="indefinite"/></circle>
+        <circle cx="213" cy="-65" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="3s" repeatCount="indefinite"/></circle>
       </g>
     </g>
-
-    <!-- Bottom right sparkle -->
-    <path d="M 800 220 Q 810 220 810 210 Q 810 220 820 220 Q 810 220 810 230 Q 810 220 800 220 Z" fill="#64748b" opacity="0.6"/>
   </g>
 </svg>
