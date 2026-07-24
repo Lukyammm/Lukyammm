@@ -6,7 +6,7 @@
 
 <br/>
 
-<p align="center"><a href="#pt"><img src="./lang-pt.svg" height="42" alt="Português" /></a><a href="#en"><img src="./lang-en.svg" height="42" alt="English" /></a></p>
+<p align="center"><a href="#en"><img src="./lang-en.svg" height="42" alt="English" /></a><a href="#pt"><img src="./lang-pt.svg" height="42" alt="Português" /></a></p>
 
 ---
 
@@ -27,39 +27,6 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </div>
-
----
-
-## <a id="pt"></a>🇧🇷 Português
-
-**Analista de Dados & Desenvolvedor** focado em descomplicar operações, automatizar rotinas e estruturar dashboards que ajudam equipes a tomar decisões precisas e baseadas em dados.
-
-Pego planilhas caóticas, processos de papel e dados não estruturados, e transformo em aplicações web confiáveis e pipelines automatizados. Minha base principal de atuação tem sido operações e qualidade hospitalar, mas as ferramentas que construo (automação de ETL, dashboards gerenciais, sistemas internos) otimizam a qualidade da informação em qualquer área de negócio.
-
-#### 🚀 Portfólio de Projetos
-
-Abaixo estão alguns dos sistemas, automações e dashboards que desenvolvi (a maioria construída do zero para rodar em produção). Como o volume de repositórios é grande, agrupei por área de foco tecnológico:
-
-**📊 Business Intelligence & Analytics** — Projetos focados em modelagem de dados, tratamento de qualidade, DAX/SQL e criação de relatórios de apoio à decisão.
-- **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)**: Case completo de BI com modelagem dimensional, definição de KPIs, checagem de qualidade de dados em SQL e medidas DAX para Power BI.
-- **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)**: Analytics de pesquisa NPS com rotinas de limpeza, cruzamento de dados setorizados e histórico de satisfação.
-- **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)**: Dashboard de indicadores operacionais e segurança, com alertas configurados e relatórios gerenciais automatizados.
-- **[Hospital Quality Bulletin Dashboard](https://github.com/Lukyammm/hospital-quality-bulletin-dashboard)**: Painel de gestão da qualidade focado na análise diária de metas e KPIs.
-
-**⚙️ Automação de Processos & ETL** — Ferramentas criadas para substituir trabalho manual crônico, rotear dados de forma inteligente e garantir conformidade.
-- **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)**: Pipeline completo de entrada (CSV/XLSX) com rotinas de limpeza estruturada, validação de regras de negócios e importação automatizada.
-- **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)**: Workflow automatizado de custódia com trilha de auditoria contínua, monitoramento de estados lógicos e disparo de notificações.
-- **[Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)**: Portal back-office para automatizar rotinas de comunicados internos mantendo logs de submissão estruturados.
-- **[Shift Handoff Workflow](https://github.com/Lukyammm/shift-handoff-workflow)**: Automação para consolidar logs de passagem de plantão, trazendo padronização para dados anteriormente desestruturados.
-
-**💻 Aplicações Web Internas** — Sistemas completos que lidam com controle de acesso (RBAC), cache, proteção contra acessos simultâneos e criptografia.
-- **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)**: Dashboard interativo de gestão de governança e processos, com snapshot recorrente de dados e RBAC completo.
-- **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)**: Sistema robusto de rastreio e SLA para chamados de triagem. Usa hashing de senha com salt e bloqueio (lockout) para segurança.
-- **[Institutional Access Governance Portal](https://github.com/Lukyammm/institutional-access-governance-portal)**: Sistema escalável focado em controle de acesso com implementação de *document locks* para lidar com escrita concorrente de milhares de registros.
-
-> 💡 *Tenho dezenas de outros repositórios práticos. Fique à vontade para explorar todos os meus projetos na aba [Repositories](https://github.com/Lukyammm?tab=repositories).*
-
-<div align="right"><a href="#top">⬆ voltar ao topo</a></div>
 
 ---
 
@@ -93,6 +60,39 @@ Below are some of the systems, automations, and dashboards I've built (most of t
 > 💡 *I have dozens of other hands-on repositories. Feel free to explore all my projects in the [Repositories](https://github.com/Lukyammm?tab=repositories) tab.*
 
 <div align="right"><a href="#top">⬆ back to top</a></div>
+
+---
+
+## <a id="pt"></a>🇧🇷 Português
+
+**Analista de Dados & Desenvolvedor** focado em descomplicar operações, automatizar rotinas e estruturar dashboards que ajudam equipes a tomar decisões precisas e baseadas em dados.
+
+Pego planilhas caóticas, processos de papel e dados não estruturados, e transformo em aplicações web confiáveis e pipelines automatizados. Minha base principal de atuação tem sido operações e qualidade hospitalar, mas as ferramentas que construo (automação de ETL, dashboards gerenciais, sistemas internos) otimizam a qualidade da informação em qualquer área de negócio.
+
+#### 🚀 Portfólio de Projetos
+
+Abaixo estão alguns dos sistemas, automações e dashboards que desenvolvi (a maioria construída do zero para rodar em produção). Como o volume de repositórios é grande, agrupei por área de foco tecnológico:
+
+**📊 Business Intelligence & Analytics** — Projetos focados em modelagem de dados, tratamento de qualidade, DAX/SQL e criação de relatórios de apoio à decisão.
+- **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)**: Case completo de BI com modelagem dimensional, definição de KPIs, checagem de qualidade de dados em SQL e medidas DAX para Power BI.
+- **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)**: Analytics de pesquisa NPS com rotinas de limpeza, cruzamento de dados setorizados e histórico de satisfação.
+- **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)**: Dashboard de indicadores operacionais e segurança, com alertas configurados e relatórios gerenciais automatizados.
+- **[Hospital Quality Bulletin Dashboard](https://github.com/Lukyammm/hospital-quality-bulletin-dashboard)**: Painel de gestão da qualidade focado na análise diária de metas e KPIs.
+
+**⚙️ Automação de Processos & ETL** — Ferramentas criadas para substituir trabalho manual crônico, rotear dados de forma inteligente e garantir conformidade.
+- **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)**: Pipeline completo de entrada (CSV/XLSX) com rotinas de limpeza estruturada, validação de regras de negócios e importação automatizada.
+- **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)**: Workflow automatizado de custódia com trilha de auditoria contínua, monitoramento de estados lógicos e disparo de notificações.
+- **[Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)**: Portal back-office para automatizar rotinas de comunicados internos mantendo logs de submissão estruturados.
+- **[Shift Handoff Workflow](https://github.com/Lukyammm/shift-handoff-workflow)**: Automação para consolidar logs de passagem de plantão, trazendo padronização para dados anteriormente desestruturados.
+
+**💻 Aplicações Web Internas** — Sistemas completos que lidam com controle de acesso (RBAC), cache, proteção contra acessos simultâneos e criptografia.
+- **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)**: Dashboard interativo de gestão de governança e processos, com snapshot recorrente de dados e RBAC completo.
+- **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)**: Sistema robusto de rastreio e SLA para chamados de triagem. Usa hashing de senha com salt e bloqueio (lockout) para segurança.
+- **[Institutional Access Governance Portal](https://github.com/Lukyammm/institutional-access-governance-portal)**: Sistema escalável focado em controle de acesso com implementação de *document locks* para lidar com escrita concorrente de milhares de registros.
+
+> 💡 *Tenho dezenas de outros repositórios práticos. Fique à vontade para explorar todos os meus projetos na aba [Repositories](https://github.com/Lukyammm?tab=repositories).*
+
+<div align="right"><a href="#top">⬆ voltar ao topo</a></div>
 
 ---
 
