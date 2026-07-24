@@ -6,17 +6,11 @@
 
 <br/>
 
-<p align="center">
-  <a href="#pt">🇧🇷 <img src="https://img.shields.io/badge/Portugu%C3%AAs-3b82f6?style=for-the-badge" alt="Português" /></a>
-  &nbsp;&nbsp;
-  <a href="#en">🇺🇸 <img src="https://img.shields.io/badge/English-3b82f6?style=for-the-badge" alt="English" /></a>
-  &nbsp;&nbsp;
-  <a href="#jp">🇯🇵 <img src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-3b82f6?style=for-the-badge" alt="日本語" /></a>
-</p>
+<p align="center"><a href="#pt"><img src="./lang-pt.svg" height="42" alt="Português" /></a><a href="#en"><img src="./lang-en.svg" height="42" alt="English" /></a></p>
 
 ---
 
-### 🧰 Ferramentas · Tools · スキル
+### 🧰 Ferramentas · Tools
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -102,40 +96,7 @@ Below are some of the systems, automations, and dashboards I've built (most of t
 
 ---
 
-## <a id="jp"></a>🇯🇵 日本語
-
-**データアナリスト & デベロッパー**。業務の複雑さを解消し、ルーチン作業を自動化し、チームが正確なデータに基づいて意思決定できるダッシュボードを構築することに注力しています。
-
-煩雑なスプレッドシートや紙ベースの業務、構造化されていないデータを、信頼性の高いWebアプリケーションと自動化されたパイプラインに変換します。主な活動領域は医療現場の業務とクオリティ管理ですが、開発するツール(ETL自動化、管理ダッシュボード、社内システム)は、あらゆる業界の情報品質向上に応用できます。
-
-#### 🚀 プロジェクトポートフォリオ
-
-以下は、これまでに構築したシステム・自動化ツール・ダッシュボードの一部です(そのほとんどをゼロから開発し、実際に本番環境で稼働しています)。リポジトリ数が多いため、技術分野ごとに分類しています。
-
-**📊 BI・データ分析** — データモデリング、品質管理、DAX/SQL、意思決定を支援するレポート作成に焦点を当てたプロジェクトです。
-- **[Healthcare Quality BI Analytics](https://github.com/Lukyammm/healthcare-quality-bi-analytics)**: ディメンショナルモデリング、KPI定義、SQLによるデータ品質チェック、Power BI向けDAXメジャーを含む、包括的なBIケーススタディ。
-- **[Patient Experience Analytics](https://github.com/Lukyammm/patient-experience-analytics)**: データクレンジング処理、部門別データの突合、満足度履歴を備えたNPS調査分析。
-- **[Patient Safety Analytics](https://github.com/Lukyammm/patient-safety-analytics)**: アラート設定と自動化された管理レポートを備えた、業務・安全指標ダッシュボード。
-- **[Hospital Quality Bulletin Dashboard](https://github.com/Lukyammm/hospital-quality-bulletin-dashboard)**: 日々の目標とKPI分析に特化した品質管理パネル。
-
-**⚙️ 業務自動化・ETL** — 慢性的な手作業を置き換え、データを賢くルーティングし、コンプライアンスを確保するために構築したツール群です。
-- **[Spreadsheet Intake Automation](https://github.com/Lukyammm/spreadsheet-intake-automation)**: 構造化されたクレンジング処理、ビジネスルール検証、自動インポートを備えた、CSV/XLSXの完全な取り込みパイプライン。
-- **[Locker Custody Workflow](https://github.com/Lukyammm/locker-custody-workflow)**: 継続的な監査証跡、状態監視、通知トリガーを備えた自動保管管理ワークフロー。
-- **[Internal Communication Platform](https://github.com/Lukyammm/internal-communication-platform)**: 構造化された送信ログを保持しながら、社内アナウンス業務を自動化するバックオフィスポータル。
-- **[Shift Handoff Workflow](https://github.com/Lukyammm/shift-handoff-workflow)**: これまで非構造化だった申し送りデータを標準化し、勤務交代ログを統合する自動化ツール。
-
-**💻 社内向けWebアプリケーション** — アクセス制御(RBAC)、キャッシュ、同時アクセス対策、暗号化を扱う完全なシステム群です。
-- **[Clinical Operations Command Center](https://github.com/Lukyammm/clinical-operations-command-center)**: 定期的なデータスナップショットと完全なRBACを備えた、ガバナンス・プロセス管理のためのインタラクティブダッシュボード。
-- **[Rapid Response Triage Platform](https://github.com/Lukyammm/rapid-response-triage-platform)**: トリアージ案件の追跡とSLA管理を行う堅牢なシステム。ソルト付きパスワードハッシュとロックアウト機能でセキュリティを確保。
-- **[Institutional Access Governance Portal](https://github.com/Lukyammm/institutional-access-governance-portal)**: 数千件規模のレコードへの同時書き込みに対応するドキュメントロックを実装した、スケーラブルなアクセス制御システム。
-
-> 💡 *実務ベースのリポジトリは他にも多数あります。ぜひ [Repositories](https://github.com/Lukyammm?tab=repositories) タブから全プロジェクトをご覧ください。*
-
-<div align="right"><a href="#top">⬆ トップへ戻る</a></div>
-
----
-
-### 📊 Números · Stats · 統計
+### 📊 Números · Stats
 
 <div align="center">
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=Lukyammm&theme=tokyonight&hide_border=true&background=0D1117" alt="Sequência de contribuições" />
@@ -151,9 +112,9 @@ Below are some of the systems, automations, and dashboards I've built (most of t
 
 ---
 
-### 📬 Contato · Contact · お問い合わせ
+### 📬 Contato · Contact
 
-Bora trocar uma ideia? · Let's talk? · お話ししませんか?
+Bora trocar uma ideia? · Let's talk?
 
 <div align="left">
   <a href="mailto:lukyam.madeira@gmail.com">
