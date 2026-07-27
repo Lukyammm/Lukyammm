@@ -157,3 +157,18 @@ Bora trocar uma ideia? · Let's talk?
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 </div>
+
+
+
+---
+
+## 🤝 Contato e Contribuição
+
+Feito com dedicação por **Lukyam Madeira**.
+Sinta-se à vontade para explorar, abrir *issues* para dúvidas ou sugerir melhorias.
+
+<div align="center">
+  <a href="https://github.com/Lukyammm">
+    <img src="https://img.shields.io/badge/GitHub-Lukyammm-181717?style=flat-square&logo=github" alt="GitHub" />
+  </a>
+</div>
