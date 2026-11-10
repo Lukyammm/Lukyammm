@@ -1,60 +1,65 @@
-<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lukyam Madeira - Data &amp; BI Analyst | Python Automation &amp; Internal Systems">
+<svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lukyam Madeira — Data &amp; BI Analyst | Python Automation">
   <defs>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#334155" stroke-width="0.6" stroke-opacity="0.35"/>
-    </pattern>
-    <clipPath id="rnd">
-      <rect width="900" height="250" rx="10"/>
-    </clipPath>
+    <clipPath id="rnd"><rect width="900" height="240" rx="6"/></clipPath>
   </defs>
 
   <g clip-path="url(#rnd)">
-    <!-- Solid Technical Dark Background -->
-    <rect width="900" height="250" fill="#0f172a"/>
-    <rect width="900" height="250" fill="url(#grid)"/>
-    <rect x="0.75" y="0.75" width="898.5" height="248.5" rx="9.5" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+    <!-- Fundo escuro industrial integrado ao GitHub (#090a0f) -->
+    <rect width="900" height="240" fill="#090a0f"/>
+    <rect width="900" height="240" fill="none" stroke="#21262d" stroke-width="1" rx="6"/>
 
-    <!-- Top Accent Line -->
-    <rect x="0" y="0" width="900" height="3" fill="#38bdf8"/>
+    <!-- Barra Técnica Superior -->
+    <line x1="0" y1="36" x2="900" y2="36" stroke="#21262d" stroke-width="1"/>
+    
+    <rect x="0" y="0" width="130" height="36" fill="#161b22"/>
+    <text x="16" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', monospace" font-size="11" font-weight="600" letter-spacing="1.2" fill="#e6edf3">SYSTEM // 01</text>
+    <line x1="130" y1="0" x2="130" y2="36" stroke="#21262d" stroke-width="1"/>
+    
+    <text x="146" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', monospace" font-size="11" letter-spacing="0.8" fill="#8b949e">STACK: PYTHON · DUCKDB · SQL · POWER BI</text>
+    
+    <line x1="650" y1="0" x2="650" y2="36" stroke="#21262d" stroke-width="1"/>
+    <text x="666" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', monospace" font-size="11" font-weight="600" letter-spacing="0.8" fill="#f97316">● TELEMETRIA EM PRODUÇÃO</text>
 
-    <!-- Left Content: Identity & Positioning -->
-    <g transform="translate(48, 0)" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
-      <!-- Domain Pill -->
-      <rect x="0" y="38" width="346" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="13" cy="50" r="3.5" fill="#38bdf8"/>
-      <text x="25" y="54" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#e2e8f0">DATA &amp; BI ANALYTICS · PYTHON AUTOMATION</text>
+    <!-- Divisor Vertical Central -->
+    <line x1="530" y1="36" x2="530" y2="240" stroke="#21262d" stroke-width="1"/>
 
-      <!-- Name -->
-      <text x="-2" y="114" font-size="46" font-weight="700" letter-spacing="-0.5" fill="#f8fafc">Lukyam Madeira</text>
+    <!-- LADO ESQUERDO: Nome Imponente mas Sóbrio, Cargo e Trajetória -->
+    <g transform="translate(36, 52)">
+      <!-- Nome: Sans SemiBold sóbria (peso 600, 44px, branco nobre) -->
+      <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="44" font-weight="600" fill="#f0f6fc" letter-spacing="-0.4">Lukyam Madeira</text>
+      
+      <!-- Cargo sóbrio em tom azul-acinzentado refinado -->
+      <text x="0" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14.5" font-weight="500" letter-spacing="0.6" fill="#7dd3fc">Data &amp; BI Analyst · Python Automation</text>
+      
+      <!-- Frase operacional direta -->
+      <text x="0" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13.5" font-weight="400" fill="#8b949e">Pipelines automatizados, extração em escala e inteligência operacional.</text>
 
-      <!-- Bilateral Subtitle -->
-      <text x="0" y="146" font-size="14.5" font-weight="600" letter-spacing="0.4" fill="#38bdf8">Data &amp; BI Analyst | Python Automation | Internal Web &amp; Desktop Systems</text>
-      <text x="0" y="168" font-size="13" font-weight="400" fill="#94a3b8">Analista de Dados e BI · Automação em Python · Social Listening e Sistemas Hospitalares</text>
-
-      <!-- Bottom Location & Verified English Badge -->
-      <g transform="translate(0, 196)" font-size="12" font-weight="500" fill="#cbd5e1">
-        <text x="0" y="15" fill="#94a3b8">Fortaleza / Caucaia, CE, Brazil · Open to Global Remote &amp; Relocation · EF SET English B2 (57/100)</text>
+      <!-- Metadados de Trajetória sóbrios -->
+      <g transform="translate(0, 134)" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', monospace" font-size="11" fill="#6e7681">
+        <text x="0" y="0">EBM Quintto (Atual) · ISGH (2022–2026) · Caucaia / Fortaleza, CE</text>
       </g>
     </g>
 
-    <!-- Right Content: Verified Production Telemetry Card -->
-    <g transform="translate(595, 36)" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
-      <rect x="0" y="0" width="265" height="178" rx="8" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1"/>
+    <!-- LADO DIREITO: Telemetria Real de Produção Sóbria -->
+    <g transform="translate(555, 52)">
+      <text x="0" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', monospace" font-size="10.5" font-weight="600" letter-spacing="1.2" fill="#8b949e">ESCOPO REAL CONSTRUÍDO</text>
 
-      <text x="18" y="26" font-size="10" font-weight="700" letter-spacing="1.2" fill="#94a3b8">VERIFIED PRODUCTION SCOPE</text>
-      <line x1="18" y1="36" x2="247" y2="36" stroke="#334155" stroke-width="1"/>
+      <!-- Linha 1: 73,952 Linhas Python -->
+      <g transform="translate(0, 34)">
+        <text x="0" y="26" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Consolas', monospace" font-size="30" font-weight="700" fill="#f97316" letter-spacing="-0.5">73,952</text>
+        <text x="125" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#f0f6fc">linhas de Python</text>
+        <text x="125" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Inter', monospace" font-size="10.5" fill="#8b949e">429 módulos (Scraping, QA, Hub)</text>
+      </g>
 
-      <!-- Metric 1 -->
-      <text x="18" y="64" font-size="20" font-weight="700" fill="#f8fafc">73,952 <tspan font-size="11" font-weight="500" fill="#38bdf8">lines of Python</tspan></text>
-      <text x="18" y="80" font-size="11" fill="#94a3b8">429 .py modules (Scraping, DuckDB, QA)</text>
+      <line x1="0" y1="84" x2="310" y2="84" stroke="#21262d" stroke-width="1"/>
 
-      <!-- Metric 2 -->
-      <text x="18" y="112" font-size="20" font-weight="700" fill="#f8fafc">~150,000 <tspan font-size="11" font-weight="500" fill="#38bdf8">lines in Apps Script</tspan></text>
-      <text x="18" y="128" font-size="11" fill="#94a3b8">25 internal hospital web applications</text>
-
-      <!-- Metric 3 -->
-      <text x="18" y="156" font-size="13" font-weight="600" fill="#e2e8f0">Power BI · SQL · DuckDB · Python</text>
-      <text x="18" y="170" font-size="10.5" fill="#64748b">EBM Quintto (Current) · ISGH (2022–2026)</text>
+      <!-- Linha 2: ~150k Apps Script / 25 Sistemas Hospitalares -->
+      <g transform="translate(0, 98)">
+        <text x="0" y="26" font-family="'JetBrains Mono', 'IBM Plex Mono', 'Consolas', monospace" font-size="30" font-weight="700" fill="#f0f6fc" letter-spacing="-0.5">~150k</text>
+        <text x="105" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#f0f6fc">linhas em Apps Script</text>
+        <text x="105" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Inter', monospace" font-size="10.5" fill="#8b949e">25 sistemas hospitalares ativos</text>
+      </g>
     </g>
+
   </g>
 </svg>

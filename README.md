@@ -6,7 +6,7 @@
 
 <br/>
 
-<p align="center"><a href="#en"><img src="./lang-en.svg" height="36" alt="Read in English" /></a>&nbsp;&nbsp;<a href="#pt"><img src="./lang-pt.svg" height="36" alt="Ler em Português" /></a></p>
+<p align="center"><a href="#en"><img src="./lang-en.svg" height="32" alt="Read in English" /></a>&nbsp;&nbsp;<a href="#pt"><img src="./lang-pt.svg" height="32" alt="Ler em Português" /></a></p>
 
 ---
 
