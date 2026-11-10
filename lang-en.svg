@@ -1,5 +1,5 @@
-<svg width="132" height="42" viewBox="0 0 132 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="English">
-  <path d="M20,1 H132 V41 H20 A19,19 0 0 1 1,22 V20 A19,19 0 0 1 20,1 Z" fill="#1e293b"/>
-  <path d="M132,1 H20 A19,19 0 0 0 1,20 V22 A19,19 0 0 0 20,41 H132" fill="none" stroke="#475569" stroke-opacity="0.6" stroke-width="1.5"/>
-  <text x="66" y="26" text-anchor="middle" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="1.5" fill="#cbd5e1">ENGLISH</text>
+<svg width="145" height="36" viewBox="0 0 145 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Read in English">
+  <rect x="0.75" y="0.75" width="143.5" height="34.5" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2"/>
+  <circle cx="18" cy="18" r="3" fill="#38bdf8"/>
+  <text x="80" y="22" text-anchor="middle" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#f8fafc">ENGLISH</text>
 </svg>
