@@ -1,0 +1,9 @@
+# resultados e materiais de entrada ficam só na máquina (livros têm direitos autorais)
+saida/
+entrada/
+*.mp4
+*.mov
+# modelo de OCR é baixado pelo instalar.sh (8 MB)
+modelos/*.traineddata
+__pycache__/
+*.pyc
