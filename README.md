@@ -8,6 +8,8 @@
 
 <p align="center"><a href="#en"><img src="./lang-en.svg" height="32" alt="Read in English" /></a>&nbsp;&nbsp;<a href="#pt"><img src="./lang-pt.svg" height="32" alt="Ler em Português" /></a></p>
 
+<p align="center"><a href="https://lukyammm.github.io/">Portfólio: lukyammm.github.io</a> &nbsp;|&nbsp; <a href="https://lukyammm.github.io/en/">Portfolio in English</a></p>
+
 ---
 
 ### Verified Tech Stack · Tecnologias Reais
