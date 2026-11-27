@@ -95,7 +95,9 @@ for name, ra, dec, mag, col in ORION:
     if book_mask[int(y), int(x)]:
         print('star over the book:', name)
     amp = 0.40 + 0.40 * (1 - np.clip((mag + 0.2) / 4.4, 0, 1))
-    glint(x, y, amp, col, size=1.15 if name in ('Betelgeuse', 'Rigel') else 1.0)
+    if name == 'Betelgeuse':
+        amp *= 1.45     # its red tint reads dimmer than the white stars
+    glint(x, y, amp, col, size=1.3 if name == 'Betelgeuse' else 1.15 if name == 'Rigel' else 1.0)
 
 # faint glints where the light catches the pile
 prob = np.clip(lum_s, 0, None) ** 1.6

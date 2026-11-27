@@ -23,6 +23,7 @@ ap.add_argument('--h', type=int, default=675)
 ap.add_argument('--samples', type=int, default=48)
 ap.add_argument('--out', default=os.path.join(HERE, 'test.png'))
 ap.add_argument('--book', default='en')
+ap.add_argument('--scene', default='single', help='single | duo')
 ap.add_argument('--key', type=float, default=1.0, help='key light multiplier')
 ap.add_argument('--exposure', type=float, default=0.0)
 ap.add_argument('--look', default='AgX - Punchy')
@@ -283,19 +284,31 @@ def build_pages(mat_pages):
     return obj
 
 
-wrap = os.path.join(HERE, f'wrap_{args.book}.png')
-cover_obj, crease_u = build_cover(bpy.data.materials.new('tmp'), plain_material('inner', (0.78, 0.78, 0.75), 0.8),
-                                  plain_material('cut_edge', (0.55, 0.55, 0.52), 0.7))
-cover_obj.data.materials[0] = cover_material(wrap, crease_u)
-pages_obj = build_pages(pages_material())
+def make_book(tag, loc, rot):
+    wrap = os.path.join(HERE, f'wrap_{tag}.png')
+    cover_obj, crease_u = build_cover(bpy.data.materials.new('tmp'), plain_material('inner', (0.78, 0.78, 0.75), 0.8),
+                                      plain_material('cut_edge', (0.55, 0.55, 0.52), 0.7))
+    cover_obj.data.materials[0] = cover_material(wrap, crease_u)
+    pages_obj = build_pages(pages_material())
+    parent = bpy.data.objects.new('book_' + tag, None)
+    coll.objects.link(parent)
+    for o in (cover_obj, pages_obj):
+        o.parent = parent
+    parent.rotation_euler = (0, 0, rot)
+    parent.location = (loc[0], loc[1], H / 2 + (0.0002 if args.variant == 'B' else 0.0))
+    return [cover_obj, pages_obj], parent
 
-book = bpy.data.objects.new('book', None)
-coll.objects.link(book)
-for o in (cover_obj, pages_obj):
-    o.parent = book
-ROT = 0.62
-book.rotation_euler = (0, 0, ROT)
-book.location = (0, 0, H / 2 + (0.0002 if args.variant == 'B' else 0.0))
+
+if args.scene == 'duo':
+    ROT = -0.40
+    objs_pt, book_pt = make_book('pt', (-0.091, 0.018), 0.48)
+    objs_en, book = make_book('en', (0.089, -0.009), ROT)
+    book_objs = objs_pt + objs_en
+    books = [('pt', book_pt, 0.48), ('en', book, ROT)]
+else:
+    ROT = 0.62
+    book_objs, book = make_book(args.book, (0.0, 0.0), ROT)
+    books = [(args.book, book, ROT)]
 
 # ---------------------------------------------------------------- set
 YB = 0.42   # the velvet hangs this far behind the book
@@ -403,13 +416,13 @@ cam_d.sensor_fit = 'VERTICAL'
 cam_d.sensor_height = 36
 cam = bpy.data.objects.new('cam', cam_d)
 coll.objects.link(cam)
-elev = math.radians(16)
-dist = 0.80
-look = Vector((0.0, 0.0, 0.112))
+elev = math.radians(16 if args.scene != 'duo' else 12)
+dist = 0.80 if args.scene != 'duo' else 1.16
+look = Vector((0.0, 0.0, 0.112)) if args.scene != 'duo' else Vector((0.0, 0.0, 0.122))
 cam.location = look + dist * Vector((0, -math.cos(elev), math.sin(elev)))
 cam.rotation_euler = (look - cam.location).to_track_quat('-Z', 'Y').to_euler()
 scene.camera = cam
-front_center = Vector((D / 2 * math.sin(ROT), -D / 2 * math.cos(ROT), H / 2))
+front_center = book.location + Vector((D / 2 * math.sin(ROT), -D / 2 * math.cos(ROT), 0))
 cam_d.dof.use_dof = True
 cam_d.dof.focus_distance = (front_center - cam.location).length
 cam_d.dof.aperture_fstop = 11
@@ -452,12 +465,25 @@ bpy.ops.render.render(write_still=True)
 # book outline in screen space, so the glints stay off the book
 depsgraph = bpy.context.evaluated_depsgraph_get()
 pts = []
-for o in (cover_obj, pages_obj):
+for o in book_objs:
     ev = o.evaluated_get(depsgraph)
     mw = o.matrix_world
     for v in ev.data.vertices:
         p = world_to_camera_view(scene, cam, mw @ v.co)
         pts.append((p.x * args.w, (1 - p.y) * args.h))
+anchors = {}
+for tag, ob, rot in books:
+    base = ob.location.copy()
+    base.z = 0.0
+    lowest = None
+    for o in [c for c in ob.children]:
+        ev = o.evaluated_get(depsgraph)
+        for v in ev.data.vertices:
+            p = world_to_camera_view(scene, cam, o.matrix_world @ v.co)
+            y = (1 - p.y) * args.h
+            lowest = y if lowest is None else max(lowest, y)
+    c = world_to_camera_view(scene, cam, base)
+    anchors[tag] = {'x': c.x * args.w, 'bottom': lowest}
 with open(args.out + '.json', 'w') as fh:
-    json.dump({'book_pts': pts, 'w': args.w, 'h': args.h}, fh)
+    json.dump({'book_pts': pts, 'anchors': anchors, 'w': args.w, 'h': args.h}, fh)
 print('done', args.out)
