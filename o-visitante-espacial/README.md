@@ -100,11 +100,11 @@ Feito em 27/11/2026 a partir da capa aberta americana de 25-11 (a placa molhada 
 
 | Slide | O que mostra |
 |---|---|
-| 01 | O livro em 3D, com a lombada, num fundo azul de estúdio (não mais quase preto) e com o chão levemente molhado refletindo o livro, que lembra a placa molhada. A contracapa não aparece, porque o texto dela ainda fala em "eleven million years". Outras opções de fundo em `alternativas_de_fundo.jpg`. |
+| 01 | O livro em 3D, com a lombada, num fundo azul de estúdio (não mais quase preto) e com o chão levemente molhado refletindo o livro, que lembra a placa molhada. O livro ficou mais grosso (3,3 cm), um pouco mais virado e visto de um pouco mais de cima, pra espessura aparecer. A contracapa não aparece, porque o texto dela ainda fala em "eleven million years". Outras opções de fundo em `alternativas_de_fundo.jpg`. **Pendente:** o autor quer trocar esse fundo por um veludo sutil, com o brilho da luz no tecido formando constelações (ver "Ideias para depois"). |
 | 02 | **O que é de verdade (1):** a placa com luz só nas gravuras do Disco de Ouro. Mostra como tocar (o disco visto de cima, com a agulha), quanto dura (o disco de lado e o tempo de um lado em binário, cerca de 1 hora) e como ver as fotos (o sinal que vira imagem). |
 | 03 | **O que é de verdade (2):** o mapa de 14 pulsares que aponta pro Sol e o átomo de hidrogênio, que é a unidade de tempo do disco. |
-| 04 | **O que é do livro:** Akaihi, a linha vermelha, molhado (o lago) e queimado (a entrada em Árret como bola de fogo, ainda soltando fumaça). |
-| 05 | As duas edições lado a lado, Brasil e EUA. |
+| 04 | **O que é do livro:** Akaihi, a linha vermelha, molhado (o lago) e queimado (a entrada em Árret como bola de fogo, ainda soltando fumaça). Akaihi tem um asterisco e uma nota no céu, a pedido do autor: Akaihi é o nome que o povo de Árret dá, e aqui da Terra é a Betelgeuse. |
+| 05 | As duas edições lado a lado, Brasil e EUA, com os livros na mesma espessura do slide 01. |
 | 06 | Fechamento com a Voyager 1 a 1 dia-luz (18/11/2026). É opcional. |
 
 O `00_visao_geral.jpg` mostra os seis juntos.
@@ -113,9 +113,15 @@ O `00_visao_geral.jpg` mostra os seis juntos.
 - **Histórico da tipografia:** a 1ª versão, com título pequeno espaçado em cima e serifa em itálico embaixo, foi trocada porque tinha cara de feito por IA. A 2ª usava máquina de escrever (Courier Prime) em etiquetas de papel. O `alternativas_de_fonte.jpg` mostra as três opções que foram comparadas: máquina de escrever (em cima), anotação à mão (no meio) e editorial (embaixo).
 - **Escrita (2ª versão):** os textos foram reescritos no jeito do autor, com frases corridas com vírgula e o aparte entre parênteses com kkk. Saíram as frases de efeito, os títulos com metáfora, os dois-pontos de revelação e o slogan. As partes "molhada" e "queimada" e a legenda da capa brasileira usam as palavras do próprio autor.
 - **Linha vermelha:** o slide não fala em rota. Diz só que ela não existe no disco da NASA e que o significado fica pro livro.
+- **Betelgeuse:** a nota do slide 04 diz que ela fica perto das Três Marias (o cinturão de Órion) e que pode explodir "amanhã ou daqui a 100 mil anos". Esse é o prazo que os astrônomos costumam dar para ela virar supernova.
+- **Seta do ponto 3 (slide 02):** a seta ficou curta demais e parecia um rabisco. Agora o círculo envolve o desenho das ondas inteiro e a caixa desceu para a seta ter espaço.
 - **Fontes das gravuras:** as explicações seguem a descrição da NASA/JPL para a capa do Golden Record. A arte da capa é uma versão estilizada, então a posição das gravuras não é igual à do disco real.
 - **Fontes do livro:** a contracapa (bola de fogo no lago de Árret, Akaihi apagando), o capítulo 1 (Áslan e o avô no lago) e o próprio autor (queimado = a entrada em Árret).
 - **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 (com `notext=1` sai sem texto e vira o fundo do slide 5, em `bg/`). O slide 1 sai de dois renders com fundo transparente, `transparent=1` e `transparent=1&reflect=1` (o reflexo), juntados por `compose_bg.py` com a paleta `slate` (as outras são `ardosia_clara`, `pedra` e `crepusculo`). `slides.html` monta os slides 2 a 6. A versão final usa `st=misto` (caixas editoriais com marcações à mão); também aceita `st=ficha` (Courier Prime), `st=mao` (Caveat) e `st=edit` (Archivo com linhas retas). As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
+
+## Ideias para depois
+
+- **Fundo de veludo no slide 01 (ideia do autor, 27/11/2026):** trocar o fundo atrás do livro por um veludo escuro, bem sutil. A luz do ambiente bate nas fibras do tecido e alguns pontos brilham mais que outros, e esses pontos de brilho formam constelações, como um universo aparecendo no próprio tecido. O autor pediu para fazer depois de fechar os outros ajustes e conversar antes.
 
 ## Pontos para conferir
 

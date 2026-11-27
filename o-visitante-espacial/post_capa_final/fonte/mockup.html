@@ -52,7 +52,7 @@ function pagesTex(vertical){
   const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
 }
 async function book(name,w,h,d){
-  const [front,spine,back]=await Promise.all(['front','spine','back'].map(p=>load(`src/${name}_${p}.png`)));
+  const [front,spine,back]=await Promise.all(['front','spine_wide','back'].map(p=>load(`src/${name}_${p}.png`)));
   const cover=m=>new THREE.MeshPhysicalMaterial({map:m,roughness:0.5,clearcoat:0.35,clearcoatRoughness:0.38,envMapIntensity:0.55});
   const pageSide=new THREE.MeshStandardMaterial({map:pagesTex(true),roughness:0.95,envMapIntensity:0.3});
   const pageTop=new THREE.MeshStandardMaterial({map:pagesTex(false),roughness:0.95,envMapIntensity:0.3});
@@ -92,17 +92,18 @@ function contact(x,z,ry,w,d){
   m.rotation.x=-Math.PI/2;m.rotation.z=ry;m.position.set(x,0.01,z);scene.add(m);
 }
 if(sceneName==='en'){
-  const b=await book('en',6,9,0.81);
-  b.rotation.y=0.52;
-  if(reflect){b.position.set(0.3,-4.5,0);b.scale.y=-1;}else{b.position.set(0.3,4.5,0);contact(0.3,0,-0.52,8.5,2.6);}
+  const TH=+(q.get('th')||1.3), ROT=+(q.get('rot')||0.62), CY=+(q.get('cy')||15.5);
+  const b=await book('en',6,9,TH);
+  b.rotation.y=ROT;
+  if(reflect){b.position.set(0.3,-4.5,0);b.scale.y=-1;}else{b.position.set(0.3,4.5,0);contact(0.3,0,-ROT,8.5,2.6);}
   scene.add(b);
-  camera.position.set(0,12.5,31);camera.lookAt(0,4.35,0);
+  camera.position.set(0,CY,31);camera.lookAt(0,4.35,0);
   document.getElementById('star').style.display='none';
 }else{
-  const pt=await book('pt',6,9,0.85), en=await book('en',6,9,0.81);
+  const pt=await book('pt',6,9,1.3), en=await book('en',6,9,1.3);
   const P=[[pt,-3.6,-1.2,0.48,'BRASIL'],[en,3.5,0.6,-0.40,'EUA']];
   for(const [b,x,z,r] of P){b.rotation.y=r;if(reflect){b.position.set(x,-4.5,z);b.scale.y=-1;}else{b.position.set(x,4.5,z);contact(x,z,-r,8.5,2.6);}scene.add(b);}
-  camera.position.set(0,12.5,44.5);camera.lookAt(0,5.6,0);camera.updateMatrixWorld();
+  camera.position.set(0,14.5,44.5);camera.lookAt(0,5.6,0);camera.updateMatrixWorld();
   document.getElementById('star').style.display='none';
   const notext=q.get('notext')==='1';
   if(!notext){const h=document.createElement('div');h.className='head';h.innerHTML='<div class="kick">BRASIL E EUA</div><div class="title">Mesmo disco, duas capas</div>';document.body.appendChild(h);}

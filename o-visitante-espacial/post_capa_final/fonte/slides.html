@@ -28,6 +28,8 @@ svg{position:absolute;left:0;top:0}
 /* edit: grotesk, numbered */
 .st-edit .head{font:800 42px/1.1 Archivo;color:#fff;letter-spacing:-.012em}
 .st-edit .lab{font:400 24px/1.32 Archivo;color:#f1eee8;background:rgba(7,9,16,.88);padding:16px 20px 18px 74px;border-radius:0}
+.st-edit .lab.note{font-size:22px;line-height:1.34}
+.ast{color:#dcae57;font-weight:800}
 .st-edit .lab .n{position:absolute;left:18px;top:15px;width:40px;height:40px;border-radius:50%;background:#dcae57;color:#0b0d16;font:800 22px/40px Archivo;text-align:center}
 .st-edit .big{font:900 150px/1 Archivo;color:#fff;letter-spacing:-.035em}
 .st-edit .par{font:400 32px/1.36 Archivo;color:#e9e6df}
@@ -55,7 +57,7 @@ const T={
    labels:[
     {k:1,x:36,y:258,w:470,d:'O disco visto de cima com a agulha, mostrando onde ela tem que começar a tocar',side:'bottom',at:262,a:[262,500]},
     {k:2,x:540,y:700,w:520,d:'O disco de lado, e esses risquinhos são um número em binário com o tempo de um lado (mais ou menos 1 hora)',side:'top',at:908,a:[908,531]},
-    {k:3,x:560,y:1140,w:490,d:'Ensina a transformar o sinal do disco em imagem, linha por linha, como numa TV antiga',side:'top',at:650,a:[650,1090]},
+    {k:3,x:560,y:1188,w:490,d:'Ensina a transformar o sinal do disco em imagem, linha por linha, como numa TV antiga',side:'top',at:700,a:[730,1012],cr:[238,96]},
    ]},
  3:{...NASA,head:'E essas duas também estão no disco original',
    spots:[[150,1170,360,265],[835,1237,190,100]],
@@ -67,7 +69,8 @@ const T={
    head:'Agora o que é do livro',
    mspots:[[902,261,140,110],[485,745,170,150],[314,606,140,120],[962,1218,190,170],[300,980,150,300]],
    labels:[
-    {k:'',x:530,y:372,w:510,d:'Essa é Akaihi, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
+    {k:'',x:530,y:372,w:510,d:'Essa é Akaihi<span class="ast">*</span>, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
+    {k:'',note:true,nocircle:true,x:40,y:150,w:500,d:'<span class="ast">*</span>Akaihi é o nome que o povo de Árret dá, aqui da Terra ela é a Betelgeuse, aquela vermelhinha perto das Três Marias que o pessoal vive dizendo que vai explodir (pode ser amanhã ou daqui a 100 mil anos kkk)',side:'right',at:236,a:[902,261],r:20},
     {k:'',x:580,y:715,w:470,d:'Essa linha vermelha não existe no disco da NASA, o que ela significa eu não vou contar (lê o livro kkk)',side:'left',at:745,a:[485,745]},
     {k:'',x:20,y:706,w:385,d:'Molhada porque caiu num lago, na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
     {k:'',x:290,y:1178,w:530,d:'A placa tá queimada de quando a Voyager entrou em Árret, dá pra ver até a fumaça',side:'right',at:1240,a:[985,1225],r:18,cr:[66,92]},
@@ -129,7 +132,7 @@ function connector(L,r){
   if(HAND){
     const cr=(L.r||14)+10;
     const rx=(STYLE==='misto'&&L.cr)?L.cr[0]:cr*1.12, ry=(STYLE==='misto'&&L.cr)?L.cr[1]:cr*.92;
-    handCircle(L.a,cr,rx,ry);
+    if(!L.nocircle)handCircle(L.a,cr,rx,ry);
     const gap=10;
     const pp=L.side==='bottom'?[p[0],p[1]+gap]:L.side==='top'?[p[0],p[1]-gap]:L.side==='left'?[p[0]-gap,p[1]]:[p[0]+gap,p[1]];
     const dx=L.a[0]-pp[0],dy=L.a[1]-pp[1],dl=Math.hypot(dx,dy),ux=dx/dl,uy=dy/dl;
@@ -147,7 +150,7 @@ function labels(C){
     const L={...L0,...((STYLE==='mao'&&MAO[n]&&MAO[n][i])||{})};
     const html=LOOK==='edit'&&L.k!==''?`<span class="n">${L.k}</span>${L.d}`:L.d;
     const pad=LOOK==='ficha'?36:LOOK==='edit'?(L.k!==''?94:40):0;
-    const b=div('lab',html,{left:L.x+'px',top:L.y+'px',width:(L.w-pad)+'px',zIndex:2});
+    const b=div('lab'+(L.note?' note':''),html,{left:L.x+'px',top:L.y+'px',width:(L.w-pad)+'px',zIndex:2});
     if(LOOK==='edit'&&L.k==='')b.style.paddingLeft='20px';
     connector(L,b.getBoundingClientRect());
   });
@@ -161,7 +164,7 @@ async function main(){
   if(n===5){
     el('image',{href:'bg/duo.png',x:0,y:0,width:W,height:H},svg);
     div('head','As duas versões da capa',{left:'56px',top:'58px',width:'960px'});
-    const caps=[[291,1092,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[792,1128,'A americana é a placa de ouro, molhada e queimada']];
+    const caps=[[294,1084,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[789,1125,'A americana é a placa de ouro, molhada e queimada']];
     for(const [x,y,t] of caps){
       const w=STYLE==='mao'?420:460;
       const css={left:(x-w/2)+'px',top:y+'px',width:(w-(LOOK==='ficha'?36:LOOK==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
