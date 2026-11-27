@@ -49,6 +49,20 @@ const overlay=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`,style:'z-index:
 const sh=el('filter',{id:'sh',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feDropShadow',{dx:0,dy:0,stdDeviation:2.2,'flood-color':'#000','flood-opacity':.85},sh);
 const od=el('defs',{},overlay);const sh2=el('filter',{id:'sh2',x:'-20%',y:'-20%',width:'140%',height:'140%'},od);el('feDropShadow',{dx:0,dy:1,stdDeviation:2.4,'flood-color':'#000','flood-opacity':.9},sh2);
 const lines=el('g',{filter:'url(#sh2)'},overlay);
+// natural marker strokes: rough edge, slightly uneven ink, soft shadow
+const inkF=el('filter',{id:'ink',filterUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H},od);
+el('feTurbulence',{type:'fractalNoise',baseFrequency:.9,numOctaves:2,seed:4,result:'n'},inkF);
+el('feDisplacementMap',{in:'SourceGraphic',in2:'n',scale:1.7,xChannelSelector:'R',yChannelSelector:'G',result:'d'},inkF);
+el('feTurbulence',{type:'fractalNoise',baseFrequency:.5,numOctaves:2,seed:11,result:'n2'},inkF);
+el('feColorMatrix',{in:'n2',type:'matrix',values:'0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 .56',result:'a'},inkF);
+el('feComposite',{in:'d',in2:'a',operator:'in',result:'inked'},inkF);
+el('feGaussianBlur',{in:'inked',stdDeviation:.3,result:'aa'},inkF);
+el('feGaussianBlur',{in:'SourceAlpha',stdDeviation:2.6,result:'sb'},inkF);
+el('feOffset',{in:'sb',dx:0,dy:1.2,result:'so'},inkF);
+el('feColorMatrix',{in:'so',type:'matrix',values:'0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .7 0',result:'shadow'},inkF);
+const mg2=el('feMerge',{},inkF);el('feMergeNode',{in:'shadow'},mg2);el('feMergeNode',{in:'aa'},mg2);
+const inkG=el('g',{filter:'url(#ink)'},overlay);
+let PF=null;
 
 const NASA={img:'src/en_front.png',iw:1800,ih:2700,s:0.6545,cx:0,cy:989,oy:230};
 const T={
@@ -70,7 +84,7 @@ const T={
    mspots:[[902,261,140,110],[485,745,170,150],[314,606,140,120],[962,1218,190,170],[300,980,150,300]],
    labels:[
     {k:'',x:530,y:372,w:510,d:'Essa é Akaihi<span class="ast">*</span>, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
-    {k:'',note:true,nocircle:true,x:40,y:150,w:500,d:'<span class="ast">*</span>Akaihi é o nome que o povo de Árret dá, aqui da Terra ela é a Betelgeuse, aquela vermelhinha perto das Três Marias que o pessoal vive dizendo que vai explodir (pode ser amanhã ou daqui a 100 mil anos kkk)',side:'right',at:236,a:[902,261],r:20},
+    {k:'',note:true,nocircle:true,x:40,y:150,w:620,d:'<span class="ast">*</span>Aqui da Terra ela é a Betelgeuse, que vive ameaçando explodir (em 2019 até deu uma apagada kkk)',side:'right',at:196,a:[902,261],r:20},
     {k:'',x:580,y:715,w:470,d:'Essa linha vermelha não existe no disco da NASA, o que ela significa eu não vou contar (lê o livro kkk)',side:'left',at:745,a:[485,745]},
     {k:'',x:20,y:706,w:385,d:'Molhada porque caiu num lago, na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
     {k:'',x:290,y:1178,w:530,d:'A placa tá queimada de quando a Voyager entrou em Árret, dá pra ver até a fumaça',side:'right',at:1240,a:[985,1225],r:18,cr:[66,92]},
@@ -104,25 +118,69 @@ function photo(C,spots,base){
 function div(cls,html,css){const d=document.createElement('div');d.className=cls;d.innerHTML=html;Object.assign(d.style,css);st.appendChild(d);return d}
 // seeded wobble so renders are stable
 let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
-function handLine(p,a,stop){
-  const dx=a[0]-p[0],dy=a[1]-p[1],L=Math.hypot(dx,dy);
-  const ex=a[0]-dx/L*stop, ey=a[1]-dy/L*stop;
-  const nx=-dy/L,ny=dx/L,bend=(rnd()<.5?-1:1)*Math.min(40,L*.14);
-  const cx=(p[0]+ex)/2+nx*bend, cy=(p[1]+ey)/2+ny*bend;
-  el('path',{d:`M${p[0]},${p[1]} Q${cx},${cy} ${ex},${ey}`,fill:'none',stroke:'#f7f2e8','stroke-width':3.4,'stroke-linecap':'round'},lines);
-  // arrow head along the tangent at the end
-  const tx=ex-cx,ty=ey-cy,tl=Math.hypot(tx,ty),ux=tx/tl,uy=ty/tl;
-  for(const s of [1,-1]){
-    const ang=s*0.5,c=Math.cos(ang),si=Math.sin(ang);
-    const bx=-(ux*c-uy*si)*20,by=-(ux*si+uy*c)*20;
-    el('path',{d:`M${ex},${ey} l${bx},${by}`,stroke:'#f7f2e8','stroke-width':3.4,'stroke-linecap':'round',fill:'none'},lines);
-  }
+const avg=(a,b)=>(a+b)/2;
+function pathFromStroke(pts){
+  const len=pts.length;if(len<4)return '';
+  let a=pts[0],b=pts[1];const c=pts[2];
+  let r=`M${a[0].toFixed(2)},${a[1].toFixed(2)} Q${b[0].toFixed(2)},${b[1].toFixed(2)} ${avg(b[0],c[0]).toFixed(2)},${avg(b[1],c[1]).toFixed(2)} T`;
+  for(let i=2;i<len-1;i++){a=pts[i];b=pts[i+1];r+=`${avg(a[0],b[0]).toFixed(2)},${avg(a[1],b[1]).toFixed(2)} `;}
+  return r+'Z';
 }
+function addStroke(pts,size,ts,te){
+  const o=PF(pts,{size,thinning:.62,smoothing:.62,streamline:.32,simulatePressure:false,start:{taper:ts,cap:true},end:{taper:te,cap:true}});
+  el('path',{d:pathFromStroke(o),fill:'#f4f0e7'},inkG);
+}
+// a loop drawn in one go: starts upper left, overshoots where it closes, a little spiral and tilt
 function handCircle(a,r,rx,ry){
   rx=rx||r*1.12;ry=ry||r*.92;
-  const pts=[];const a0=rnd()*6.28;
-  for(let i=0;i<=26;i++){const t=a0+i/24*6.28*1.06;const k=1+(rnd()-.5)*.08;pts.push([a[0]+Math.cos(t)*rx*k,a[1]+Math.sin(t)*ry*k])}
-  el('path',{d:'M'+pts.map(p=>p.join(',')).join(' L'),fill:'none',stroke:'#f7f2e8','stroke-width':3.2,'stroke-linecap':'round','stroke-linejoin':'round'},lines);
+  const dir=rnd()<.5?1:-1,tilt=(rnd()-.5)*.4,th0=-2.0+(rnd()-.5)*1.0;
+  const over=.4+rnd()*.45,spiral=(rnd()<.5?-1:1)*(.05+rnd()*.07),ph1=rnd()*6.28,ph2=rnd()*6.28;
+  const total=2*Math.PI+over,N=Math.max(48,Math.round((rx+ry)*1.5));
+  const pts=[];
+  for(let i=0;i<=N;i++){
+    const t=i/N,th=th0+dir*total*t;
+    const k=1+.05*Math.sin(2*th+ph1)+.03*Math.sin(3*th+ph2)+spiral*t;
+    const x=Math.cos(th)*rx*k,y=Math.sin(th)*ry*k;
+    const xr=x*Math.cos(tilt)-y*Math.sin(tilt),yr=x*Math.sin(tilt)+y*Math.cos(tilt);
+    const pr=.42+.38*Math.sin(Math.PI*Math.min(1,t*1.1))+.06*Math.sin(t*11+ph1);
+    pts.push([a[0]+xr,a[1]+yr,Math.min(1,Math.max(.12,pr))]);
+  }
+  addStroke(pts,5.6,10,26);
+}
+// arrow: a slightly drifting curve that gets lighter towards the end, then a V drawn in one stroke
+function handLine(p0,target,stop){
+  const dx=target[0]-p0[0],dy=target[1]-p0[1],L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,nx=-uy,ny=ux;
+  const end=[target[0]-ux*stop+(rnd()-.5)*3,target[1]-uy*stop+(rnd()-.5)*3];
+  const ex0=end[0]-p0[0],ey0=end[1]-p0[1],len=Math.hypot(ex0,ey0);
+  const bend=(rnd()<.5?-1:1)*Math.min(28,len*(.06+rnd()*.07));
+  const c1=[p0[0]+ex0*.28+nx*bend*1.15,p0[1]+ey0*.28+ny*bend*1.15];
+  const c2=[p0[0]+ex0*.7+nx*bend*.55,p0[1]+ey0*.7+ny*bend*.55];
+  const N=Math.max(18,Math.round(len/2.5)),ph=rnd()*6.28,pts=[];
+  for(let i=0;i<=N;i++){
+    const t=i/N,mt=1-t;
+    let x=mt*mt*mt*p0[0]+3*mt*mt*t*c1[0]+3*mt*t*t*c2[0]+t*t*t*end[0];
+    let y=mt*mt*mt*p0[1]+3*mt*mt*t*c1[1]+3*mt*t*t*c2[1]+t*t*t*end[1];
+    const w=Math.sin(t*Math.PI*2.2+ph)*1.1*Math.sin(Math.PI*t);x+=nx*w;y+=ny*w;
+    pts.push([x,y,.78-.32*t+.06*Math.sin(t*7+ph)]);
+  }
+  addStroke(pts,5.2,8,6);
+  let tx=end[0]-c2[0],ty=end[1]-c2[1];const tl=Math.hypot(tx,ty);tx/=tl;ty/=tl;
+  const la=14+rnd()*6,lb=12+rnd()*7,aa=.42+rnd()*.2,ab=.4+rnd()*.22;
+  const rot=(vx,vy,an)=>[vx*Math.cos(an)-vy*Math.sin(an),vx*Math.sin(an)+vy*Math.cos(an)];
+  const wa=rot(-tx,-ty,aa),wb=rot(-tx,-ty,-ab);
+  const tip=[end[0]+tx*1.5,end[1]+ty*1.5];
+  const A=[tip[0]+wa[0]*la,tip[1]+wa[1]*la],B=[tip[0]+wb[0]*lb,tip[1]+wb[1]*lb];
+  const hp=[],M=10;
+  for(let i=0;i<=M;i++){const t=i/M;hp.push([A[0]+(tip[0]-A[0])*t,A[1]+(tip[1]-A[1])*t,.45+.4*t]);}
+  for(let i=1;i<=M;i++){const t=i/M;hp.push([tip[0]+(B[0]-tip[0])*t,tip[1]+(B[1]-tip[1])*t,.85-.5*t]);}
+  addStroke(hp,5,4,8);
+}
+function handUnderline(x0,x1,y0){
+  const N=70,ph=rnd()*6,p1=[],p2=[];
+  for(let i=0;i<=N;i++){const t=i/N;p1.push([x0+(x1-x0)*t,y0+4-9*t+2.5*Math.sin(t*Math.PI*1.3+ph)+3*Math.sin(Math.PI*t),.5+.45*Math.sin(Math.PI*Math.min(1,t*1.15))]);}
+  addStroke(p1,7,18,70);
+  for(let i=0;i<=N;i++){const t=i/N;p2.push([x0+55+(x1-x0-140)*t,y0+16-5*t+2*Math.sin(t*Math.PI*1.7+ph),.45+.35*Math.sin(Math.PI*t)]);}
+  addStroke(p2,5.2,14,50);
 }
 function connector(L,r){
   let p;
@@ -160,6 +218,7 @@ function finish(imgs){
 }
 async function main(){
   await document.fonts.ready;
+  PF=(await import('./node_modules/perfect-freehand/dist/esm/index.mjs')).getStroke;
   if(n===1){el('image',{href:'bg/en.png',x:0,y:0,width:W,height:H},svg);return finish(['bg/en.png'])}
   if(n===5){
     el('image',{href:'bg/duo.png',x:0,y:0,width:W,height:H},svg);
@@ -184,9 +243,7 @@ async function main(){
     el('rect',{x:0,y:958,width:W,height:150,fill:'url(#f2)'},svg);
     const star=document.createElement('div');star.style.cssText='position:absolute;left:954px;top:182px;width:13px;height:13px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 46px 20px rgba(255,40,40,.16)';st.appendChild(star);
     const bg6=div('big','1 dia-luz',{left:'80px',top:STYLE==='mao'?'250px':'290px'});
-    if(STYLE==='misto'){const r=bg6.getBoundingClientRect();const y0=r.bottom+14,x0=r.left+6,x1=r.right-10;
-      el('path',{d:`M${x0},${y0+4} C${x0+(x1-x0)*.3},${y0-6} ${x0+(x1-x0)*.7},${y0+10} ${x1},${y0-2}`,fill:'none',stroke:'#f7f2e8','stroke-width':4.5,'stroke-linecap':'round'},lines);
-      el('path',{d:`M${x0+40},${y0+16} C${x0+(x1-x0)*.4},${y0+8} ${x0+(x1-x0)*.75},${y0+20} ${x1-30},${y0+11}`,fill:'none',stroke:'#f7f2e8','stroke-width':3.2,'stroke-linecap':'round'},lines);}
+    if(STYLE==='misto'){const r=bg6.getBoundingClientRect();handUnderline(r.left+6,r.right-10,r.bottom+14);}
     div('par','No dia 18 de novembro de 2026 a Voyager 1 chegou a 1 dia-luz da Terra, ou seja, uma mensagem daqui leva 24 horas pra chegar lá, e o disco de ouro tá com ela até hoje',
       {left:'84px',top:STYLE==='mao'?'450px':STYLE==='misto'?'505px':'470px',width:STYLE==='ficha'?'900px':'880px'});
     return finish([C.img]);
