@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 inp, outp, variant = sys.argv[1:4]
 strength = float(sys.argv[4]) if len(sys.argv) > 4 else 1.0
+with_orion = not (len(sys.argv) > 5 and sys.argv[5] == 'noorion')
 img = Image.open(inp).convert('RGB')
 W, H = img.size
 k = W / 1620.0
@@ -89,7 +90,7 @@ ORION = [
 ]
 box_x0, box_w, box_y0 = 0.80, 0.165, 0.06
 scale = box_w * W / (88.79 - 78.63)
-for name, ra, dec, mag, col in ORION:
+for name, ra, dec, mag, col in (ORION if with_orion else []):
     x = box_x0 * W + (88.79 - ra) * scale
     y = box_y0 * H + (9.93 - dec) * scale
     if book_mask[int(y), int(x)]:
@@ -107,7 +108,8 @@ if variant == 'A':
 else:
     prob[int(0.62 * H):, :] *= 0.4
 # keep the Orion area for Orion
-prob[int(0.03 * H):int(0.36 * H), int(0.78 * W):] *= 0.15
+if with_orion:
+    prob[int(0.03 * H):int(0.36 * H), int(0.78 * W):] *= 0.15
 prob = prob.ravel() / prob.sum()
 for idx in rng.choice(prob.size, size=int(210), p=prob):
     y, x = divmod(int(idx), W)

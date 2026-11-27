@@ -221,9 +221,11 @@ async function main(){
   PF=(await import('./node_modules/perfect-freehand/dist/esm/index.mjs')).getStroke;
   if(n===1){el('image',{href:'bg/en.png',x:0,y:0,width:W,height:H},svg);return finish(['bg/en.png'])}
   if(n===5){
-    el('image',{href:'bg/duo.png',x:0,y:0,width:W,height:H},svg);
+    const DUO=q.get('duo')||'bg/duo.png';
+    el('image',{href:DUO,x:0,y:0,width:W,height:H},svg);
     div('head','As duas versões da capa',{left:'56px',top:'58px',width:'960px'});
-    const caps=[[294,1084,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[789,1125,'A americana é a placa de ouro, molhada e queimada']];
+    const cx1=+(q.get('px')||294), cy1=+(q.get('py')||1084), cx2=+(q.get('ex')||789), cy2=+(q.get('ey')||1125);
+    const caps=[[cx1,cy1,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[cx2,cy2,'A americana é a placa de ouro, molhada e queimada']];
     for(const [x,y,t] of caps){
       const w=STYLE==='mao'?420:460;
       const css={left:(x-w/2)+'px',top:y+'px',width:(w-(LOOK==='ficha'?36:LOOK==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
@@ -232,7 +234,7 @@ async function main(){
       const bx=div('lab',t,css);
       if(STYLE==='misto'&&q.get('arrows')==='1'){const r=bx.getBoundingClientRect();handLine([x+40,r.top-10],[x+10,r.top-105],0);}
     }
-    return finish(['bg/duo.png']);
+    return finish([DUO]);
   }
   if(n===6){
     const C={img:'src/en_front.png',iw:1800,ih:2700,s:0.6};

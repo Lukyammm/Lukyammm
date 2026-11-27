@@ -26,6 +26,7 @@ ap.add_argument('--book', default='en')
 ap.add_argument('--scene', default='single', help='single | duo')
 ap.add_argument('--key', type=float, default=1.0, help='key light multiplier')
 ap.add_argument('--exposure', type=float, default=0.0)
+ap.add_argument('--spine', type=float, default=0.0, help='soft bounce on the lower spine (W)')
 ap.add_argument('--look', default='AgX - Punchy')
 ap.add_argument('--view', default='AgX')
 ap.add_argument('--spec', type=float, default=0.3)
@@ -397,6 +398,11 @@ area('fill', 1.0, 1.0, 2.4 * k, (-0.9, -0.55, 0.25), (0.86, 0.9, 1.0))
 # thin rims behind the book: one outlines the spine, the other the page edge
 area('rim_l', 0.12, 0.7, 12 * k, (-0.38, 0.28, 0.45), (0.85, 0.9, 1.0), aim=Vector((-0.05, 0.0, 0.15)))
 area('rim_r', 0.12, 0.7, 10 * k, (0.42, 0.3, 0.4), (1.0, 0.94, 0.86), aim=Vector((0.05, 0.0, 0.12)))
+# a low bounce card on the left, just enough to bring the author's name on the spine out of the shade
+if args.spine > 0:
+    for tag, ob, rot in [b_ for b_ in books if b_[2] > 0]:
+        sp = ob.location + Vector((-W / 2 * math.cos(rot), -W / 2 * math.sin(rot), -H / 2 + 0.06))
+        area('bounce_' + tag, 0.22, 0.12, args.spine * k, (sp.x - 0.30, sp.y - 0.22, 0.05), (1.0, 0.93, 0.84), aim=sp)
 area('top', 0.4, 0.4, 1.1 * k, (0.0, 0.05, 0.75), (1.0, 0.97, 0.92))
 # a narrow beam running along the velvet, which is what shows its folds and sheen
 area('graze', 0.25, 1.0, 9 * k, (-0.95, YB - 0.04, 0.55), (0.8, 0.86, 1.0), aim=Vector((0.6, YB + 0.03, 0.3)), spread=math.radians(25))
