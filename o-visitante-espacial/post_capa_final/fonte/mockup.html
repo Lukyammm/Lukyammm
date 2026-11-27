@@ -1,0 +1,123 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Jost;font-weight:400;src:url(node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2)}
+@font-face{font-family:Jost;font-weight:500;src:url(node_modules/@fontsource/jost/files/jost-latin-500-normal.woff2)}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+body{background:
+  radial-gradient(ellipse 70% 55% at 50% 42%, #1b2038 0%, #10131f 55%, #07080d 100%);}
+#glow{position:absolute;left:0;top:0;width:1080px;height:1350px;
+  background:radial-gradient(circle at 84% 12%, rgba(225,45,45,.20) 0, rgba(225,45,45,.06) 9%, transparent 22%);}
+#star{position:absolute;width:12px;height:12px;border-radius:50%;left:901px;top:156px;
+  background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 40px 18px rgba(255,40,40,.18)}
+canvas{position:absolute;left:0;top:0}
+.head{position:absolute;left:56px;top:58px;width:960px}
+.kick{font-family:Jost;font-weight:500;font-size:24px;letter-spacing:.32em;color:#c9a45c;margin-bottom:16px}
+.title{font-family:Caslon;font-style:italic;font-size:41px;line-height:1.22;color:#f2eadb}
+@font-face{font-family:Caslon;font-style:italic;src:url(node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-italic.woff2)}
+.lab{position:absolute;font-family:Jost;font-weight:500;letter-spacing:.32em;font-size:26px;color:#c9a45c;text-align:center;width:400px}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="star"></div>
+<script type="module">
+import * as THREE from 'three';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+const q=new URLSearchParams(location.search);
+const sceneName=q.get('scene')||'en';
+const transparent=q.get('transparent')==='1', reflect=q.get('reflect')==='1';
+if(transparent)document.body.style.background='transparent';
+const W=1080,H=1350;
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(W,H);
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.VSMShadowMap;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+const scene=new THREE.Scene();
+const pmrem=new THREE.PMREMGenerator(renderer);
+scene.environment=pmrem.fromScene(new RoomEnvironment(),0.04).texture;
+
+const loader=new THREE.TextureLoader();
+const load=u=>new Promise(r=>loader.load(u,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();r(t)}));
+
+function pagesTex(vertical){
+  const c=document.createElement('canvas');c.width=1024;c.height=1024;const g=c.getContext('2d');
+  g.fillStyle='#ece3cf';g.fillRect(0,0,1024,1024);
+  for(let i=0;i<1024;i+=2){
+    const a=0.04+Math.random()*0.10;g.fillStyle=`rgba(90,70,40,${a})`;
+    if(vertical) g.fillRect(i,0,1,1024); else g.fillRect(0,i,1024,1);
+  }
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
+}
+async function book(name,w,h,d){
+  const [front,spine,back]=await Promise.all(['front','spine_wide','back'].map(p=>load(`src/${name}_${p}.png`)));
+  const cover=m=>new THREE.MeshPhysicalMaterial({map:m,roughness:0.5,clearcoat:0.35,clearcoatRoughness:0.38,envMapIntensity:0.55});
+  const pageSide=new THREE.MeshStandardMaterial({map:pagesTex(true),roughness:0.95,envMapIntensity:0.3});
+  const pageTop=new THREE.MeshStandardMaterial({map:pagesTex(false),roughness:0.95,envMapIntensity:0.3});
+  const g=new THREE.Group();
+  // page block slightly inset
+  const inset=0.06;
+  const pages=new THREE.Mesh(new THREE.BoxGeometry(w-inset,h-inset*2,d-0.05),[pageSide,pageSide,pageTop,pageTop,pageSide,pageSide]);
+  pages.position.x=inset/2;pages.castShadow=true;pages.receiveShadow=true;g.add(pages);
+  const t=0.025;
+  const fr=new THREE.Mesh(new THREE.BoxGeometry(w,h,t),[cover(front),cover(front),cover(front),cover(front),cover(front),cover(back)]);
+  fr.position.z=d/2-t/2;
+  // only +Z face shows the front art; make edges dark
+  const edge=new THREE.MeshStandardMaterial({color:0x14172a,roughness:0.6});
+  fr.material=[edge,edge,edge,edge,cover(front),edge];
+  fr.castShadow=true;fr.receiveShadow=true;g.add(fr);
+  const bk=new THREE.Mesh(new THREE.BoxGeometry(w,h,t),[edge,edge,edge,edge,edge,cover(back)]);
+  bk.position.z=-d/2+t/2;bk.castShadow=true;g.add(bk);
+  const sp=new THREE.Mesh(new THREE.BoxGeometry(t,h,d),[edge,cover(spine),edge,edge,edge,edge]);
+  sp.position.x=-w/2+t/2;sp.castShadow=true;g.add(sp);
+  return g;
+}
+const camera=new THREE.PerspectiveCamera(24,W/H,0.1,200);
+const key=new THREE.DirectionalLight(0xfff1df,2.6);key.position.set(-6,20,17);key.castShadow=true;
+key.shadow.mapSize.set(4096,4096);key.shadow.camera.left=-14;key.shadow.camera.right=14;key.shadow.camera.top=14;key.shadow.camera.bottom=-14;key.shadow.radius=14;key.shadow.blurSamples=24;key.shadow.bias=-0.0006;
+scene.add(key);
+const fill=new THREE.DirectionalLight(0x9fb0ff,0.45);fill.position.set(12,3,8);scene.add(fill);
+const rim=new THREE.DirectionalLight(0xffe2c0,1.4);rim.position.set(7,8,-12);scene.add(rim);
+scene.add(new THREE.AmbientLight(0x8890b0,0.25));
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.ShadowMaterial({opacity:0.5}));
+ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+
+function contact(x,z,ry,w,d){
+  const c=document.createElement('canvas');c.width=256;c.height=256;const g=c.getContext('2d');
+  const gr=g.createRadialGradient(128,128,10,128,128,128);gr.addColorStop(0,'rgba(0,0,0,0.85)');gr.addColorStop(0.5,'rgba(0,0,0,0.35)');gr.addColorStop(1,'rgba(0,0,0,0)');
+  g.fillStyle=gr;g.fillRect(0,0,256,256);
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(w,d),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthWrite:false}));
+  m.rotation.x=-Math.PI/2;m.rotation.z=ry;m.position.set(x,0.01,z);scene.add(m);
+}
+if(sceneName==='en'){
+  const TH=+(q.get('th')||1.3), ROT=+(q.get('rot')||0.62), CY=+(q.get('cy')||15.5);
+  const b=await book('en',6,9,TH);
+  b.rotation.y=ROT;
+  if(reflect){b.position.set(0.3,-4.5,0);b.scale.y=-1;}else{b.position.set(0.3,4.5,0);contact(0.3,0,-ROT,8.5,2.6);}
+  scene.add(b);
+  camera.position.set(0,CY,31);camera.lookAt(0,4.35,0);
+  document.getElementById('star').style.display='none';
+}else{
+  const pt=await book('pt',6,9,1.3), en=await book('en',6,9,1.3);
+  const P=[[pt,-3.6,-1.2,0.48,'BRASIL'],[en,3.5,0.6,-0.40,'EUA']];
+  for(const [b,x,z,r] of P){b.rotation.y=r;if(reflect){b.position.set(x,-4.5,z);b.scale.y=-1;}else{b.position.set(x,4.5,z);contact(x,z,-r,8.5,2.6);}scene.add(b);}
+  camera.position.set(0,14.5,44.5);camera.lookAt(0,5.6,0);camera.updateMatrixWorld();
+  document.getElementById('star').style.display='none';
+  const notext=q.get('notext')==='1';
+  if(!notext){const h=document.createElement('div');h.className='head';h.innerHTML='<div class="kick">BRASIL E EUA</div><div class="title">Mesmo disco, duas capas</div>';document.body.appendChild(h);}
+  for(const [b,x,z,r,txt] of P){
+    const v=new THREE.Vector3(x,0,z+1.2).project(camera);
+    console.log('LABEL',txt,Math.round((v.x+1)/2*W),Math.round((1-v.y)/2*H));
+    if(notext)continue;
+    const d=document.createElement('div');d.className='lab';d.textContent=txt;
+    d.style.left=((v.x+1)/2*W-200)+'px';d.style.top=((1-v.y)/2*H+40)+'px';document.body.appendChild(d);
+  }
+}
+if(transparent&&!reflect){ground.material.opacity=0.3;key.shadow.radius=26;key.shadow.blurSamples=32;}
+if(reflect){ground.visible=false;for(const L of [key,fill,rim])L.position.y*=-1;}
+renderer.render(scene,camera);
+await document.fonts.ready;
+window.__done=true;
+</script></body></html>
