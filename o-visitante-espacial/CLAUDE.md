@@ -2,6 +2,10 @@
 
 Esta pasta guarda o material de divulgação do livro no Instagram, feito em 27/11/2026: capas, stories, o carrossel da capa final e os scripts que geram as imagens. O projeto do livro inteiro (manuscrito, edições, regras, histórico) não está aqui. Ele está no Google Drive, em `03_Projetos_Literarios_VSE/`, com o `CLAUDE.md` e o `HISTORICO.md` de lá, e no repositório privado `Lukyammm/o-visitante-espacial`. Fato do livro se confere lá ou com o Lukyam, nunca de memória.
 
+## Próximo trabalho pedido
+
+O post da capa oficial, a da edição brasileira, "mais completo" que o da capa inglesa. O pedido é de 27/11/2026, e ele vai avisar quando quiser começar. Antes, leia [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md) e faça as perguntas de lá.
+
 ## Antes de mexer
 
 1. Leia o `README.md` desta pasta (índice e como refazer cada imagem) e o `DIARIO.md` (o que foi pedido, decidido e aprendido).

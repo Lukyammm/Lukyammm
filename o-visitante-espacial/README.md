@@ -128,6 +128,10 @@ O `00_visao_geral.jpg` mostra os seis juntos.
   - **Livro realista:** capa com espessura de papel, dobra arredondada na lombada e um vinco perto dela, miolo com linhas de página e cantos suavizados, acabamento fosco com textura leve. A luz principal vem da frente à direita e ilumina a capa, a lombada fica em sombra suave, duas luzes finas atrás desenham o contorno e uma luz rasante passa pelo veludo. As sombras saem do próprio render, suaves.
   - **Escolhida a opção A** (27/11/2026: "Gostei da opção A"). Ajuste: o nome do autor na lombada agora aparece de leve na meia-sombra (`--spine 2.2`, uma luz baixa de rebatimento). O slide 05 passou para o mesmo cenário (`--scene duo`).
 
+## Próximo trabalho
+
+- **Post da capa oficial, a da edição brasileira** (pedido de 27/11/2026, para depois): o plano, as perguntas e o material estão em [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md).
+
 ## Pontos para conferir
 
 - **Contracapa em inglês:** fala em "more than eleven million years later". Segundo o autor, isso não bate com a história. Vale revisar antes de imprimir.

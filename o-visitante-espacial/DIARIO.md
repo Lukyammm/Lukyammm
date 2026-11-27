@@ -97,6 +97,7 @@ Exemplo, com o pedido de hoje escrito assim: "Post de carrossel no feed sobre a 
 
 ## Pendências e próximos passos
 
+0. **Próximo trabalho pedido:** o post da capa oficial, a da edição brasileira, "mais completo". Ele vai pedir depois. O plano, as perguntas e o material estão em [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md).
 1. **Legenda do post da capa final.** Ainda não foi escrita. Partir de um rascunho dele.
 2. **Carrossel das capas:** 24 imagens para um limite de 20.
 3. **Ordem dos posts.** Sugestão: primeiro o post da capa final, depois os stories da evolução da capa e, por último, o carrossel com as capas antigas.
