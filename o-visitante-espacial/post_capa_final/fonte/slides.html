@@ -226,8 +226,9 @@ async function main(){
     div('head','As duas versões da capa',{left:'56px',top:'58px',width:'960px'});
     const cx1=+(q.get('px')||294), cy1=+(q.get('py')||1084), cx2=+(q.get('ex')||789), cy2=+(q.get('ey')||1125);
     const caps=[[cx1,cy1,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[cx2,cy2,'A americana é a placa de ouro, molhada e queimada']];
-    for(const [x,y,t] of caps){
-      const w=STYLE==='mao'?420:460;
+    const capW=[+(q.get('pw')||460), +(q.get('ew')||460)];
+    for(const [ci,[x,y,t]] of caps.entries()){
+      const w=STYLE==='mao'?420:capW[ci];
       const css={left:(x-w/2)+'px',top:y+'px',width:(w-(LOOK==='ficha'?36:LOOK==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
       if(LOOK==='edit')Object.assign(css,{padding:'14px 20px 16px',fontSize:'22px'});
       if(LOOK==='ficha')Object.assign(css,{fontSize:'23px'});
