@@ -9,6 +9,6 @@ const { chromium } = require('playwright');
   await page.goto(url);
   await page.waitForFunction(() => window.__done === true, null, { timeout: 120000 });
   await page.waitForTimeout(300);
-  await page.screenshot({ path: out });
+  await page.screenshot({ path: out, omitBackground: true });
   await browser.close();
 })();

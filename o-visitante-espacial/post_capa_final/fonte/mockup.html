@@ -25,6 +25,8 @@ import * as THREE from 'three';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 const q=new URLSearchParams(location.search);
 const sceneName=q.get('scene')||'en';
+const transparent=q.get('transparent')==='1', reflect=q.get('reflect')==='1';
+if(transparent)document.body.style.background='transparent';
 const W=1080,H=1350;
 const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -91,13 +93,15 @@ function contact(x,z,ry,w,d){
 }
 if(sceneName==='en'){
   const b=await book('en',6,9,0.81);
-  b.position.set(0.3,4.5,0);b.rotation.y=0.52;scene.add(b);contact(0.3,0,-0.52,8.5,2.6);
+  b.rotation.y=0.52;
+  if(reflect){b.position.set(0.3,-4.5,0);b.scale.y=-1;}else{b.position.set(0.3,4.5,0);contact(0.3,0,-0.52,8.5,2.6);}
+  scene.add(b);
   camera.position.set(0,12.5,31);camera.lookAt(0,4.35,0);
   document.getElementById('star').style.display='none';
 }else{
   const pt=await book('pt',6,9,0.85), en=await book('en',6,9,0.81);
   const P=[[pt,-3.6,-1.2,0.48,'BRASIL'],[en,3.5,0.6,-0.40,'EUA']];
-  for(const [b,x,z,r] of P){b.position.set(x,4.5,z);b.rotation.y=r;scene.add(b);contact(x,z,-r,8.5,2.6);}
+  for(const [b,x,z,r] of P){b.rotation.y=r;if(reflect){b.position.set(x,-4.5,z);b.scale.y=-1;}else{b.position.set(x,4.5,z);contact(x,z,-r,8.5,2.6);}scene.add(b);}
   camera.position.set(0,12.5,44.5);camera.lookAt(0,5.6,0);camera.updateMatrixWorld();
   document.getElementById('star').style.display='none';
   const notext=q.get('notext')==='1';
@@ -110,6 +114,8 @@ if(sceneName==='en'){
     d.style.left=((v.x+1)/2*W-200)+'px';d.style.top=((1-v.y)/2*H+40)+'px';document.body.appendChild(d);
   }
 }
+if(transparent&&!reflect){ground.material.opacity=0.3;key.shadow.radius=26;key.shadow.blurSamples=32;}
+if(reflect){ground.visible=false;for(const L of [key,fill,rim])L.position.y*=-1;}
 renderer.render(scene,camera);
 await document.fonts.ready;
 window.__done=true;

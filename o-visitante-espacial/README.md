@@ -100,7 +100,7 @@ Feito em 27/11/2026 a partir da capa aberta americana de 25-11 (a placa molhada 
 
 | Slide | O que mostra |
 |---|---|
-| 01 | O livro em 3D, com a lombada. A contracapa não aparece, porque o texto dela ainda fala em "eleven million years". |
+| 01 | O livro em 3D, com a lombada, num fundo azul de estúdio (não mais quase preto) e com o chão levemente molhado refletindo o livro, que lembra a placa molhada. A contracapa não aparece, porque o texto dela ainda fala em "eleven million years". Outras opções de fundo em `alternativas_de_fundo.jpg`. |
 | 02 | **O que é de verdade (1):** a placa com luz só nas gravuras do Disco de Ouro. Mostra como tocar (o disco visto de cima, com a agulha), quanto dura (o disco de lado e o tempo de um lado em binário, cerca de 1 hora) e como ver as fotos (o sinal que vira imagem). |
 | 03 | **O que é de verdade (2):** o mapa de 14 pulsares que aponta pro Sol e o átomo de hidrogênio, que é a unidade de tempo do disco. |
 | 04 | **O que é do livro:** Akaihi, a linha vermelha, molhado (o lago) e queimado (a entrada em Árret como bola de fogo, ainda soltando fumaça). |
@@ -114,7 +114,7 @@ O `00_visao_geral.jpg` mostra os seis juntos.
 - **Linha vermelha:** o slide não fala em rota. Diz só que ela não existe no disco da NASA e que o significado fica pro livro.
 - **Fontes das gravuras:** as explicações seguem a descrição da NASA/JPL para a capa do Golden Record. A arte da capa é uma versão estilizada, então a posição das gravuras não é igual à do disco real.
 - **Fontes do livro:** a contracapa (bola de fogo no lago de Árret, Akaihi apagando), o capítulo 1 (Áslan e o avô no lago) e o próprio autor (queimado = a entrada em Árret).
-- **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 (com `notext=1` sai sem texto e vira o fundo dos slides 1 e 5, em `bg/`). `slides.html` monta os slides com Courier Prime e aceita `st=ficha`, `st=mao` (Caveat) ou `st=edit` (Archivo). As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
+- **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 (com `notext=1` sai sem texto e vira o fundo do slide 5, em `bg/`). O slide 1 sai de dois renders com fundo transparente, `transparent=1` e `transparent=1&reflect=1` (o reflexo), juntados por `compose_bg.py` com a paleta `slate` (as outras são `ardosia_clara`, `pedra` e `crepusculo`). `slides.html` monta os slides com Courier Prime e aceita `st=ficha`, `st=mao` (Caveat) ou `st=edit` (Archivo). As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
 
 ## Pontos para conferir
 
