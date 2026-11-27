@@ -70,19 +70,23 @@ Cada rodada saiu de uma frase dele:
 
 Pedido: "faça a legenda desse post de maneira inteligente, né, com a minha linguagem, sem forçar muito também, para não parecer a mesma coisa, né? Tu fica usando como base como eu falo, mas aí tu fica só repetindo os mesmos padrões e não dá certo."
 
-Feito (`post_capa_final/legenda.txt`, esperando o OK dele):
+Primeira versão: a legenda complementava os slides em vez de repetir o que eles dizem (a placa existe de verdade, e o molhado, o queimado e a estrela são do livro) e terminava com a tradução do que cada slide diz, em inglês. Tinha 2.103 caracteres.
 
-- A legenda complementa os slides em vez de repetir o que eles dizem. Conta que a placa existe de verdade (é a que protege o Disco de Ouro, com um manual desenhado pela NASA), que o molhado, o queimado e a estrela vermelha são do livro e por que tem inglês no fim: o manual da NASA foi feito para "até um ET" entender sem língua nenhuma, e os comentários dele não.
-- Saíram os padrões que eu vinha repetindo: abrir com "Em 1977 a NASA mandou...", fechar cada parágrafo com um parêntese e kkk, e o "quem entende sabe". Ficou um kkk só, e as frases variam de tamanho.
-- No fim vem a parte em inglês, slide por slide, com a numeração dourada dos slides 2 e 3. O "kkk" dos slides virou "lol". A linha vermelha aparece porque está no slide 4, mas sem dizer o que ela é, como no slide.
-- São 2.103 caracteres, contados com Python. O limite do Instagram é 2.200. Não tem hashtag, mas cabem as 5 que o Instagram aceita, se ele quiser.
+Ele pediu mais curto: "pode ser consiso, afinal de contas a postagem já explica muito, e sobre o auxílio em inglês eu quero mais consiso, nada tão extenso, é algo bem resumido mesmo".
+
+Versão atual (`post_capa_final/legenda.txt`, esperando o OK dele):
+
+- Dois parágrafos curtos em português. O primeiro diz que a placa é a do Disco de Ouro e que o molhado, o queimado e a estrela vermelha são do livro. O segundo é a piada que explica o inglês: os desenhos da NASA "até um ET entende", os comentários dele nem tanto.
+- A parte em inglês é um resumo de três frases, não a tradução de cada slide, e fecha avisando que os slides estão em português ("sorry lol").
+- Saíram os padrões que eu vinha repetindo: abrir com "Em 1977 a NASA mandou...", fechar cada parágrafo com um parêntese e kkk, e o "quem entende sabe". Ficou um kkk só. Não fala da rota.
+- São 669 caracteres, contados com Python (o limite do Instagram é 2.200). Não tem hashtag, mas cabem as 5 que o Instagram aceita, se ele quiser.
 
 A parte em inglês foi ideia dele: "coloque no final, não sei como é o nome, mas algum tipo de apoio ao leitor. Quem é americano ou fala outra língua, dizer tipo assim, o que é que está dizendo em cada imagem... é como se fosse um bônus da legenda". Ele pediu para guardar como sugestão, não como regra: "Eu tô estudando se isso vale a pena, você vai me dizer se vale a pena, enfim, tudo que eu falo aqui também é uma conversa, quando for mandatório eu aviso."
 
 Minha opinião, para ele decidir:
 
 - **Vale testar.** O Instagram já oferece "Ver tradução" na legenda, mas não traduz o que está escrito dentro das imagens. Neste carrossel a explicação toda está nas imagens, então quem é de fora não entende nada sem a parte em inglês.
-- **Custa pouco.** É traduzir o texto que já está nos slides. Fica depois do "mais", então não atrapalha quem é daqui. E a legenda em texto o leitor de tela consegue ler, o texto da imagem não.
+- **Custa pouco.** São duas ou três frases. Fica depois do "mais", então não atrapalha quem é daqui. E a legenda em texto o leitor de tela consegue ler, o texto da imagem não.
 - **Nem sempre faz falta.** Em post sem texto na imagem, a tradução automática da legenda já resolve.
 - **Quem, não quantos.** A nota 39 da Matéria, no Drive, diz para escolher o idioma pensando em quem vai assistir, não em quantos. Aqui quem interessa é quem pode comprar *The Space Visitor* quando ele subir no KDP.
 - **Como saber se vale.** Depois de um mês, ver nos Insights de onde são os seguidores e se apareceu comentário ou mensagem em inglês. Se não aparecer ninguém de fora, a parte em inglês pode ficar só nos posts da edição americana.
@@ -96,7 +100,7 @@ Minha opinião, para ele decidir:
 
 ## Ideias em teste
 
-- **27/11/2026: parte em inglês no fim da legenda.** Ideia dele, ainda em avaliação, e não regra. O primeiro exemplo é a legenda do post da capa final (passo 7, com a minha opinião).
+- **27/11/2026: parte em inglês no fim da legenda.** Ideia dele, ainda em avaliação, e não regra. É um resumo curto, de duas ou três frases, e não a tradução de cada slide (ele: "é algo bem resumido mesmo"). O primeiro exemplo é a legenda do post da capa final (passo 7, com a minha opinião).
 
 ## O que se aprendeu (para as próximas vezes)
 
@@ -107,6 +111,7 @@ Minha opinião, para ele decidir:
 - **Fato do livro se confirma com ele.** A contracapa inglesa não vale como fonte da história.
 - **Ele pede curto e espera que se pense além.** Nesta conversa, o que foi além do pedido e ele aceitou: a divisão "de verdade" e "do livro", a estrela de Órion ligada à Akaihi, o apagão de 2019 na nota, o livro realista também no slide 5 e este diário.
 - **Usar o jeito dele não é repetir a fórmula.** As frases corridas, o kkk e o parêntese são traços dele, não um molde. Quando viraram molde, ele percebeu: "tu fica só repetindo os mesmos padrões e não dá certo". Variar a abertura e o fecho, e complementar os slides em vez de repetir.
+- **Se o post já explica, a legenda é curta.** Ele: "pode ser consiso, afinal de contas a postagem já explica muito".
 - **O que ele fala é conversa.** Ideia dele se registra como sugestão, com a frase e a data, e vem com a minha opinião sobre se vale a pena. Ele avisa quando algo é obrigatório.
 
 ## Como pedir da próxima vez (modelo)

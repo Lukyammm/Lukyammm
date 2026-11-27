@@ -125,10 +125,10 @@ O `00_visao_geral.jpg` mostra os seis juntos.
 
 ## Legenda do post da capa final (`post_capa_final/legenda.txt`)
 
-Escrita em 27/11/2026, falta o OK do autor. Tem 2.103 caracteres (o limite do Instagram é 2.200) e nenhuma hashtag. O arquivo tem só a legenda, pronta para copiar.
+Escrita em 27/11/2026, falta o OK do autor. Tem 669 caracteres (o limite do Instagram é 2.200) e nenhuma hashtag. O arquivo tem só a legenda, pronta para copiar. A primeira versão, com a tradução de cada slide, tinha 2.103 caracteres, e o autor pediu mais curta: "a postagem já explica muito".
 
-- **Em português:** conta que a placa existe de verdade (é a que protege o Disco de Ouro, com o manual desenhado da NASA) e que o molhado, o queimado e a estrela são do livro. Não fala da rota. Não abre com "Em 1977 a NASA mandou...", como as legendas anteriores, para não repetir a fórmula.
-- **Em inglês, no fim:** o que cada slide diz, com a numeração dourada dos slides 02 e 03. É uma ideia do autor ainda em teste, não regra. Faz falta aqui porque o Instagram traduz a legenda, mas não o texto dentro das imagens, e neste post a explicação está toda nas imagens.
+- **Em português:** conta que a placa existe de verdade (é a do Disco de Ouro) e que o molhado, o queimado e a estrela são do livro. Não fala da rota. Não abre com "Em 1977 a NASA mandou...", como as legendas anteriores, para não repetir a fórmula.
+- **Em inglês, no fim:** um resumo de três frases, que avisa que os slides estão em português. É uma ideia do autor ainda em teste, não regra, e ele quer curto ("é algo bem resumido mesmo"). Faz falta aqui porque o Instagram traduz a legenda, mas não o texto dentro das imagens.
 
 ## Ideias e decisões do slide 01
 
