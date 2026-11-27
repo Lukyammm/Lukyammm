@@ -4,4 +4,4 @@ Repositório de perfil do GitHub, com o portfólio (`portfolio/`) e o material d
 
 - Converse em português do Brasil.
 - Antes de mexer no material do livro, leia `o-visitante-espacial/CLAUDE.md`.
-- Texto que ele vai publicar sai no jeito dele, sem cara de IA. As regras estão no `CLAUDE.md` do livro e valem para qualquer texto dele.
+- Texto que ele vai publicar sai no jeito dele, sem cara de IA. As preferências dele estão no `CLAUDE.md` do livro e valem para qualquer texto dele. Ele avisa quando algo é obrigatório, o resto é conversa.

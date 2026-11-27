@@ -6,9 +6,9 @@ Registro da conversa de 27/11/2026 com o Claude na nuvem (claude.ai/code) sobre 
 
 - **Repositório** `Lukyammm/Lukyammm`, branch `claude/book-covers-instagram-stories-8xfvig` (PR #11, rascunho), pasta `o-visitante-espacial/`: todas as imagens, os scripts e este diário.
 - **Drive**, pasta do projeto `03_Projetos_Literarios_VSE/`:
-  - `04_Midia_e_Divulgacao/05_Instagram/`: este diário e as seis imagens do post da capa final, prontas para postar do celular.
-  - Na raiz do projeto, o arquivo `HISTORICO E CLAUDE - itens de 27-11 para mesclar.md`, com o registro no formato do `HISTORICO.md` e o resumo para "Onde o trabalho parou" do `CLAUDE.md`. O conector do Drive só cria arquivos novos e não edita os que já existem. Por isso a mescla fica para a próxima conversa no computador.
-- **Memória do Claude:** notas sobre a voz das legendas, o visual sem "cara de Claude" e os fatos do livro confirmados nesta conversa.
+  - `04_Midia_e_Divulgacao/05_Instagram/`: este diário, as seis imagens do post da capa final, prontas para postar do celular, e a legenda desse post (`LEGENDA - post da capa final.txt`).
+  - Na raiz do projeto, os arquivos `HISTORICO E CLAUDE - itens de 27-11 para mesclar.md` e `HISTORICO E CLAUDE - itens de 27-11 (parte 2) para mesclar.md`, com o registro no formato do `HISTORICO.md` e o que vai para o `CLAUDE.md`. O conector do Drive só cria arquivos novos e não edita os que já existem. Por isso a mescla fica para a próxima conversa no computador.
+- **Memória do Claude:** notas sobre a voz das legendas, o visual sem "cara de Claude", os fatos do livro confirmados nesta conversa, a ideia da parte em inglês na legenda e o aviso dele de que o que ele fala é conversa.
 
 ## Passo a passo
 
@@ -66,12 +66,37 @@ Cada rodada saiu de uma frase dele:
   - a luz principal vem da frente pela direita, com contraluz fina e sombra suave.
 - **Veludo com constelação (ideia dele).** O pedido: um fundo de veludo sutil em que "os pontos formando constelações... é meio que a iluminação do próprio tecido". Foram duas opções. Ele escolheu a A: cortina de veludo atrás e chão escuro molhado. A constelação é Órion, montada com as posições reais das estrelas, com a Betelgeuse levemente avermelhada, que é a Akaihi. Ajuste final: "meu nome na lateral do livro não ficou visível... mais assim desfocado pq representa a iluminação e sombra, mas mostra um pouco, sutil". Uma luz baixa de rebatimento deixa o nome aparecer de leve na meia-sombra. O mesmo livro e o mesmo cenário foram para o slide 5.
 
+### 7. Legenda do post da capa final
+
+Pedido: "faça a legenda desse post de maneira inteligente, né, com a minha linguagem, sem forçar muito também, para não parecer a mesma coisa, né? Tu fica usando como base como eu falo, mas aí tu fica só repetindo os mesmos padrões e não dá certo."
+
+Feito (`post_capa_final/legenda.txt`, esperando o OK dele):
+
+- A legenda complementa os slides em vez de repetir o que eles dizem. Conta que a placa existe de verdade (é a que protege o Disco de Ouro, com um manual desenhado pela NASA), que o molhado, o queimado e a estrela vermelha são do livro e por que tem inglês no fim: o manual da NASA foi feito para "até um ET" entender sem língua nenhuma, e os comentários dele não.
+- Saíram os padrões que eu vinha repetindo: abrir com "Em 1977 a NASA mandou...", fechar cada parágrafo com um parêntese e kkk, e o "quem entende sabe". Ficou um kkk só, e as frases variam de tamanho.
+- No fim vem a parte em inglês, slide por slide, com a numeração dourada dos slides 2 e 3. O "kkk" dos slides virou "lol". A linha vermelha aparece porque está no slide 4, mas sem dizer o que ela é, como no slide.
+- São 2.103 caracteres, contados com Python. O limite do Instagram é 2.200. Não tem hashtag, mas cabem as 5 que o Instagram aceita, se ele quiser.
+
+A parte em inglês foi ideia dele: "coloque no final, não sei como é o nome, mas algum tipo de apoio ao leitor. Quem é americano ou fala outra língua, dizer tipo assim, o que é que está dizendo em cada imagem... é como se fosse um bônus da legenda". Ele pediu para guardar como sugestão, não como regra: "Eu tô estudando se isso vale a pena, você vai me dizer se vale a pena, enfim, tudo que eu falo aqui também é uma conversa, quando for mandatório eu aviso."
+
+Minha opinião, para ele decidir:
+
+- **Vale testar.** O Instagram já oferece "Ver tradução" na legenda, mas não traduz o que está escrito dentro das imagens. Neste carrossel a explicação toda está nas imagens, então quem é de fora não entende nada sem a parte em inglês.
+- **Custa pouco.** É traduzir o texto que já está nos slides. Fica depois do "mais", então não atrapalha quem é daqui. E a legenda em texto o leitor de tela consegue ler, o texto da imagem não.
+- **Nem sempre faz falta.** Em post sem texto na imagem, a tradução automática da legenda já resolve.
+- **Quem, não quantos.** A nota 39 da Matéria, no Drive, diz para escolher o idioma pensando em quem vai assistir, não em quantos. Aqui quem interessa é quem pode comprar *The Space Visitor* quando ele subir no KDP.
+- **Como saber se vale.** Depois de um mês, ver nos Insights de onde são os seguidores e se apareceu comentário ou mensagem em inglês. Se não aparecer ninguém de fora, a parte em inglês pode ficar só nos posts da edição americana.
+
 ## Decisões
 
 - **27/11/2026: a legenda não fala da rota marcada.** Por quê: pedido dele. No slide 4 a linha vermelha aparece, mas o texto diz só que ela não existe no disco da NASA e que o significado fica pro livro.
 - **27/11/2026: tipografia editorial com riscos à mão.** Descartado: título espaçado com itálico (cara de IA), máquina de escrever e anotação só à mão. Quem decidiu: o Lukyam, "Eu gostei da terceira opção, use-a... com aspectos da segunda".
 - **27/11/2026: livro 3D fotorrealista no veludo, opção A.** Descartado: o livro em three.js ("feito em AutoCAD") e a opção B, com o veludo também no chão. Quem decidiu: o Lukyam, "Gostei da opção A".
 - **27/11/2026: Akaihi é a Betelgeuse.** Entrou como nota no slide 4. Quem decidiu: o Lukyam.
+
+## Ideias em teste
+
+- **27/11/2026: parte em inglês no fim da legenda.** Ideia dele, ainda em avaliação, e não regra. O primeiro exemplo é a legenda do post da capa final (passo 7, com a minha opinião).
 
 ## O que se aprendeu (para as próximas vezes)
 
@@ -81,6 +106,8 @@ Cada rodada saiu de uma frase dele:
 - **Luz é prioridade para ele.** Luz principal na capa, lombada em sombra suave, contraluz para separar do fundo e sombra sutil.
 - **Fato do livro se confirma com ele.** A contracapa inglesa não vale como fonte da história.
 - **Ele pede curto e espera que se pense além.** Nesta conversa, o que foi além do pedido e ele aceitou: a divisão "de verdade" e "do livro", a estrela de Órion ligada à Akaihi, o apagão de 2019 na nota, o livro realista também no slide 5 e este diário.
+- **Usar o jeito dele não é repetir a fórmula.** As frases corridas, o kkk e o parêntese são traços dele, não um molde. Quando viraram molde, ele percebeu: "tu fica só repetindo os mesmos padrões e não dá certo". Variar a abertura e o fecho, e complementar os slides em vez de repetir.
+- **O que ele fala é conversa.** Ideia dele se registra como sugestão, com a frase e a data, e vem com a minha opinião sobre se vale a pena. Ele avisa quando algo é obrigatório.
 
 ## Como pedir da próxima vez (modelo)
 
@@ -98,8 +125,8 @@ Exemplo, com o pedido de hoje escrito assim: "Post de carrossel no feed sobre a 
 ## Pendências e próximos passos
 
 0. **Próximo trabalho pedido:** o post da capa oficial, a da edição brasileira, "mais completo". Ele vai pedir depois. O plano, as perguntas e o material estão em [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md).
-1. **Legenda do post da capa final.** Ainda não foi escrita. Partir de um rascunho dele.
-2. **Carrossel das capas:** 24 imagens para um limite de 20.
+1. **Legenda do post da capa final.** Escrita em 27/11 (`post_capa_final/legenda.txt`), falta o OK dele.
+2. **Carrossel das capas:** 24 imagens para um limite de 20. A legenda desse carrossel tem 12 hashtags, e o Instagram aceita no máximo 5 desde dezembro de 2025.
 3. **Ordem dos posts.** Sugestão: primeiro o post da capa final, depois os stories da evolução da capa e, por último, o carrossel com as capas antigas.
 4. **Texto alternativo** (acessibilidade) para cada slide. Posso escrever.
 5. **Versão em vídeo (ideia):** a cena 3D já existe, e dá para fazer um reels curto com a câmera andando devagar em volta do livro e os brilhos do veludo piscando.

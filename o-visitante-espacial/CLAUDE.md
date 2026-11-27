@@ -4,7 +4,7 @@ Esta pasta guarda o material de divulgação do livro no Instagram, feito em 27/
 
 ## Próximo trabalho pedido
 
-O post da capa oficial, a da edição brasileira, "mais completo" que o da capa inglesa. O pedido é de 27/11/2026, e ele vai avisar quando quiser começar. Antes, leia [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md) e faça as perguntas de lá.
+O post da capa oficial, a da edição brasileira, "mais completo" que o da capa inglesa. O pedido é de 27/11/2026, e ele vai avisar quando quiser começar. Antes, leia [`A_FAZER_post_capa_oficial.md`](A_FAZER_post_capa_oficial.md) e faça as perguntas de lá. A legenda pode terminar com a parte em inglês (ideia em teste, veja abaixo).
 
 ## Antes de mexer
 
@@ -13,7 +13,10 @@ O post da capa oficial, a da edição brasileira, "mais completo" que o da capa 
 
 ## Como o Lukyam quer as coisas
 
-- **Texto no jeito dele.** Parta das palavras dele e mexa pouco. O tom, nas palavras dele: "irreverente sem ser rude e engraçado sem ser brega". Use frases corridas com vírgula e o comentário entre parênteses com kkk. Ele reconhece como IA: frase de efeito curta, título com metáfora, dois-pontos de revelação, slogan, pergunta-gancho e emoji. Hashtag só quando ele pede. Travessão não entra em texto de entrega (no romance, sim).
+São preferências que ele mostrou nas conversas, não regras fixas. Nas palavras dele (27/11/2026): "tudo que eu falo aqui também é uma conversa, quando for mandatório eu aviso". Quando ele trouxer uma ideia, registre como sugestão e diga se acha que vale a pena.
+
+- **Texto no jeito dele.** Parta das palavras dele e mexa pouco. O tom, nas palavras dele: "irreverente sem ser rude e engraçado sem ser brega". Ele escreve em frases corridas, com vírgula, e às vezes solta um comentário com kkk. Isso não é fórmula: em 27/11 ele avisou que eu estava "só repetindo os mesmos padrões". Varie a abertura, não reaproveite frases de legendas anteriores, use um kkk só quando couber e complemente os slides em vez de repetir o que eles dizem. Ele reconhece como IA: frase de efeito curta, título com metáfora, dois-pontos de revelação, slogan, pergunta-gancho e emoji. Hashtag só quando ele pede, e no máximo 5, o limite do Instagram desde dezembro de 2025. Travessão não entra em texto de entrega (no romance, sim).
+- **Ideia em teste: parte em inglês no fim da legenda.** Pedido de 27/11/2026, como sugestão: no fim da legenda, o que cada imagem diz em inglês, para quem é de fora ("eu não estou fazendo ainda conteúdo em inglês... só que eu quero ter também um suporte para quem falar"). Ele ainda está vendo se vale a pena. Proponha quando a imagem tiver texto, porque o Instagram traduz a legenda sozinho mas não o que está escrito na imagem. Quando a imagem não tiver texto, diga que não faz falta. A legenda inteira tem que caber em 2.200 caracteres. O primeiro exemplo está em `post_capa_final/legenda.txt`.
 - **Visual sem "cara de Claude".** Nada de título pequeno espaçado em cima de título grande em itálico, nem de caixa arredondada com borda dourada. O estilo aprovado é letra branca (Archivo) em caixa preta reta, número dourado e riscos à mão com traço de caneta (perfect-freehand).
 - **Realismo por foto ou por simulação de luz.** Quando ele diz que algo não parece real, troque de técnica: foto (Gemini) ou render físico (Blender). Não insista no desenho feito em código.
 - **Luz bonita, sombra sutil.** Luz principal na capa, lombada em meia-sombra (com o nome dele aparecendo de leve), contraluz fina e nada de preto total no fundo.

@@ -78,6 +78,8 @@ Escrita no tom do autor: irreverente sem ser rude, engraçado sem ser brega, cur
 >
 > #OVisitanteEspacial #TheSpaceVisitor #Voyager1 #DiscoDeOuro #GoldenRecord #FiccaoCientifica #ScienceFiction #LivroNacional #EscritorBrasileiro #CapaDeLivro #Bookstagram #Wattpad
 
+Desde dezembro de 2025 o Instagram aceita no máximo 5 hashtags por post. Antes de postar, escolher 5 dessas 12.
+
 Versão curta:
 
 > Em 1977 a NASA mandou um disco de ouro pro espaço pra quem achasse. Agora a Voyager 1 tá a 1 dia-luz da Terra e até hoje ninguém respondeu. Em O Visitante Espacial alguém achou kkk
@@ -120,6 +122,13 @@ O `00_visao_geral.jpg` mostra os seis juntos.
 - **Fontes das gravuras:** as explicações seguem a descrição da NASA/JPL para a capa do Golden Record. A arte da capa é uma versão estilizada, então a posição das gravuras não é igual à do disco real.
 - **Fontes do livro:** a contracapa (bola de fogo no lago de Árret, Akaihi apagando), o capítulo 1 (Áslan e o avô no lago) e o próprio autor (queimado = a entrada em Árret).
 - **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 (com `notext=1` sai sem texto e vira o fundo do slide 5, em `bg/`). O slide 1 sai de dois renders com fundo transparente, `transparent=1` e `transparent=1&reflect=1` (o reflexo), juntados por `compose_bg.py` com a paleta `slate` (as outras são `ardosia_clara`, `pedra` e `crepusculo`). `slides.html` monta os slides 2 a 6. A versão final usa `st=misto` (caixas editoriais com marcações à mão); também aceita `st=ficha` (Courier Prime), `st=mao` (Caveat) e `st=edit` (Archivo com linhas retas). As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`. As opções de veludo saem de `fonte/blender/book_scene.py` (Blender 5.3 como módulo Python, `pip install bpy`), com `--variant A` ou `--variant B`, e depois `fonte/blender/glints.py` coloca a constelação e os brilhos. As capas abertas que ele usa (`wrap_en.png`, `wrap_pt.png`) juntam verso, lombada alargada e frente.
+
+## Legenda do post da capa final (`post_capa_final/legenda.txt`)
+
+Escrita em 27/11/2026, falta o OK do autor. Tem 2.103 caracteres (o limite do Instagram é 2.200) e nenhuma hashtag. O arquivo tem só a legenda, pronta para copiar.
+
+- **Em português:** conta que a placa existe de verdade (é a que protege o Disco de Ouro, com o manual desenhado da NASA) e que o molhado, o queimado e a estrela são do livro. Não fala da rota. Não abre com "Em 1977 a NASA mandou...", como as legendas anteriores, para não repetir a fórmula.
+- **Em inglês, no fim:** o que cada slide diz, com a numeração dourada dos slides 02 e 03. É uma ideia do autor ainda em teste, não regra. Faz falta aqui porque o Instagram traduz a legenda, mas não o texto dentro das imagens, e neste post a explicação está toda nas imagens.
 
 ## Ideias e decisões do slide 01
 
