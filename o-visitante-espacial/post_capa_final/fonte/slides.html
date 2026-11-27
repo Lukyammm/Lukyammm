@@ -1,124 +1,190 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <style>
-@font-face{font-family:Jost;font-weight:400;src:url(node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2)}
-@font-face{font-family:Jost;font-weight:500;src:url(node_modules/@fontsource/jost/files/jost-latin-500-normal.woff2)}
-@font-face{font-family:Caslon;font-style:normal;src:url(node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-normal.woff2)}
-@font-face{font-family:Caslon;font-style:italic;src:url(node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-italic.woff2)}
-:root{--navy:#0e1120;--gold:#cfa65a;--cream:#f2eadb}
-html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:var(--navy)}
+@font-face{font-family:Courier Prime;font-weight:400;src:url(node_modules/@fontsource/courier-prime/files/courier-prime-latin-400-normal.woff2)}
+@font-face{font-family:Courier Prime;font-weight:700;src:url(node_modules/@fontsource/courier-prime/files/courier-prime-latin-700-normal.woff2)}
+@font-face{font-family:Caveat;font-weight:500;src:url(node_modules/@fontsource/caveat/files/caveat-latin-500-normal.woff2)}
+@font-face{font-family:Caveat;font-weight:700;src:url(node_modules/@fontsource/caveat/files/caveat-latin-700-normal.woff2)}
+@font-face{font-family:Archivo;font-weight:400;src:url(node_modules/@fontsource/archivo/files/archivo-latin-400-normal.woff2)}
+@font-face{font-family:Archivo;font-weight:600;src:url(node_modules/@fontsource/archivo/files/archivo-latin-600-normal.woff2)}
+@font-face{font-family:Archivo;font-weight:800;src:url(node_modules/@fontsource/archivo/files/archivo-latin-800-normal.woff2)}
+@font-face{font-family:Archivo;font-weight:900;src:url(node_modules/@fontsource/archivo/files/archivo-latin-900-normal.woff2)}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:#0e1120}
 #stage{position:absolute;inset:0;overflow:hidden}
 svg{position:absolute;left:0;top:0}
-.head{position:absolute;left:56px;top:58px;width:960px}
-.kick{font-family:Jost;font-weight:500;font-size:24px;letter-spacing:.32em;color:var(--gold);margin-bottom:16px}
-.title{font-family:Caslon;font-style:italic;font-size:41px;line-height:1.22;color:var(--cream)}
-.box{position:absolute;background:rgba(9,11,21,.80);border:1.5px solid rgba(207,166,90,.55);border-radius:16px;padding:17px 22px 19px;
-  box-shadow:0 10px 30px rgba(0,0,0,.45);backdrop-filter:blur(5px)}
-.box .t{font-family:Jost;font-weight:500;font-size:22px;letter-spacing:.22em;color:var(--gold);margin-bottom:7px}
-.box .d{font-family:Caslon;font-size:27px;line-height:1.3;color:var(--cream)}
-.num{display:inline-block;margin-right:10px;color:var(--cream);opacity:.75}
-.bigk{font-family:Jost;font-weight:500;font-size:24px;letter-spacing:.32em;color:var(--gold);text-align:center}
+.head,.lab,.big,.par{position:absolute}
+/* ficha: typewriter on paper slips */
+.st-ficha .head{font:400 34px/1.36 'Courier Prime';color:#ece4d3}
+.st-ficha .lab{font:400 26px/1.34 'Courier Prime';color:#16171b;background-color:#ebe3d1;padding:14px 18px 16px;border-radius:2px;
+  box-shadow:0 10px 24px rgba(0,0,0,.5);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)' opacity='.35'/></svg>")}
+.st-ficha .big{font:700 128px/1 'Courier Prime';color:#ece4d3;letter-spacing:-.02em}
+.st-ficha .par{font:400 30px/1.42 'Courier Prime';color:#ece4d3}
+/* mao: handwritten notes */
+.st-mao .head{font:700 60px/1.0 Caveat;color:#f7f2e8;text-shadow:0 2px 4px rgba(0,0,0,.6)}
+.st-mao .lab{font:500 41px/1.04 Caveat;color:#f7f2e8;text-shadow:0 2px 3px rgba(0,0,0,.9),0 0 16px rgba(0,0,0,.8),0 0 4px rgba(0,0,0,.9)}
+.st-mao .big{font:700 170px/1 Caveat;color:#f7f2e8}
+.st-mao .par{font:500 48px/1.1 Caveat;color:#f7f2e8}
+/* edit: grotesk, numbered */
+.st-edit .head{font:800 42px/1.1 Archivo;color:#fff;letter-spacing:-.012em}
+.st-edit .lab{font:400 24px/1.32 Archivo;color:#f1eee8;background:rgba(7,9,16,.88);padding:16px 20px 18px 74px;border-radius:0}
+.st-edit .lab .n{position:absolute;left:18px;top:15px;width:40px;height:40px;border-radius:50%;background:#dcae57;color:#0b0d16;font:800 22px/40px Archivo;text-align:center}
+.st-edit .big{font:900 150px/1 Archivo;color:#fff;letter-spacing:-.035em}
+.st-edit .par{font:400 32px/1.36 Archivo;color:#e9e6df}
 </style></head><body><div id="stage"></div>
 <script>
 const NS='http://www.w3.org/2000/svg';
 const W=1080,H=1350;
+const q=new URLSearchParams(location.search);
+const STYLE=q.get('st')||'ficha', n=+(q.get('n')||2);
+document.body.classList.add('st-'+STYLE);
 const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
-
-const NASA={img:'src/en_front.png',iw:1800,ih:2700,s:0.6545,cx:0,cy:989,oy:230};
-const SLIDES={
- 2:{...NASA,
-   head:['O QUE É DE VERDADE','Tudo isso tá gravado no disco que a NASA mandou nas Voyager, em 1977'],
-   spots:[[110,595,230,205],[790,560,240,165],[730,1012,265,130]],
-   labels:[
-    {x:36,y:262,w:470,t:'COMO TOCAR',d:'O disco visto de cima, com a agulha no ponto certo pra começar',side:'bottom',at:262,a:[262,500]},
-    {x:585,y:712,w:460,t:'QUANTO TEMPO DURA',d:'O disco de lado. Os riscos são um número em binário: o tempo de um lado, cerca de 1 hora',side:'top',at:908,a:[908,531]},
-    {x:560,y:1150,w:480,t:'COMO VER AS FOTOS',d:'O sinal que vira imagem, linha por linha, tipo TV antiga',side:'top',at:650,a:[650,1090]},
-   ]},
- 3:{...NASA,
-   head:['O QUE É DE VERDADE','E tem até o endereço da Terra'],
-   spots:[[150,1170,360,265],[835,1237,190,100]],
-   labels:[
-    {x:36,y:700,w:470,t:'ONDE A GENTE MORA',d:'Um mapa de 14 pulsares que aponta pro Sol. É o endereço da Terra na galáxia',side:'bottom',at:70,a:[70,1140]},
-    {x:560,y:880,w:480,t:'A RÉGUA DO UNIVERSO',d:'O átomo de hidrogênio. O tempo dele é a unidade de medida de tudo no disco',side:'bottom',at:835,a:[835,1237]},
-   ]},
- 6:{closer:true,img:'src/en_front.png',iw:1800,ih:2700,s:0.6,cx:0,cy:0,oy:0,labels:[],head:['','']},
- 4:{img:'src/en_front_clean.png',iw:1800,ih:2700,s:0.9,cx:600,cy:380,oy:0,dim:0.92,
-   headW:600,head:['O QUE É DO LIVRO','E o que aconteceu com ele quando chegou em Árret'],
-   labels:[
-    {x:530,y:345,w:510,t:'AKAIHI',d:'A estrela vermelha que ilumina Árret. E que tá começando a apagar',side:'top',at:902,a:[902,261],r:20},
-    {x:595,y:722,w:430,t:'A LINHA VERMELHA',d:'Essa não tem no disco da NASA. O que ela marca, só lendo pra saber',side:'left',at:745,a:[485,745]},
-    {x:24,y:700,w:340,t:'MOLHADO',d:'Caiu num lago, bem na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
-    {x:300,y:1192,w:520,t:'QUEIMADO',d:'Entrou em Árret como uma bola de fogo e ainda tá soltando fumaça',side:'right',at:1250,a:[962,1218],r:18},
-   ]},
-};
-const n=+(new URLSearchParams(location.search).get('n')||2);
-const C=SLIDES[n];
 const st=document.getElementById('stage');
-if(C.closer){
-  const svg=el('svg',{width:W,height:H},st);const defs=el('defs',{},svg);
-  const cp=el('clipPath',{id:'cc'},defs);el('rect',{x:0,y:960,width:W,height:H},cp);
-  el('image',{href:C.img,x:0,y:1010-820*C.s,width:C.iw*C.s,height:C.ih*C.s,preserveAspectRatio:'none',style:'filter:brightness(.9)','clip-path':'url(#cc)'},svg);
-  const lg=el('linearGradient',{id:'f2',x1:0,y1:0,x2:0,y2:1},defs);
-  el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
-  el('rect',{x:0,y:958,width:W,height:150,fill:'url(#f2)'},svg);
-  const star=document.createElement('div');star.style.cssText='position:absolute;left:954px;top:182px;width:13px;height:13px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 46px 20px rgba(255,40,40,.16)';st.appendChild(star);
-  const t=document.createElement('div');t.style.cssText='position:absolute;left:90px;top:300px;width:900px;text-align:center';
-  t.innerHTML=`<div class="bigk">18 DE NOVEMBRO DE 2026</div>
-  <div style="font-family:Caslon;font-style:italic;font-size:150px;line-height:1;color:#f2eadb;margin:34px 0 40px">1 dia-luz</div>
-  <div style="font-family:Caslon;font-size:35px;line-height:1.38;color:#f2eadb;opacity:.92">A Voyager 1 chegou a 1 dia-luz da Terra. Uma mensagem daqui leva 24 horas pra chegar lá, é a coisa mais longe que a gente já arremessou.</div>
-  <div class="bigk" style="margin-top:44px;font-size:22px;line-height:1.7">O DISCO TÁ COM ELA.<br>ATÉ HOJE NINGUÉM RESPONDEU.</div>`;
-  st.appendChild(t);
-  document.fonts.ready.then(()=>{const im=new Image();im.onload=()=>setTimeout(()=>window.__done=true,400);im.src=C.img;});
-  throw 'closer';
-}
 const svg=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},st);
 const defs=el('defs',{},svg);
-const blur=el('filter',{id:'soft',x:'-50%',y:'-50%',width:'200%',height:'200%'},defs);el('feGaussianBlur',{stdDeviation:38},blur);
+const overlay=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`,style:'z-index:3'},st);
 const sh=el('filter',{id:'sh',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feDropShadow',{dx:0,dy:0,stdDeviation:2.2,'flood-color':'#000','flood-opacity':.85},sh);
-const ix=-C.cx*C.s, iy=C.oy-C.cy*C.s, iw=C.iw*C.s, ih=C.ih*C.s;
-const imgA={href:C.img,x:ix,y:iy,width:iw,height:ih,preserveAspectRatio:'none','clip-path':'url(#cl)'};
-const cp=el('clipPath',{id:'cl'},defs);el('rect',{x:0,y:C.oy,width:W,height:H-C.oy},cp);
-if(C.spots){
-  const g=el('g',{},svg);
-  el('image',{...imgA,style:'filter:brightness(.32) saturate(.7)'},g);
-  const m=el('mask',{id:'spot',maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H},defs);
-  el('rect',{x:0,y:0,width:W,height:H,fill:'#000'},m);
-  const mg=el('g',{filter:'url(#soft)'},m);
-  for(const [x,y,rx,ry] of C.spots) el('ellipse',{cx:x,cy:y,rx,ry,fill:'#fff'},mg);
-  el('image',{...imgA,mask:'url(#spot)'},svg);
-}else{
-  el('image',{...imgA,style:`filter:brightness(${C.dim||1})`},svg);
-}
-if(C.oy>0){
-  const lg=el('linearGradient',{id:'hg',x1:0,y1:0,x2:0,y2:1},defs);
-  el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
-  el('rect',{x:0,y:C.oy-2,width:W,height:200,fill:'url(#hg)'},svg);
-}
-// header
-const hd=document.createElement('div');hd.className='head';
-if(C.headW)hd.style.width=C.headW+'px';
-hd.innerHTML=`<div class="kick">${C.head[0]}</div><div class="title">${C.head[1]}</div>`;
-st.appendChild(hd);
-const lines=el('g',{filter:'url(#sh)'},svg);
-document.fonts.ready.then(()=>{
-  for(const L of C.labels){
-    const b=document.createElement('div');b.className='box';
-    b.style.left=L.x+'px';b.style.top=L.y+'px';b.style.width=(L.w-44)+'px';
-    b.innerHTML=`<div class="t">${L.t}</div><div class="d">${L.d}</div>`;st.appendChild(b);
-    const r=b.getBoundingClientRect();
-    let p;
-    if(L.side==='bottom')p=[L.at,r.bottom];else if(L.side==='top')p=[L.at,r.top];
-    else if(L.side==='left')p=[r.left,L.at];else p=[r.right,L.at];
-    const [ax,ay]=L.a, rr=L.r||11;
-    // stop the line at the ring
-    const dx=ax-p[0],dy=ay-p[1],len=Math.hypot(dx,dy);
-    const ex=ax-dx/len*rr, ey=ay-dy/len*rr;
-    el('line',{x1:p[0],y1:p[1],x2:ex,y2:ey,stroke:'#f2eadb','stroke-width':2.4,'stroke-linecap':'round'},lines);
-    el('circle',{cx:p[0],cy:p[1],r:4.5,fill:'#cfa65a'},lines);
-    el('circle',{cx:ax,cy:ay,r:rr,fill:'none',stroke:'#f2eadb','stroke-width':2.6},lines);
-    el('circle',{cx:ax,cy:ay,r:3.6,fill:'#f2eadb'},lines);
+const od=el('defs',{},overlay);const sh2=el('filter',{id:'sh2',x:'-20%',y:'-20%',width:'140%',height:'140%'},od);el('feDropShadow',{dx:0,dy:1,stdDeviation:2.4,'flood-color':'#000','flood-opacity':.9},sh2);
+const lines=el('g',{filter:'url(#sh2)'},overlay);
+
+const NASA={img:'src/en_front.png',iw:1800,ih:2700,s:0.6545,cx:0,cy:989,oy:230};
+const T={
+ 2:{...NASA,head:'Os desenhos da placa existem de verdade, estão na capa do disco de ouro que a NASA mandou nas Voyager em 1977',
+   spots:[[110,595,230,205],[790,560,240,165],[730,1012,265,130]],
+   labels:[
+    {k:1,x:36,y:258,w:470,d:'O disco visto de cima com a agulha, mostrando onde ela tem que começar a tocar',side:'bottom',at:262,a:[262,500]},
+    {k:2,x:560,y:700,w:490,d:'O disco de lado, e esses risquinhos são um número em binário com o tempo de um lado (mais ou menos 1 hora)',side:'top',at:908,a:[908,531]},
+    {k:3,x:560,y:1140,w:490,d:'Ensina a transformar o sinal do disco em imagem, linha por linha, como numa TV antiga',side:'top',at:650,a:[650,1090]},
+   ]},
+ 3:{...NASA,head:'E essas duas também estão no disco original',
+   spots:[[150,1170,360,265],[835,1237,190,100]],
+   labels:[
+    {k:4,x:36,y:670,w:500,d:'Um mapa de 14 pulsares, que são estrelas que piscam num ritmo exato, as linhas saem do Sol, então é basicamente o endereço da Terra',side:'bottom',at:70,a:[70,1140]},
+    {k:5,x:560,y:860,w:490,d:'O átomo de hidrogênio, o mais comum do universo, que serve de unidade de tempo pra tudo que tá no disco',side:'bottom',at:835,a:[835,1237]},
+   ]},
+ 4:{img:'src/en_front_clean.png',iw:1800,ih:2700,s:0.9,cx:600,cy:380,oy:0,
+   head:'Agora o que é do livro',
+   mspots:[[902,261,140,110],[485,745,170,150],[314,606,140,120],[962,1218,190,170],[300,980,150,300]],
+   labels:[
+    {k:'',x:530,y:340,w:510,d:'Essa é Akaihi, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
+    {k:'',x:580,y:715,w:470,d:'Essa linha vermelha não existe no disco da NASA, o que ela significa eu não vou contar (lê o livro kkk)',side:'left',at:745,a:[485,745]},
+    {k:'',x:20,y:680,w:385,d:'Molhada porque caiu num lago, na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
+    {k:'',x:290,y:1178,w:530,d:'A placa tá queimada de quando a Voyager entrou em Árret, dá pra ver até a fumaça',side:'right',at:1240,a:[962,1218],r:18},
+   ]},
+};
+// per-style tweaks of positions (handwriting has no box, so it needs its own room)
+const MAO={
+ 2:{0:{x:40,y:258,w:520},1:{x:600,y:700,w:450},2:{x:560,y:1150,w:490}},
+ 3:{0:{x:40,y:690,w:470},1:{x:560,y:880,w:480}},
+ 4:{0:{x:520,y:330,w:520},1:{x:600,y:720,w:440},2:{x:20,y:690,w:350},3:{x:290,y:1180,w:540}},
+};
+function photo(C,spots,base){
+  const ix=-C.cx*C.s, iy=C.oy-C.cy*C.s, iw=C.iw*C.s, ih=C.ih*C.s;
+  const cp=el('clipPath',{id:'cl'},defs);el('rect',{x:0,y:C.oy,width:W,height:H-C.oy},cp);
+  const A={href:C.img,x:ix,y:iy,width:iw,height:ih,preserveAspectRatio:'none','clip-path':'url(#cl)'};
+  if(spots){
+    el('image',{...A,style:`filter:brightness(${base}) saturate(.7)`},svg);
+    const bl=el('filter',{id:'soft',x:'-50%',y:'-50%',width:'200%',height:'200%'},defs);el('feGaussianBlur',{stdDeviation:38},bl);
+    const m=el('mask',{id:'spot',maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H},defs);
+    el('rect',{x:0,y:0,width:W,height:H,fill:'#000'},m);
+    const mg=el('g',{filter:'url(#soft)'},m);
+    for(const [x,y,rx,ry] of spots) el('ellipse',{cx:x,cy:y,rx,ry,fill:'#fff'},mg);
+    el('image',{...A,mask:'url(#spot)'},svg);
+  }else el('image',A,svg);
+  if(C.oy>0){
+    const lg=el('linearGradient',{id:'hg',x1:0,y1:0,x2:0,y2:1},defs);
+    el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
+    el('rect',{x:0,y:C.oy-2,width:W,height:200,fill:'url(#hg)'},svg);
   }
-  // wait for images
-  Promise.all([...document.querySelectorAll('image')].map(i=>new Promise(res=>{const im=new Image();im.onload=res;im.src=i.getAttribute('href')}))).then(()=>setTimeout(()=>window.__done=true,400));
-});
+}
+function div(cls,html,css){const d=document.createElement('div');d.className=cls;d.innerHTML=html;Object.assign(d.style,css);st.appendChild(d);return d}
+// seeded wobble so renders are stable
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+function handLine(p,a,stop){
+  const dx=a[0]-p[0],dy=a[1]-p[1],L=Math.hypot(dx,dy);
+  const ex=a[0]-dx/L*stop, ey=a[1]-dy/L*stop;
+  const nx=-dy/L,ny=dx/L,bend=(rnd()<.5?-1:1)*Math.min(40,L*.14);
+  const cx=(p[0]+ex)/2+nx*bend, cy=(p[1]+ey)/2+ny*bend;
+  el('path',{d:`M${p[0]},${p[1]} Q${cx},${cy} ${ex},${ey}`,fill:'none',stroke:'#f7f2e8','stroke-width':3.4,'stroke-linecap':'round'},lines);
+  // arrow head along the tangent at the end
+  const tx=ex-cx,ty=ey-cy,tl=Math.hypot(tx,ty),ux=tx/tl,uy=ty/tl;
+  for(const s of [1,-1]){
+    const ang=s*0.5,c=Math.cos(ang),si=Math.sin(ang);
+    const bx=-(ux*c-uy*si)*20,by=-(ux*si+uy*c)*20;
+    el('path',{d:`M${ex},${ey} l${bx},${by}`,stroke:'#f7f2e8','stroke-width':3.4,'stroke-linecap':'round',fill:'none'},lines);
+  }
+}
+function handCircle(a,r){
+  const pts=[];const a0=rnd()*6.28;
+  for(let i=0;i<=26;i++){const t=a0+i/24*6.28*1.06;const rr=r*(1+(rnd()-.5)*.08);pts.push([a[0]+Math.cos(t)*rr*1.12,a[1]+Math.sin(t)*rr*.92])}
+  el('path',{d:'M'+pts.map(p=>p.join(',')).join(' L'),fill:'none',stroke:'#f7f2e8','stroke-width':3.2,'stroke-linecap':'round','stroke-linejoin':'round'},lines);
+}
+function connector(L,r){
+  let p;
+  if(L.side==='bottom')p=[L.at,r.bottom];else if(L.side==='top')p=[L.at,r.top];
+  else if(L.side==='left')p=[r.left,L.at];else p=[r.right,L.at];
+  const [ax,ay]=L.a, rr=L.r||11;
+  if(STYLE==='mao'){
+    const cr=(L.r||14)+10;handCircle(L.a,cr);
+    const gap=STYLE==='mao'?10:0;
+    const pp=L.side==='bottom'?[p[0],p[1]+gap]:L.side==='top'?[p[0],p[1]-gap]:L.side==='left'?[p[0]-gap,p[1]]:[p[0]+gap,p[1]];
+    handLine(pp,L.a,cr+6);return;
+  }
+  const dx=ax-p[0],dy=ay-p[1],len=Math.hypot(dx,dy),ex=ax-dx/len*rr,ey=ay-dy/len*rr;
+  const col=STYLE==='edit'?'#dcae57':'#efe7d6';
+  el('line',{x1:p[0],y1:p[1],x2:ex,y2:ey,stroke:col,'stroke-width':2.4,'stroke-linecap':'round'},lines);
+  el('circle',{cx:ax,cy:ay,r:rr,fill:'none',stroke:col,'stroke-width':2.6},lines);
+  el('circle',{cx:ax,cy:ay,r:3.6,fill:col},lines);
+}
+function labels(C){
+  C.labels.forEach((L0,i)=>{
+    const L={...L0,...((STYLE==='mao'&&MAO[n]&&MAO[n][i])||{})};
+    const html=STYLE==='edit'&&L.k!==''?`<span class="n">${L.k}</span>${L.d}`:L.d;
+    const pad=STYLE==='ficha'?36:STYLE==='edit'?(L.k!==''?94:40):0;
+    const b=div('lab',html,{left:L.x+'px',top:L.y+'px',width:(L.w-pad)+'px',zIndex:2});
+    if(STYLE==='edit'&&L.k==='')b.style.paddingLeft='20px';
+    connector(L,b.getBoundingClientRect());
+  });
+}
+function finish(imgs){
+  document.fonts.ready.then(()=>Promise.all(imgs.map(u=>new Promise(r=>{const i=new Image();i.onload=r;i.src=u})))).then(()=>setTimeout(()=>window.__done=true,400));
+}
+async function main(){
+  await document.fonts.ready;
+  if(n===1){el('image',{href:'bg/en.png',x:0,y:0,width:W,height:H},svg);return finish(['bg/en.png'])}
+  if(n===5){
+    el('image',{href:'bg/duo.png',x:0,y:0,width:W,height:H},svg);
+    div('head','As duas versões da capa',{left:'56px',top:'58px',width:'960px'});
+    const caps=[[291,1092,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[792,1128,'A americana é a placa de ouro, molhada e queimada']];
+    for(const [x,y,t] of caps){
+      const w=STYLE==='mao'?420:460;
+      const css={left:(x-w/2)+'px',top:y+'px',width:(w-(STYLE==='ficha'?36:STYLE==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
+      if(STYLE==='edit')Object.assign(css,{padding:'14px 20px 16px',fontSize:'22px'});
+      if(STYLE==='ficha')Object.assign(css,{fontSize:'23px'});
+      div('lab',t,css);
+    }
+    return finish(['bg/duo.png']);
+  }
+  if(n===6){
+    const C={img:'src/en_front.png',iw:1800,ih:2700,s:0.6};
+    const cp=el('clipPath',{id:'cc'},defs);el('rect',{x:0,y:960,width:W,height:H},cp);
+    el('image',{href:C.img,x:0,y:1010-820*C.s,width:C.iw*C.s,height:C.ih*C.s,preserveAspectRatio:'none',style:'filter:brightness(.9)','clip-path':'url(#cc)'},svg);
+    const lg=el('linearGradient',{id:'f2',x1:0,y1:0,x2:0,y2:1},defs);
+    el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
+    el('rect',{x:0,y:958,width:W,height:150,fill:'url(#f2)'},svg);
+    const star=document.createElement('div');star.style.cssText='position:absolute;left:954px;top:182px;width:13px;height:13px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 46px 20px rgba(255,40,40,.16)';st.appendChild(star);
+    div('big','1 dia-luz',{left:'80px',top:STYLE==='mao'?'250px':'290px'});
+    div('par','No dia 18 de novembro de 2026 a Voyager 1 chegou a 1 dia-luz da Terra, ou seja, uma mensagem daqui leva 24 horas pra chegar lá, e o disco de ouro tá com ela até hoje',
+      {left:'84px',top:STYLE==='mao'?'450px':'470px',width:STYLE==='ficha'?'900px':'880px'});
+    return finish([C.img]);
+  }
+  const C=T[n];
+  let spots=C.spots, base=.32;
+  if(n===4&&STYLE==='mao'){spots=C.mspots;base=.5}
+  photo(C,spots,base);
+  div('head',C.head,{left:'56px',top:'58px',width:n===4?'640px':'968px'});
+  labels(C);
+  finish([C.img]);
+}
+main();
 </script></body></html>

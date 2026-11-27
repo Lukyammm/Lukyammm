@@ -100,9 +100,12 @@ if(sceneName==='en'){
   for(const [b,x,z,r] of P){b.position.set(x,4.5,z);b.rotation.y=r;scene.add(b);contact(x,z,-r,8.5,2.6);}
   camera.position.set(0,12.5,44.5);camera.lookAt(0,5.6,0);camera.updateMatrixWorld();
   document.getElementById('star').style.display='none';
-  const h=document.createElement('div');h.className='head';h.innerHTML='<div class="kick">BRASIL E EUA</div><div class="title">Mesmo disco, duas capas</div>';document.body.appendChild(h);
+  const notext=q.get('notext')==='1';
+  if(!notext){const h=document.createElement('div');h.className='head';h.innerHTML='<div class="kick">BRASIL E EUA</div><div class="title">Mesmo disco, duas capas</div>';document.body.appendChild(h);}
   for(const [b,x,z,r,txt] of P){
     const v=new THREE.Vector3(x,0,z+1.2).project(camera);
+    console.log('LABEL',txt,Math.round((v.x+1)/2*W),Math.round((1-v.y)/2*H));
+    if(notext)continue;
     const d=document.createElement('div');d.className='lab';d.textContent=txt;
     d.style.left=((v.x+1)/2*W-200)+'px';d.style.top=((1-v.y)/2*H+40)+'px';document.body.appendChild(d);
   }

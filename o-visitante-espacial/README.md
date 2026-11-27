@@ -109,10 +109,12 @@ Feito em 27/11/2026 a partir da capa aberta americana de 25-11 (a placa molhada 
 
 O `00_visao_geral.jpg` mostra os seis juntos.
 
-- **Linha vermelha:** o slide não fala em rota. Diz só que ela não existe no disco da NASA e que o que ela marca só lendo pra saber.
+- **Tipografia (2ª versão):** os textos estão em fonte de máquina de escrever (Courier Prime), em etiquetas de papel, como um documento da NASA de 1977. A 1ª versão, com título pequeno espaçado em cima e serifa em itálico embaixo, foi trocada porque tinha cara de feito por IA. O `alternativas_de_fonte.jpg` mostra a escolhida (em cima) e duas alternativas: anotação à mão e editorial com números.
+- **Escrita (2ª versão):** os textos foram reescritos no jeito do autor, com frases corridas com vírgula e o aparte entre parênteses com kkk. Saíram as frases de efeito, os títulos com metáfora, os dois-pontos de revelação e o slogan. As partes "molhada" e "queimada" e a legenda da capa brasileira usam as palavras do próprio autor.
+- **Linha vermelha:** o slide não fala em rota. Diz só que ela não existe no disco da NASA e que o significado fica pro livro.
 - **Fontes das gravuras:** as explicações seguem a descrição da NASA/JPL para a capa do Golden Record. A arte da capa é uma versão estilizada, então a posição das gravuras não é igual à do disco real.
 - **Fontes do livro:** a contracapa (bola de fogo no lago de Árret, Akaihi apagando), o capítulo 1 (Áslan e o avô no lago) e o próprio autor (queimado = a entrada em Árret).
-- **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 e `slides.html` monta os slides com as fontes Jost e Libre Caslon. As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
+- **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 (com `notext=1` sai sem texto e vira o fundo dos slides 1 e 5, em `bg/`). `slides.html` monta os slides com Courier Prime e aceita `st=ficha`, `st=mao` (Caveat) ou `st=edit` (Archivo). As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
 
 ## Pontos para conferir
 
