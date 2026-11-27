@@ -37,7 +37,8 @@ const NS='http://www.w3.org/2000/svg';
 const W=1080,H=1350;
 const q=new URLSearchParams(location.search);
 const STYLE=q.get('st')||'ficha', n=+(q.get('n')||2);
-document.body.classList.add('st-'+STYLE);
+const LOOK=STYLE==='misto'?'edit':STYLE, HAND=STYLE==='mao'||STYLE==='misto';
+document.body.classList.add('st-'+LOOK);
 const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
 const st=document.getElementById('stage');
 const svg=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},st);
@@ -53,23 +54,23 @@ const T={
    spots:[[110,595,230,205],[790,560,240,165],[730,1012,265,130]],
    labels:[
     {k:1,x:36,y:258,w:470,d:'O disco visto de cima com a agulha, mostrando onde ela tem que começar a tocar',side:'bottom',at:262,a:[262,500]},
-    {k:2,x:560,y:700,w:490,d:'O disco de lado, e esses risquinhos são um número em binário com o tempo de um lado (mais ou menos 1 hora)',side:'top',at:908,a:[908,531]},
+    {k:2,x:540,y:700,w:520,d:'O disco de lado, e esses risquinhos são um número em binário com o tempo de um lado (mais ou menos 1 hora)',side:'top',at:908,a:[908,531]},
     {k:3,x:560,y:1140,w:490,d:'Ensina a transformar o sinal do disco em imagem, linha por linha, como numa TV antiga',side:'top',at:650,a:[650,1090]},
    ]},
  3:{...NASA,head:'E essas duas também estão no disco original',
    spots:[[150,1170,360,265],[835,1237,190,100]],
    labels:[
-    {k:4,x:36,y:670,w:500,d:'Um mapa de 14 pulsares, que são estrelas que piscam num ritmo exato, as linhas saem do Sol, então é basicamente o endereço da Terra',side:'bottom',at:70,a:[70,1140]},
-    {k:5,x:560,y:860,w:490,d:'O átomo de hidrogênio, o mais comum do universo, que serve de unidade de tempo pra tudo que tá no disco',side:'bottom',at:835,a:[835,1237]},
+    {k:4,x:36,y:670,w:500,d:'Um mapa de 14 pulsares, que são estrelas que piscam num ritmo exato, as linhas saem do Sol, então é basicamente o endereço da Terra',side:'bottom',at:70,a:[70,1140],cr:[34,32]},
+    {k:5,x:530,y:860,w:520,d:'O átomo de hidrogênio, o mais comum do universo, que serve de unidade de tempo pra tudo que tá no disco',side:'bottom',at:835,a:[835,1237],cr:[165,78]},
    ]},
  4:{img:'src/en_front_clean.png',iw:1800,ih:2700,s:0.9,cx:600,cy:380,oy:0,
    head:'Agora o que é do livro',
    mspots:[[902,261,140,110],[485,745,170,150],[314,606,140,120],[962,1218,190,170],[300,980,150,300]],
    labels:[
-    {k:'',x:530,y:340,w:510,d:'Essa é Akaihi, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
+    {k:'',x:530,y:372,w:510,d:'Essa é Akaihi, a estrela vermelha que ilumina Árret, e no livro ela começa a apagar',side:'top',at:902,a:[902,261],r:20},
     {k:'',x:580,y:715,w:470,d:'Essa linha vermelha não existe no disco da NASA, o que ela significa eu não vou contar (lê o livro kkk)',side:'left',at:745,a:[485,745]},
-    {k:'',x:20,y:680,w:385,d:'Molhada porque caiu num lago, na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
-    {k:'',x:290,y:1178,w:530,d:'A placa tá queimada de quando a Voyager entrou em Árret, dá pra ver até a fumaça',side:'right',at:1240,a:[962,1218],r:18},
+    {k:'',x:20,y:706,w:385,d:'Molhada porque caiu num lago, na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
+    {k:'',x:290,y:1178,w:530,d:'A placa tá queimada de quando a Voyager entrou em Árret, dá pra ver até a fumaça',side:'right',at:1240,a:[985,1225],r:18,cr:[66,92]},
    ]},
 };
 // per-style tweaks of positions (handwriting has no box, so it needs its own room)
@@ -114,9 +115,10 @@ function handLine(p,a,stop){
     el('path',{d:`M${ex},${ey} l${bx},${by}`,stroke:'#f7f2e8','stroke-width':3.4,'stroke-linecap':'round',fill:'none'},lines);
   }
 }
-function handCircle(a,r){
+function handCircle(a,r,rx,ry){
+  rx=rx||r*1.12;ry=ry||r*.92;
   const pts=[];const a0=rnd()*6.28;
-  for(let i=0;i<=26;i++){const t=a0+i/24*6.28*1.06;const rr=r*(1+(rnd()-.5)*.08);pts.push([a[0]+Math.cos(t)*rr*1.12,a[1]+Math.sin(t)*rr*.92])}
+  for(let i=0;i<=26;i++){const t=a0+i/24*6.28*1.06;const k=1+(rnd()-.5)*.08;pts.push([a[0]+Math.cos(t)*rx*k,a[1]+Math.sin(t)*ry*k])}
   el('path',{d:'M'+pts.map(p=>p.join(',')).join(' L'),fill:'none',stroke:'#f7f2e8','stroke-width':3.2,'stroke-linecap':'round','stroke-linejoin':'round'},lines);
 }
 function connector(L,r){
@@ -124,11 +126,15 @@ function connector(L,r){
   if(L.side==='bottom')p=[L.at,r.bottom];else if(L.side==='top')p=[L.at,r.top];
   else if(L.side==='left')p=[r.left,L.at];else p=[r.right,L.at];
   const [ax,ay]=L.a, rr=L.r||11;
-  if(STYLE==='mao'){
-    const cr=(L.r||14)+10;handCircle(L.a,cr);
-    const gap=STYLE==='mao'?10:0;
+  if(HAND){
+    const cr=(L.r||14)+10;
+    const rx=(STYLE==='misto'&&L.cr)?L.cr[0]:cr*1.12, ry=(STYLE==='misto'&&L.cr)?L.cr[1]:cr*.92;
+    handCircle(L.a,cr,rx,ry);
+    const gap=10;
     const pp=L.side==='bottom'?[p[0],p[1]+gap]:L.side==='top'?[p[0],p[1]-gap]:L.side==='left'?[p[0]-gap,p[1]]:[p[0]+gap,p[1]];
-    handLine(pp,L.a,cr+6);return;
+    const dx=L.a[0]-pp[0],dy=L.a[1]-pp[1],dl=Math.hypot(dx,dy),ux=dx/dl,uy=dy/dl;
+    const edge=1/Math.sqrt((ux/rx)**2+(uy/ry)**2);
+    handLine(pp,L.a,edge+7);return;
   }
   const dx=ax-p[0],dy=ay-p[1],len=Math.hypot(dx,dy),ex=ax-dx/len*rr,ey=ay-dy/len*rr;
   const col=STYLE==='edit'?'#dcae57':'#efe7d6';
@@ -139,10 +145,10 @@ function connector(L,r){
 function labels(C){
   C.labels.forEach((L0,i)=>{
     const L={...L0,...((STYLE==='mao'&&MAO[n]&&MAO[n][i])||{})};
-    const html=STYLE==='edit'&&L.k!==''?`<span class="n">${L.k}</span>${L.d}`:L.d;
-    const pad=STYLE==='ficha'?36:STYLE==='edit'?(L.k!==''?94:40):0;
+    const html=LOOK==='edit'&&L.k!==''?`<span class="n">${L.k}</span>${L.d}`:L.d;
+    const pad=LOOK==='ficha'?36:LOOK==='edit'?(L.k!==''?94:40):0;
     const b=div('lab',html,{left:L.x+'px',top:L.y+'px',width:(L.w-pad)+'px',zIndex:2});
-    if(STYLE==='edit'&&L.k==='')b.style.paddingLeft='20px';
+    if(LOOK==='edit'&&L.k==='')b.style.paddingLeft='20px';
     connector(L,b.getBoundingClientRect());
   });
 }
@@ -158,10 +164,11 @@ async function main(){
     const caps=[[291,1092,'A brasileira é mais clean, com o disco de forma geométrica fazendo referência ao olho'],[792,1128,'A americana é a placa de ouro, molhada e queimada']];
     for(const [x,y,t] of caps){
       const w=STYLE==='mao'?420:460;
-      const css={left:(x-w/2)+'px',top:y+'px',width:(w-(STYLE==='ficha'?36:STYLE==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
-      if(STYLE==='edit')Object.assign(css,{padding:'14px 20px 16px',fontSize:'22px'});
-      if(STYLE==='ficha')Object.assign(css,{fontSize:'23px'});
-      div('lab',t,css);
+      const css={left:(x-w/2)+'px',top:y+'px',width:(w-(LOOK==='ficha'?36:LOOK==='edit'?40:0))+'px',textAlign:STYLE==='mao'?'center':'left'};
+      if(LOOK==='edit')Object.assign(css,{padding:'14px 20px 16px',fontSize:'22px'});
+      if(LOOK==='ficha')Object.assign(css,{fontSize:'23px'});
+      const bx=div('lab',t,css);
+      if(STYLE==='misto'&&q.get('arrows')==='1'){const r=bx.getBoundingClientRect();handLine([x+40,r.top-10],[x+10,r.top-105],0);}
     }
     return finish(['bg/duo.png']);
   }
@@ -173,9 +180,12 @@ async function main(){
     el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
     el('rect',{x:0,y:958,width:W,height:150,fill:'url(#f2)'},svg);
     const star=document.createElement('div');star.style.cssText='position:absolute;left:954px;top:182px;width:13px;height:13px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 46px 20px rgba(255,40,40,.16)';st.appendChild(star);
-    div('big','1 dia-luz',{left:'80px',top:STYLE==='mao'?'250px':'290px'});
+    const bg6=div('big','1 dia-luz',{left:'80px',top:STYLE==='mao'?'250px':'290px'});
+    if(STYLE==='misto'){const r=bg6.getBoundingClientRect();const y0=r.bottom+14,x0=r.left+6,x1=r.right-10;
+      el('path',{d:`M${x0},${y0+4} C${x0+(x1-x0)*.3},${y0-6} ${x0+(x1-x0)*.7},${y0+10} ${x1},${y0-2}`,fill:'none',stroke:'#f7f2e8','stroke-width':4.5,'stroke-linecap':'round'},lines);
+      el('path',{d:`M${x0+40},${y0+16} C${x0+(x1-x0)*.4},${y0+8} ${x0+(x1-x0)*.75},${y0+20} ${x1-30},${y0+11}`,fill:'none',stroke:'#f7f2e8','stroke-width':3.2,'stroke-linecap':'round'},lines);}
     div('par','No dia 18 de novembro de 2026 a Voyager 1 chegou a 1 dia-luz da Terra, ou seja, uma mensagem daqui leva 24 horas pra chegar lá, e o disco de ouro tá com ela até hoje',
-      {left:'84px',top:STYLE==='mao'?'450px':'470px',width:STYLE==='ficha'?'900px':'880px'});
+      {left:'84px',top:STYLE==='mao'?'450px':STYLE==='misto'?'505px':'470px',width:STYLE==='ficha'?'900px':'880px'});
     return finish([C.img]);
   }
   const C=T[n];
