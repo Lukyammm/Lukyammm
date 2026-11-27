@@ -10,6 +10,7 @@ Material reunido em 27/11/2026 para o post e os stories das capas do livro no In
 | `capas_todas/` | Todas as 40 versões encontradas, da mais antiga à mais nova, sem cortar nenhuma. | 1080×1350 (feed 4:5) |
 | `stories_capas/` | As capas finais (PT e EN, frente e capa aberta) para stories, mais as duas capas abertas empilhadas. | 1080×1920 (story 9:16) e 1080×1350 |
 | `originais/` | Arquivos originais achados em e-mails de 2021 e a capa de 2024 tirada do PDF do livro, sem tratamento. | tamanho original |
+| `post_capa_final/` | Carrossel da capa final (placa molhada): o livro em 3D, as referências explicadas e as duas edições. | 1080×1350 (feed 4:5) |
 
 Cada capa está centralizada sobre um fundo desfocado feito da própria arte, longe das bordas de cima e de baixo para a interface do Instagram não cobrir o título.
 
@@ -92,6 +93,26 @@ A Voyager 1 chegou a 1 dia-luz da Terra em 18/11/2026, às 10:16 UTC, a cerca de
 7. Capa aberta EN (25-11): *E a americana completa* (caixinha: qual vocês preferem)
 
 O texto vai no espaço escuro acima ou abaixo da capa.
+
+## Post da capa final (`post_capa_final/`)
+
+Feito em 27/11/2026 a partir da capa aberta americana de 25-11 (a placa molhada e queimada) e da capa aberta brasileira de 29-09, ambas no Drive. A capa é a da versão impressa (6×9 pol.), recortada da capa aberta.
+
+| Slide | O que mostra |
+|---|---|
+| 01 | O livro em 3D, com a lombada. A contracapa não aparece, porque o texto dela ainda fala em "eleven million years". |
+| 02 | **O que é de verdade (1):** a placa com luz só nas gravuras do Disco de Ouro. Mostra como tocar (o disco visto de cima, com a agulha), quanto dura (o disco de lado e o tempo de um lado em binário, cerca de 1 hora) e como ver as fotos (o sinal que vira imagem). |
+| 03 | **O que é de verdade (2):** o mapa de 14 pulsares que aponta pro Sol e o átomo de hidrogênio, que é a unidade de tempo do disco. |
+| 04 | **O que é do livro:** Akaihi, a linha vermelha, molhado (o lago) e queimado (a entrada em Árret como bola de fogo, ainda soltando fumaça). |
+| 05 | As duas edições lado a lado, Brasil e EUA. |
+| 06 | Fechamento com a Voyager 1 a 1 dia-luz (18/11/2026). É opcional. |
+
+O `00_visao_geral.jpg` mostra os seis juntos.
+
+- **Linha vermelha:** o slide não fala em rota. Diz só que ela não existe no disco da NASA e que o que ela marca só lendo pra saber.
+- **Fontes das gravuras:** as explicações seguem a descrição da NASA/JPL para a capa do Golden Record. A arte da capa é uma versão estilizada, então a posição das gravuras não é igual à do disco real.
+- **Fontes do livro:** a contracapa (bola de fogo no lago de Árret, Akaihi apagando), o capítulo 1 (Áslan e o avô no lago) e o próprio autor (queimado = a entrada em Árret).
+- **Para refazer:** `fonte/` tem as páginas usadas para gerar as imagens. `mockup.html` monta o livro 3D com three.js 0.160 e `slides.html` monta os slides com as fontes Jost e Libre Caslon. As duas renderizam no Chromium com `shot.js`. As imagens da capa recortada (`src/`) não estão no repositório e saem da capa aberta do Drive: EN frente `(2080,38)-(3880,2738)` e PT frente `(1906,34)-(3546,2494)`.
 
 ## Pontos para conferir
 

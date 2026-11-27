@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Jost;font-weight:400;src:url(node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2)}
+@font-face{font-family:Jost;font-weight:500;src:url(node_modules/@fontsource/jost/files/jost-latin-500-normal.woff2)}
+@font-face{font-family:Caslon;font-style:normal;src:url(node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-normal.woff2)}
+@font-face{font-family:Caslon;font-style:italic;src:url(node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-italic.woff2)}
+:root{--navy:#0e1120;--gold:#cfa65a;--cream:#f2eadb}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:var(--navy)}
+#stage{position:absolute;inset:0;overflow:hidden}
+svg{position:absolute;left:0;top:0}
+.head{position:absolute;left:56px;top:58px;width:960px}
+.kick{font-family:Jost;font-weight:500;font-size:24px;letter-spacing:.32em;color:var(--gold);margin-bottom:16px}
+.title{font-family:Caslon;font-style:italic;font-size:41px;line-height:1.22;color:var(--cream)}
+.box{position:absolute;background:rgba(9,11,21,.80);border:1.5px solid rgba(207,166,90,.55);border-radius:16px;padding:17px 22px 19px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);backdrop-filter:blur(5px)}
+.box .t{font-family:Jost;font-weight:500;font-size:22px;letter-spacing:.22em;color:var(--gold);margin-bottom:7px}
+.box .d{font-family:Caslon;font-size:27px;line-height:1.3;color:var(--cream)}
+.num{display:inline-block;margin-right:10px;color:var(--cream);opacity:.75}
+.bigk{font-family:Jost;font-weight:500;font-size:24px;letter-spacing:.32em;color:var(--gold);text-align:center}
+</style></head><body><div id="stage"></div>
+<script>
+const NS='http://www.w3.org/2000/svg';
+const W=1080,H=1350;
+const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+
+const NASA={img:'src/en_front.png',iw:1800,ih:2700,s:0.6545,cx:0,cy:989,oy:230};
+const SLIDES={
+ 2:{...NASA,
+   head:['O QUE É DE VERDADE','Tudo isso tá gravado no disco que a NASA mandou nas Voyager, em 1977'],
+   spots:[[110,595,230,205],[790,560,240,165],[730,1012,265,130]],
+   labels:[
+    {x:36,y:262,w:470,t:'COMO TOCAR',d:'O disco visto de cima, com a agulha no ponto certo pra começar',side:'bottom',at:262,a:[262,500]},
+    {x:585,y:712,w:460,t:'QUANTO TEMPO DURA',d:'O disco de lado. Os riscos são um número em binário: o tempo de um lado, cerca de 1 hora',side:'top',at:908,a:[908,531]},
+    {x:560,y:1150,w:480,t:'COMO VER AS FOTOS',d:'O sinal que vira imagem, linha por linha, tipo TV antiga',side:'top',at:650,a:[650,1090]},
+   ]},
+ 3:{...NASA,
+   head:['O QUE É DE VERDADE','E tem até o endereço da Terra'],
+   spots:[[150,1170,360,265],[835,1237,190,100]],
+   labels:[
+    {x:36,y:700,w:470,t:'ONDE A GENTE MORA',d:'Um mapa de 14 pulsares que aponta pro Sol. É o endereço da Terra na galáxia',side:'bottom',at:70,a:[70,1140]},
+    {x:560,y:880,w:480,t:'A RÉGUA DO UNIVERSO',d:'O átomo de hidrogênio. O tempo dele é a unidade de medida de tudo no disco',side:'bottom',at:835,a:[835,1237]},
+   ]},
+ 6:{closer:true,img:'src/en_front.png',iw:1800,ih:2700,s:0.6,cx:0,cy:0,oy:0,labels:[],head:['','']},
+ 4:{img:'src/en_front_clean.png',iw:1800,ih:2700,s:0.9,cx:600,cy:380,oy:0,dim:0.92,
+   headW:600,head:['O QUE É DO LIVRO','E o que aconteceu com ele quando chegou em Árret'],
+   labels:[
+    {x:530,y:345,w:510,t:'AKAIHI',d:'A estrela vermelha que ilumina Árret. E que tá começando a apagar',side:'top',at:902,a:[902,261],r:20},
+    {x:595,y:722,w:430,t:'A LINHA VERMELHA',d:'Essa não tem no disco da NASA. O que ela marca, só lendo pra saber',side:'left',at:745,a:[485,745]},
+    {x:24,y:700,w:340,t:'MOLHADO',d:'Caiu num lago, bem na frente do Áslan e do avô dele',side:'top',at:300,a:[314,606],r:18},
+    {x:300,y:1192,w:520,t:'QUEIMADO',d:'Entrou em Árret como uma bola de fogo e ainda tá soltando fumaça',side:'right',at:1250,a:[962,1218],r:18},
+   ]},
+};
+const n=+(new URLSearchParams(location.search).get('n')||2);
+const C=SLIDES[n];
+const st=document.getElementById('stage');
+if(C.closer){
+  const svg=el('svg',{width:W,height:H},st);const defs=el('defs',{},svg);
+  const cp=el('clipPath',{id:'cc'},defs);el('rect',{x:0,y:960,width:W,height:H},cp);
+  el('image',{href:C.img,x:0,y:1010-820*C.s,width:C.iw*C.s,height:C.ih*C.s,preserveAspectRatio:'none',style:'filter:brightness(.9)','clip-path':'url(#cc)'},svg);
+  const lg=el('linearGradient',{id:'f2',x1:0,y1:0,x2:0,y2:1},defs);
+  el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
+  el('rect',{x:0,y:958,width:W,height:150,fill:'url(#f2)'},svg);
+  const star=document.createElement('div');star.style.cssText='position:absolute;left:954px;top:182px;width:13px;height:13px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px 6px rgba(255,50,50,.55),0 0 46px 20px rgba(255,40,40,.16)';st.appendChild(star);
+  const t=document.createElement('div');t.style.cssText='position:absolute;left:90px;top:300px;width:900px;text-align:center';
+  t.innerHTML=`<div class="bigk">18 DE NOVEMBRO DE 2026</div>
+  <div style="font-family:Caslon;font-style:italic;font-size:150px;line-height:1;color:#f2eadb;margin:34px 0 40px">1 dia-luz</div>
+  <div style="font-family:Caslon;font-size:35px;line-height:1.38;color:#f2eadb;opacity:.92">A Voyager 1 chegou a 1 dia-luz da Terra. Uma mensagem daqui leva 24 horas pra chegar lá, é a coisa mais longe que a gente já arremessou.</div>
+  <div class="bigk" style="margin-top:44px;font-size:22px;line-height:1.7">O DISCO TÁ COM ELA.<br>ATÉ HOJE NINGUÉM RESPONDEU.</div>`;
+  st.appendChild(t);
+  document.fonts.ready.then(()=>{const im=new Image();im.onload=()=>setTimeout(()=>window.__done=true,400);im.src=C.img;});
+  throw 'closer';
+}
+const svg=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},st);
+const defs=el('defs',{},svg);
+const blur=el('filter',{id:'soft',x:'-50%',y:'-50%',width:'200%',height:'200%'},defs);el('feGaussianBlur',{stdDeviation:38},blur);
+const sh=el('filter',{id:'sh',x:'-20%',y:'-20%',width:'140%',height:'140%'},defs);el('feDropShadow',{dx:0,dy:0,stdDeviation:2.2,'flood-color':'#000','flood-opacity':.85},sh);
+const ix=-C.cx*C.s, iy=C.oy-C.cy*C.s, iw=C.iw*C.s, ih=C.ih*C.s;
+const imgA={href:C.img,x:ix,y:iy,width:iw,height:ih,preserveAspectRatio:'none','clip-path':'url(#cl)'};
+const cp=el('clipPath',{id:'cl'},defs);el('rect',{x:0,y:C.oy,width:W,height:H-C.oy},cp);
+if(C.spots){
+  const g=el('g',{},svg);
+  el('image',{...imgA,style:'filter:brightness(.32) saturate(.7)'},g);
+  const m=el('mask',{id:'spot',maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H},defs);
+  el('rect',{x:0,y:0,width:W,height:H,fill:'#000'},m);
+  const mg=el('g',{filter:'url(#soft)'},m);
+  for(const [x,y,rx,ry] of C.spots) el('ellipse',{cx:x,cy:y,rx,ry,fill:'#fff'},mg);
+  el('image',{...imgA,mask:'url(#spot)'},svg);
+}else{
+  el('image',{...imgA,style:`filter:brightness(${C.dim||1})`},svg);
+}
+if(C.oy>0){
+  const lg=el('linearGradient',{id:'hg',x1:0,y1:0,x2:0,y2:1},defs);
+  el('stop',{offset:0,'stop-color':'#0e1120','stop-opacity':1},lg);el('stop',{offset:1,'stop-color':'#0e1120','stop-opacity':0},lg);
+  el('rect',{x:0,y:C.oy-2,width:W,height:200,fill:'url(#hg)'},svg);
+}
+// header
+const hd=document.createElement('div');hd.className='head';
+if(C.headW)hd.style.width=C.headW+'px';
+hd.innerHTML=`<div class="kick">${C.head[0]}</div><div class="title">${C.head[1]}</div>`;
+st.appendChild(hd);
+const lines=el('g',{filter:'url(#sh)'},svg);
+document.fonts.ready.then(()=>{
+  for(const L of C.labels){
+    const b=document.createElement('div');b.className='box';
+    b.style.left=L.x+'px';b.style.top=L.y+'px';b.style.width=(L.w-44)+'px';
+    b.innerHTML=`<div class="t">${L.t}</div><div class="d">${L.d}</div>`;st.appendChild(b);
+    const r=b.getBoundingClientRect();
+    let p;
+    if(L.side==='bottom')p=[L.at,r.bottom];else if(L.side==='top')p=[L.at,r.top];
+    else if(L.side==='left')p=[r.left,L.at];else p=[r.right,L.at];
+    const [ax,ay]=L.a, rr=L.r||11;
+    // stop the line at the ring
+    const dx=ax-p[0],dy=ay-p[1],len=Math.hypot(dx,dy);
+    const ex=ax-dx/len*rr, ey=ay-dy/len*rr;
+    el('line',{x1:p[0],y1:p[1],x2:ex,y2:ey,stroke:'#f2eadb','stroke-width':2.4,'stroke-linecap':'round'},lines);
+    el('circle',{cx:p[0],cy:p[1],r:4.5,fill:'#cfa65a'},lines);
+    el('circle',{cx:ax,cy:ay,r:rr,fill:'none',stroke:'#f2eadb','stroke-width':2.6},lines);
+    el('circle',{cx:ax,cy:ay,r:3.6,fill:'#f2eadb'},lines);
+  }
+  // wait for images
+  Promise.all([...document.querySelectorAll('image')].map(i=>new Promise(res=>{const im=new Image();im.onload=res;im.src=i.getAttribute('href')}))).then(()=>setTimeout(()=>window.__done=true,400));
+});
+</script></body></html>
