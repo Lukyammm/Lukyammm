@@ -65,17 +65,21 @@ Legenda do autor sobre a capa brasileira:
 
 Escrita no tom do autor: irreverente sem ser rude, engraçado sem ser brega, curto, sem emoji nem hashtag, com o aparte entre parênteses e kkk. A legenda não fala da rota marcada na placa, a pedido do autor.
 
-> Em 1977 a NASA mandou um disco de ouro pro espaço, com música, foto e "olá" em 55 línguas, pra quem achasse. Até hoje ninguém respondeu.
+> Em 1977 a NASA mandou um disco de ouro pro espaço na Voyager 1, com música, foto e "olá" em 55 línguas, pra quem achasse. No dia 18 de novembro ela chegou a 1 dia-luz da Terra, uma mensagem nossa leva 24 horas pra chegar lá, é a coisa mais longe que a gente já arremessou. E até hoje ninguém respondeu.
 >
 > Em O Visitante Espacial alguém achou.
 >
 > O disco cai num lago em Árret, na frente do Áslan e do avô dele, a estrela de lá começa a apagar e eles vão atrás de quem mandou (dica: fomos nós, e a gente não tá num bom dia kkk)
 >
 > E essas são as capas, desde a época do Wattpad até a final. Algumas se perderam no caminho, essas foram as que sobreviveram
+>
+> #OVisitanteEspacial #TheSpaceVisitor #Voyager1 #DiscoDeOuro #GoldenRecord #FiccaoCientifica #ScienceFiction #LivroNacional #EscritorBrasileiro #CapaDeLivro #Bookstagram #Wattpad
 
 Versão curta:
 
-> Em 1977 a NASA mandou um disco de ouro pro espaço pra quem achasse. Até hoje ninguém respondeu. Em O Visitante Espacial alguém achou kkk
+> Em 1977 a NASA mandou um disco de ouro pro espaço pra quem achasse. Agora a Voyager 1 tá a 1 dia-luz da Terra e até hoje ninguém respondeu. Em O Visitante Espacial alguém achou kkk
+
+A Voyager 1 chegou a 1 dia-luz da Terra em 18/11/2026, às 10:16 UTC, a cerca de 25,9 bilhões de km. É o primeiro objeto feito pelo ser humano a chegar tão longe (fontes: CNN e NPR, 17–18/11/2026).
 
 ## Texto dos stories (`stories_capas/`)
 
